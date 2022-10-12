@@ -1,0 +1,232 @@
+.btn{
+
+    padding: 0 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+#Home {
+    position: absolute;
+    width: 428px;
+    height: 926px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+#Rectngulo_103_ck {
+    fill: rgba(22,21,21,0.929);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 428px;
+    height: 926px;
+    left: 0px;
+    top: 0px;
+}
+#Hola_Usuario {
+    left: 31px;
+    top: 48px;
+    position: absolute;
+    overflow: visible;
+    width: 192px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(255,255,255,1);
+}
+#Grupo_866 {
+    position: absolute;
+    width: 374px;
+    height: 217px;
+    left: 27px;
+    top: 116px;
+    overflow: visible;
+}
+#ambitious-creative-co-rick-bar {
+    opacity: 0.8;
+    filter: blur(1px);
+    position: absolute;
+    width: 374px;
+    height: 217px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Grupo_de_desplazamiento_1 {
+    mix-blend-mode: normal;
+    position: absolute;
+    width: 238px;
+    height: 71px;
+    left: 22px;
+    top: 23px;
+    overflow: hidden;
+}
+#Reservas {
+    mix-blend-mode: color-dodge;
+    /* filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.722)); */
+    left: -4px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 238px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    border-color: blueviolet;
+    color: orange;
+}
+
+#Grupo_868 {
+    position: absolute;
+    width: 184px;
+    height: 494px;
+    left: 231px;
+    top: 345px;
+    overflow: visible;
+}
+#img_fruta {
+     filter: blur(0.5px); 
+    position: absolute;
+    width: 184px;
+    height: 494px;
+    left: 0px;
+    top: 0px;
+    overflow: visible; 
+}
+#Grupo_de_desplazamiento_3 {
+    mix-blend-mode: normal;
+    position: absolute;
+    width: 173px;
+    height: 49px;
+    left: 6px;
+    top: 419px;
+    overflow: hidden;
+}
+#Comidas {
+    mix-blend-mode: color-dodge;
+    filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.722));
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 164px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    color: rgba(255,157,141,1);
+}
+#Grupo_867 {
+    position: absolute;
+    width: 184px;
+    height: 494px;
+    left: 30px;
+    top: 345px;
+    overflow: visible;
+}
+#img_ejercicio{
+    filter: blur(0.5px);
+    position: absolute;
+    width: 184px;
+    height: 494px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Grupo_de_desplazamiento_2 {
+    mix-blend-mode: normal;
+    position: absolute;
+    width: 184px;
+    height: 56px;
+    left: 0px;
+    top: 47px;
+    overflow: hidden;
+}
+#Eventos_cx {
+    mix-blend-mode: color-dodge;
+    filter: drop-shadow(1px 3px 6px rgba(255, 157, 141, 1));
+    left: 15px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 163px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(13,40,170,0.812);
+}
+#Grupo_865 {
+    position: absolute;
+    width: 428px;
+    height: 62px;
+    left: 0px;
+    top: 864px;
+    overflow: visible;
+}
+#Trazado_52_cz {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Trazado_52_cz {
+    overflow: visible;
+    position: absolute;
+    width: 428px;
+    height: 62px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#n_838764_c {
+    position: absolute;
+    width: 47px;
+    height: 45px;
+    left: 304px;
+    top: 11px;
+    overflow: visible;
+}
+#calendar_c {
+    position: absolute;
+    width: 44px;
+    height: 41px;
+    left: 192px;
+    top: 14px;
+    overflow: visible;
+}
+#home_c {
+    position: absolute;
+    width: 51px;
+    height: 41px;
+    left: 73px;
+    top: 11px;
+    overflow: visible;
+}
