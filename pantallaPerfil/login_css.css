@@ -1,0 +1,485 @@
+    .btn{
+        padding:0 !important;
+    }
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Perfil {
+		position: absolute;
+		width: 428px;
+		height: 926px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Perfil;
+		--web-view-id: Perfil;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	#Trazado_48 {
+		fill: rgba(22,21,21,0.929);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Trazado_48 {
+		overflow: visible;
+		position: absolute;
+		width: 429px;
+		height: 926px;
+		left: -1px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#n_838764_g {
+		position: absolute;
+		width: 130px;
+		height: 118px;
+		left: 149px;
+		top: 147px;
+		overflow: visible;
+	}
+	#Grupo_816_ha {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 173px;
+		top: 296px;
+		overflow: visible;
+	}
+	#Grupo_815_hb {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Grupo_848 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rectngulo_400_hd {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectngulo_400_hd {
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#Emy_he {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 46px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#Grupo_849 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Rectngulo_400_hg {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectngulo_400_hg {
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#Emy_hh {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 46px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#Grupo_850 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Input_Nombre {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Input_Nombre {
+        padding: .375rem .75rem;
+        border-radius: 12px;
+        position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#Emy_hk {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 46px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#Polgono_1_hl {
+		fill: rgba(255,255,255,1);
+	}
+	.Polgono_1_hl {
+		overflow: visible;
+		position: absolute;
+		width: 24px;
+		height: 29px;
+		transform: matrix(1,0,0,1,26.5,24.5) rotate(-90deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+	}
+	#Grupo_853 {
+		position: absolute;
+		width: 125px;
+		height: 39px;
+		left: 24px;
+		top: 296px;
+		overflow: visible;
+	}
+	#Nombre_hn {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 126px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 28px;
+		color: rgba(255,255,255,1);
+	}
+	#Grupo_852 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 173px;
+		top: 355px;
+		overflow: visible;
+	}
+	#Grupo_901 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#input_Correo {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.input_Correo {
+        padding: .375rem .75rem;
+        border-radius: 12px;
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#Emy512gmailcom {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 211px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#Correo {
+		left: 24px;
+		top: 355px;
+		position: absolute;
+		overflow: visible;
+		width: 111px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 29px;
+		color: rgba(255,255,255,1);
+	}
+	#Perfil_ht {
+		filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+		left: 53px;
+		top: 66px;
+		position: absolute;
+		overflow: visible;
+		width: 106px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 40px;
+		color: rgba(254,63,30,1);
+	}
+	#Grupo_865_hu {
+		position: absolute;
+		width: 428px;
+		height: 62px;
+		left: 0px;
+		top: 864px;
+		overflow: visible;
+	}
+	#Trazado_52_hv {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Trazado_52_hv {
+		overflow: visible;
+		position: absolute;
+		width: 428px;
+		height: 62px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#n_838764_hw {
+		position: absolute;
+		width: 47px;
+		height: 45px;
+		left: 304px;
+		top: 11px;
+		overflow: visible;
+	}
+	#calendar_hx {
+		position: absolute;
+		width: 44px;
+		height: 41px;
+		left: 192px;
+		top: 14px;
+		overflow: visible;
+	}
+	#home_hy {
+		position: absolute;
+		width: 51px;
+		height: 41px;
+		left: 73px;
+		top: 11px;
+		overflow: visible;
+	}
+	#Altura {
+		left: 24px;
+		top: 415px;
+		position: absolute;
+		overflow: visible;
+		width: 103px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 29px;
+		color: rgba(255,255,255,1);
+	}
+	#Peso {
+		left: 24px;
+		top: 475px;
+		position: absolute;
+		overflow: visible;
+		width: 80px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 29px;
+		color: rgba(255,255,255,1);
+	}
+	#Grupo_905 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 173px;
+		top: 414px;
+		overflow: visible;
+	}
+	#Grupo_901_h {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#input_peso {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.input_peso{
+        padding: .375rem .75rem;
+        border-radius: 12px;
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#n_60_cm_h {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 72px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#n_60_cm_h {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 72px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
+	#Grupo_906 {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 173px;
+		top: 473px;
+		overflow: visible;
+	}
+	#Grupo_901_ia {
+		position: absolute;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Input_altura {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Input_altura {
+        padding: .375rem .75rem;
+        border-radius: 12px;
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+	}
+	#n_9_kg {
+		left: 14px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+	}
