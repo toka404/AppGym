@@ -1,6 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../components/UserContext";
 import { Link } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
@@ -34,6 +35,7 @@ const emptyLogin = {
 
 function Body() {
   const [login, setLogin] = useState(emptyLogin);
+  const setUser = useUser();
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -92,7 +94,7 @@ function Body() {
                 .then((userCredential) => {
                   // Signed in
                   // const user = userCredential.user;
-                  navigate("home");
+                  navigate("/");
                   // ...
                 })
                 .catch((error) => {
@@ -169,7 +171,7 @@ function Body() {
                     const token = credential.accessToken;
                     // The signed-in user info.
                     const user = result.user;
-                    navigate("home");
+                    navigate("/");
                     // ...
                   })
                   .catch((error) => {

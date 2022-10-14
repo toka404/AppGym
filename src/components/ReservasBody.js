@@ -41,7 +41,7 @@ function ReservasBody() {
         {/* boton regreso */}
         <button
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         >
           <svg className="btnBack btn" viewBox="0 0 24 29">

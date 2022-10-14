@@ -20,7 +20,7 @@ function AlimentosBody() {
 
         <button
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         >
           <svg className="Polgono_1_eu" viewBox="0 0 24 29">

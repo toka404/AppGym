@@ -1,6 +1,6 @@
-import "./App.css";
-import ReservasBody from "./components/ReservasBody";
-import Footer from "./components/Footer";
+import "../App.css";
+import ReservasBody from "../components/ReservasBody";
+import Footer from "../components/Footer";
 
 function Reservas() {
   return (

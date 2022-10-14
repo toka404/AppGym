@@ -1,6 +1,6 @@
-import "./App.css";
-import PerfilBody from "./components/PerfilBody";
-import Footer from "./components/Footer";
+import "../App.css";
+import PerfilBody from "../components/PerfilBody";
+import Footer from "../components/Footer";
 
 function Perfil() {
   return (

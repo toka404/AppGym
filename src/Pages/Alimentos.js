@@ -1,6 +1,6 @@
-import "./App.css";
-import AlimentosBody from "./components/AlimentosBody";
-import Footer from "./components/Footer";
+import "../App.css";
+import AlimentosBody from "../components/AlimentosBody";
+import Footer from "../components/Footer";
 
 function Alimentos() {
   return (

@@ -1,6 +1,6 @@
-import "./App.css";
-import CalendarioBody from "./components/CalendarioBody";
-import Footer from "./components/Footer";
+import "../App.css";
+import CalendarioBody from "../components/CalendarioBody";
+import Footer from "../components/Footer";
 
 function Calendario() {
   return (

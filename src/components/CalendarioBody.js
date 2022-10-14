@@ -34,7 +34,7 @@ function CalendarioBody() {
         </div>
         <button
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         >
           <svg className="Polgono_1_im btn" viewBox="0 0 24 29">

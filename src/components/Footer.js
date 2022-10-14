@@ -39,7 +39,7 @@ function Footer() {
 
       <button
         onClick={() => {
-          navigate("/home");
+          navigate("/");
         }}
       >
         <img id="home_c" src="/images/Home/home_c.png" className="btn" />

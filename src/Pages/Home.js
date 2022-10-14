@@ -1,6 +1,6 @@
-import "./App.css";
-import Footer from "./components/Footer";
-import HomeBody from "./components/HomeBody";
+import "../App.css";
+import Footer from "../components/Footer";
+import HomeBody from "../components/HomeBody";
 
 function Home() {
   return (
