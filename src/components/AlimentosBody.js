@@ -286,31 +286,6 @@ function AlimentosBody() {
             </div>
           </div>
         </div>
-        <div id="Grupo_865_gb">
-          <svg className="Trazado_52_gc" viewBox="0 0 428 62">
-            <path
-              id="Trazado_52_gc"
-              d="M 0 0 L 428 0 L 428 62 L 0 62 L 0 0 Z"
-            ></path>
-          </svg>
-          <img
-            id="n_838764_gd"
-            src="/images/Alimentos/n_838764_gd.png"
-            className="btn"
-          />
-
-          <img
-            id="calendar_ge"
-            src="/images/Alimentos/calendar_ge.png"
-            className="btn"
-          />
-
-          <img
-            id="home_gf"
-            src="/images/Alimentos/home_gf.png"
-            className="btn"
-          />
-        </div>
       </div>
     </div>
   );

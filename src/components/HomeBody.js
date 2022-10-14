@@ -69,28 +69,6 @@ function HomeBody() {
           </div>
         </div>
       </button>
-      <div id="Grupo_865">
-        <svg className="Trazado_52_cz" viewBox="0 0 428 62">
-          <path
-            id="Trazado_52_cz"
-            d="M 0 0 L 428 0 L 428 62 L 0 62 L 0 0 Z"
-          ></path>
-        </svg>
-
-        <img
-          id="n_838764_c"
-          src="/images/Home/n_838764_c.png"
-          className="btn"
-        />
-
-        <img
-          id="calendar_c"
-          src="/images/Home/calendar_c.png"
-          className="btn"
-        />
-
-        <img id="home_c" src="/images/Home/home_c.png" className="btn" />
-      </div>
     </div>
   );
 }

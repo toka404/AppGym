@@ -32,31 +32,6 @@ function CalendarioBody() {
             <span>01</span>
           </div>
         </div>
-        <div id="Grupo_865_ih">
-          <svg className="Trazado_52_ii" viewBox="0 0 428 62">
-            <path
-              id="Trazado_52_ii"
-              d="M 0 0 L 428 0 L 428 62 L 0 62 L 0 0 Z"
-            ></path>
-          </svg>
-          <img
-            id="n_838764_ij"
-            src="images/Calendario/n_838764_ij.png"
-            className="btn"
-          />
-
-          <img
-            id="calendar_ik"
-            src="images/Calendario/calendar_ik.png"
-            className="btn"
-          />
-
-          <img
-            id="home_il"
-            src="images/Calendario/home_il.png"
-            className="btn"
-          />
-        </div>
         <button
           onClick={() => {
             navigate("/home");
