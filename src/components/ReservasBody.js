@@ -93,12 +93,16 @@ function ReservasBody() {
               <span>Fecha:</span>
             </div>
             <div className="n_592022__Class">
-              <span>15/9/2022</span>
+              <select >
+                <option value="Dia" >15/9/2022</option>
+                <option value="Dia1">16/9/2022</option>
+                <option value="Dia2">17/9/2022</option>
+              </select>
             </div>
           </div>
         </div>
         <div className="btnReservar_Class btn">
-          <svg className="Trazado_40" viewBox="0 0 189 54">
+          <svg className="Trazado_40" viewBox="0 0 225 60">
             <path
               className="Trazado_40_Class"
               d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
@@ -126,7 +130,7 @@ function ReservasBody() {
         </div>
 
         <div className="btnEliminar_Class btn">
-          <svg className="Trazado_50" viewBox="0 0 149 54">
+          <svg className="Trazado_50" viewBox="0 0 170 75">
             <path
               className="Trazado_50_Class"
               d="M 14.19047546386719 0 L 134.8095245361328 0 C 142.6467132568359 0 149 8.058874130249023 149 18 L 149 36 C 149 45.94112396240234 142.6467132568359 54 134.8095245361328 54 L 14.19047546386719 54 C 6.353291988372803 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 6.353291988372803 0 14.19047546386719 0 Z"
@@ -173,12 +177,19 @@ function ReservasBody() {
               <span>Hora:</span>
             </div>
             <div className="lblHora">
-              <span>7:00</span>
+              <select>
+                <option value="Manana7">7:00</option>
+                <option value="Manan8">8:00</option>
+                <option value="Manan9">9:00</option>
+                <option value="Manan10">10:00</option>
+                <option value="Tarde16">16:00</option>
+                <option value="Tarde17">17:00</option>
+                <option value="Tarde18">18:00</option>
+                <option value="Tarde19">19:00</option>
+                <option value="Tarde20">20:00</option>
+                <option value="Tarde21">21:00</option>
+              </select>
             </div>
-
-            <svg className="btnBack2 btn" viewBox="0 0 24 29">
-              <path className="btnMenu" d="M 12 0 L 24 29 L 0 29 Z"></path>
-            </svg>
           </div>
         </div>
         <div className="barraNave_Class">

@@ -161,6 +161,7 @@
 
 
 #Btn_google{
+  padding: .375rem .75rem !important;
   border-radius: 10px;
   text-align: right;
   font-family: Poppins;
@@ -369,6 +370,7 @@
 }
 
 #BtnFacebook {
+  padding: .375rem .75rem !important;
   border-radius: 10px;
   text-align: right;
   font-family: Poppins;
@@ -472,8 +474,8 @@
 }
 #Grupo_866 {
     position: absolute;
-    width: 374px;
-    height: 217px;
+    width: 390px;
+    height: 250px;
     left: 27px;
     top: 116px;
     overflow: visible;
@@ -2197,8 +2199,8 @@ overflow: visible;
 }
 
 .Reservar_Class {
-  left: 60px;
-  top: 20px;
+  left: 40px;
+  top: 18px;
   position: absolute;
   overflow: visible;
   width: 93px;
