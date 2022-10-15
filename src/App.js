@@ -8,6 +8,7 @@ import Calendario from "./Pages/Calendario";
 import Perfil from "./Pages/Perfil";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserContext } from "./components/UserContext";
+import CrearUsuarioBody from "./components/CrearUsuarioBody";
 
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <UserContext.Provider value={emptyUser}>
+      {/* <UserContext.Provider value={emptyUser}>
         <Routes>
           <Route element={<ProtectedRoute />}>
             <Route path="/registro" element={<h1>Registro</h1>} />
@@ -31,7 +32,8 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
         </Routes>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+      <CrearUsuarioBody />
     </div>
   );
 }

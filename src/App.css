@@ -4341,3 +4341,1299 @@ overflow: visible;
   font-size: 20px;
   color: rgba(254, 63, 30, 1);
 }
+.btn {
+  padding: 0 !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.Reserva_Class {
+  position: absolute;
+  width: 428px;
+  height: 926px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Reserva;
+  --web-view-id: Reserva;
+  --web-enable-deep-linking: true;
+}
+
+.imgFondo_Class {
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.imgFondo {
+  position: absolute;
+  overflow: visible;
+  width: 445px;
+  height: 926px;
+  left: -8px;
+  top: 0px;
+}
+
+.lblReserva_Class {
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  left: 131px;
+  top: 54px;
+  position: absolute;
+  overflow: visible;
+  width: 168px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.btnBack_Class {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.btnBack {
+  overflow: visible;
+  position: absolute;
+  width: 24px;
+  height: 29px;
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
+}
+
+.formRutinas_Class {
+  position: absolute;
+  width: 355px;
+  height: 188px;
+  left: 39px;
+  top: 346px;
+  overflow: visible;
+}
+
+.Rectngulo_386_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_386 {
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  position: absolute;
+  overflow: visible;
+  width: 373px;
+  height: 206px;
+  left: 0px;
+  top: 0px;
+}
+
+.Grupo_115_Class {
+  mix-blend-mode: normal;
+  position: absolute;
+  width: 163px;
+  height: 156px;
+  left: 19px;
+  top: 8px;
+  overflow: visible;
+}
+
+.Rutinas_Class {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 85px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.n_0_Abdominales_50_Sentadillas_Class {
+  left: 0px;
+  top: 38px;
+  position: absolute;
+  overflow: visible;
+  width: 164px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.formFecha_Class {
+  position: absolute;
+  width: 346px;
+  height: 43px;
+  left: 44px;
+  top: 113px;
+  overflow: visible;
+}
+
+.Grupo_818_Class {
+  position: absolute;
+  width: 346px;
+  height: 375px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.Rectngulo_101_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_101 {
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+}
+
+.Rectngulo_102_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_102_ {
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 10px;
+}
+
+.Fecha_Class {
+  left: 16px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.n_592022_Class {
+  left: 94px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 99px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.Grupo_819_Class {
+  position: absolute;
+  width: 245px;
+  height: 45px;
+  left: 0px;
+  top: 25px;
+  overflow: visible;
+}
+
+.Grupo_820_Class {
+  position: absolute;
+  width: 346px;
+  height: 500px;
+  left: 0px;
+  top: 105px;
+  overflow: visible;
+}
+
+.Grupo_821_Class {
+  position: absolute;
+  width: 346px;
+  height: 130px;
+  left: 0px;
+  top: 490px;
+  overflow: visible;
+}
+
+.Rectngulo_101__Class {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_102__Class {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_101_ {
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+}
+
+.Fecha__Class {
+  left: 16px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.Contenido{
+  left: 15px;
+  top: 380px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.imagen_cont{
+  position: absolute;
+  width: 325px;
+  height: 345px;
+  left: 10px;
+  top: 25px;
+  overflow: visible;
+}
+
+
+.Cl_areo {
+  left: 16px;
+  top: 45px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.n_592022__Class {
+  left: 94px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 99px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.btnReservar_Class {
+  position: absolute;
+  width: 189px;
+  height: 54px;
+  left: 44px;
+  top: 249px;
+  overflow: visible;
+}
+
+.Trazado_40_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Trazado_40 {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  overflow: visible;
+  position: absolute;
+  width: 207px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.Reservar_Class {
+  left: 60px;
+  top: 20px;
+  position: absolute;
+  overflow: visible;
+  width: 93px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.formParticipantes_Class {
+  position: absolute;
+  width: 352px;
+  height: 272.333px;
+  left: 41px;
+  top: 563px;
+  overflow: visible;
+}
+
+.Trazado_39_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Trazado_39 {
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  overflow: visible;
+  position: absolute;
+  width: 370px;
+  height: 290.333px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.lblParticipantes_Class {
+  left: 60px;
+  top: 584px;
+  position: absolute;
+  overflow: visible;
+  width: 146px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.n_838764_Class {
+  position: absolute;
+  width: 62px;
+  height: 59px;
+  left: 50px;
+  top: 623px;
+  overflow: visible;
+}
+
+.Emy_Class {
+  left: 136px;
+  top: 639px;
+  position: absolute;
+  overflow: visible;
+  width: 46px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.png-transparent-computer-icons_Class {
+  position: absolute;
+  width: 62px;
+  height: 67px;
+  left: 50px;
+  top: 699px;
+  overflow: visible;
+}
+
+.Jhonny_Class {
+  left: 136px;
+  top: 721px;
+  position: absolute;
+  overflow: visible;
+  width: 78px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.btnEliminar_Class {
+  position: absolute;
+  width: 149px;
+  height: 54px;
+  left: 205px;
+  top: 623px;
+  overflow: visible;
+}
+
+.Trazado_50_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Trazado_50 {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  overflow: visible;
+  position: absolute;
+  width: 167px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.Eliminar_Class {
+  left: 22px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 108px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.formHora_Class {
+  position: absolute;
+  width: 346px;
+  height: 43px;
+  left: 44px;
+  top: 181px;
+  overflow: visible;
+}
+
+.Grupo_818_bl_Class {
+  position: absolute;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.Rectngulo_101_bm_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_101_bm {
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+}
+
+.Fecha_bn_Class {
+  left: 16px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.lblFecha {
+  left: 94px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 99px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.Grupo_819_bp_Class {
+  position: absolute;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.Rectngulo_101_bq_Class {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_101_bq {
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+}
+
+.Hora_Class {
+  left: 16px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 56px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.lblHora {
+  left: 94px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 43px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.barraNave_Class {
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 864px;
+  overflow: visible;
+}
+
+.Trazado_52_Class {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Trazado_52 {
+  overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.n_838764_bv_Class {
+  position: absolute;
+  width: 47px;
+  height: 45px;
+  left: 304px;
+  top: 11px;
+  overflow: visible;
+}
+
+.calendar_Class {
+  position: absolute;
+  width: 44px;
+  height: 41px;
+  left: 192px;
+  top: 14px;
+  overflow: visible;
+}
+
+.home_Class {
+  position: absolute;
+  width: 51px;
+  height: 41px;
+  left: 73px;
+  top: 11px;
+  overflow: visible;
+}
+
+.evento_class{
+  position: absolute;
+  width: 325px;
+  height: 340px;
+  left: 0px;
+  top: -10px;
+  overflow: visible;
+}
+
+.btn {
+  padding: 0 !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.btnBack_Class {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.btnBack {
+  overflow: visible;
+  position: absolute;
+  width: 24px;
+  height: 29px;
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
+}
+
+#img_fondo {
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.img_fondo {
+  position: absolute;
+  overflow: visible;
+  width: 431px;
+  height: 926px;
+  left: -3px;
+  top: 0px;
+}
+
+#img_Nombre {
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 55px;
+  top: 200px;
+  overflow: visible;
+}
+
+#img_Email {
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 42px;
+  top: 550px;
+  overflow: visible;
+}
+
+#img_contrasenaIni {
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 55px;
+  top: 530px;
+  overflow: visible;
+}
+
+#img_contrasenaF {
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 55px;
+  top: 650px;
+  overflow: visible;
+}
+
+#Input_nombre {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Input_nombre {
+  text-align: center;
+  color: #F0F0F0;
+  background-color: rgba(80, 77, 77, 0.302);
+  position: absolute;
+  overflow: visible;
+  width: 337px;
+  height: 55px;
+  left: 0px;
+  top: 0px;
+}
+
+#Input_apellido {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Input_apellido {
+  text-align: center;
+  color: #F0F0F0;
+  background-color: rgba(80, 77, 77, 0.302);
+  position: absolute;
+  overflow: visible;
+  width: 337px;
+  height: 55px;
+  left: 14px;
+  top: -235px;
+}
+
+#Input_email {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Input_email {
+  text-align: center;
+  color: #F0F0F0;
+  background-color: rgba(80, 77, 77, 0.302);
+  position: absolute;
+  overflow: visible;
+  width: 337px;
+  height: 55px;
+  left: 10px;
+  top: -180px;
+}
+
+#Input_contrasena {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Input_contrasena {
+  text-align: center;
+  color: #F0F0F0;
+  background-color: rgba(80, 77, 77, 0.302);
+  position: absolute;
+  overflow: visible;
+  width: 337px;
+  height: 55px;
+  left: 0px;
+  top: 0px;
+}
+
+
+#Input_contrasenaF {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Input_contrasenaF {
+  text-align: center;
+  color: #F0F0F0;
+  background-color: rgba(80, 77, 77, 0.302);
+  position: absolute;
+  overflow: visible;
+  width: 337px;
+  height: 55px;
+  left: 0px;
+  top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+#Lnea_1_c {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_1_c {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 10px;
+  top: 40px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Lnea_2_c {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_2_c {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 20px;
+  top: -195px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Lnea_3_c {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_3_c {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 15px;
+  top: 40px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Lnea_4_c {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_4_c {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 15px;
+  top: 40px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#lbl_nombre {
+  left: 55px;
+  top: 150px;
+  position: absolute;
+  overflow: visible;
+  width: 143px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+#lbl_email {
+  left: 55px;
+  top: 390px;
+  position: absolute;
+  overflow: visible;
+  width: 143px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+#btn_ingresar {
+  position: absolute;
+  width: 370px;
+  height: 62px;
+  left: 29px;
+  top: 780px;
+  overflow: visible;
+}
+
+#Rectngulo_98_db {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_98_db {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  position: absolute;
+  overflow: visible;
+  width: 200px;
+  height: 62px;
+  left: 90px;
+  top: 0px;
+
+}
+
+#Ingresar_dc {
+  left: 110px;
+  top: 15px;
+  position: absolute;
+  overflow: visible;
+  width: 110px;
+  white-space: nowrap;
+  text-align: center !important;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(254, 63, 30, 1);
+}
+
+#lbl_registrate {
+  left: 32px;
+  top: 874px;
+  position: absolute;
+  overflow: visible;
+  width: 365px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+#lbl_Crear_Usuario {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  left: 69px;
+  top: 70px;
+  position: absolute;
+  overflow: visible;
+  width: 291px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(254, 63, 30, 1);
+}
+
+#lbl_apellido {
+  left: 57px;
+  top: 270px;
+  position: absolute;
+  overflow: visible;
+  width: 129px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+#lbl_contrasena {
+  left: 57px;
+  top: 500px;
+  position: absolute;
+  overflow: visible;
+  width: 129px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+#lbl_contrasenaF {
+  left: 57px;
+  top: 610px;
+  position: absolute;
+  overflow: visible;
+  width: 129px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+#img_email {
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 46px;
+  top: 609px;
+  overflow: visible;
+}
+
+#Trazado_51 {
+  fill: rgba(80, 77, 77, 0.302);
+}
+
+.Trazado_51 {
+  overflow: visible;
+  position: absolute;
+  width: 337px;
+  height: 55px;
+  left: 5px;
+  top: -180px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Lnea_4 {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_4 {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 16px;
+  top: -140px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#btn_google {
+  position: absolute;
+  width: 182px;
+  height: 62px;
+  left: 29px;
+  top: 803px;
+  overflow: visible;
+}
+
+#Grupo_903 {
+  position: absolute;
+  width: 182px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+#Rectngulo_98_dm {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_98_dm {
+  position: absolute;
+  overflow: visible;
+  width: 182px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+}
+
+#Ingresar_dn {
+  left: 76px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 88px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+#google_1 {
+  position: absolute;
+  width: 45px;
+  height: 46px;
+  left: 13px;
+  top: 7px;
+  overflow: visible;
+}
+
+#btn_facebook {
+  position: absolute;
+  width: 182px;
+  height: 62px;
+  left: 214px;
+  top: 803px;
+  overflow: visible;
+}
+
+#Grupo_904 {
+  position: absolute;
+  width: 182px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+#Rectngulo_98_dr {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_98_dr {
+  position: absolute;
+  overflow: visible;
+  width: 182px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+}
+
+#Ingresar_ds {
+  left: 76px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 88px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+#facebook {
+  position: absolute;
+  width: 54px;
+  height: 48px;
+  left: 8px;
+  top: 7px;
+  overflow: visible;
+}
