@@ -19,22 +19,27 @@ function EventosBody() {
                 </svg>
 
                 <div className="formFecha_Class">
-                    <div className="Grupo_819_Class">
+                    {/* <div className="Grupo_819_Class">
                         <svg className="Rectngulo_101_">
                             <rect className="Rectngulo_101__Class" rx="9" ry="9" x="0" y="0" width="240" height="45">
                             </rect>
                         </svg>
-                        <div className="Fecha__Class">
-                            <span>Fecha:</span>
-                            <span>15/9/2022</span>
-                        </div>
-                    </div>
+                
+                    </div> */}
 
                     <div className="Grupo_820_Class">
                         <svg className="Rectngulo_101_">
-                            <rect className="Rectngulo_101__Class" rx="9" ry="9" x="0" y="0" width="346" height="550">
+                            <rect className="Rectngulo_101__Class" rx="9" ry="9" x="0" y="0" width="346" height="620">
                             </rect>
                         </svg>
+
+                        <div className="NameYoga__ClassEventos">
+                            <span>Yoga con Carla</span>
+                        </div>
+                        <div className="Fecha__ClassEventos">
+                            <span>Fecha:</span>
+                            <span>15/9/2022</span>
+                        </div>
                         <div className="imagen_cont">
                             <img className="evento_class" src="images/Eventos/Yoga1.png" />
                         </div>

@@ -79,10 +79,10 @@ function ReservasBody() {
         </div>
         {/* Fecha */}
         <div className="formFecha_Class">
-          <div className="Grupo_819_Class">
-            <svg className="Rectngulo_101_">
+          <div className="Grupo_819_ClassReserva">
+            <svg className="Rectngulo_101_Reserva">
               <rect
-                className="Rectngulo_101__Class"
+                className="Rectngulo_101__ClassReserva"
                 rx="9"
                 ry="9"
                 x="0"
@@ -110,14 +110,14 @@ function ReservasBody() {
             console.log("Reservado " + reserva.fecha + ";" + reserva.hora);
           }}
         >
-          <div className="btnReservar_Class btn">
+          <div className="btnReservar_ClassReserva btn">
             <svg className="Trazado_40" viewBox="0 0 225 60">
               <path
                 className="Trazado_40_Class"
                 d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
               ></path>
             </svg>
-            <div className="Reservar_Class">
+            <div className="Reservar_ClassReserva">
               <span>Reservar</span>
             </div>
           </div>
@@ -160,10 +160,10 @@ function ReservasBody() {
 
         {/* Seleccion hora */}
         <div className="formHora_Class">
-          <div className="Grupo_819_bp_Class">
-            <svg className="Rectngulo_101_bq">
+          <div className="Grupo_819_bp_ClassReserva">
+            <svg className="Rectngulo_101_bqReserva">
               <rect
-                className="Rectngulo_101_bq_Class"
+                className="Rectngulo_101_bq_ClassReserva"
                 rx="9"
                 ry="9"
                 x="0"

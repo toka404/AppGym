@@ -70,8 +70,8 @@ function Body() {
             value={login.email}
             onChange={handleChange}
           />
-          <svg className="Lnea_4" viewBox="0 0 314 5">
-            <path id="Lnea_4" d="M 0 0 L 314 0"></path>
+          <svg className="Lnea_4Login" viewBox="0 0 314 5">
+            <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
           </svg>
         </div>
 
@@ -83,8 +83,8 @@ function Body() {
 
         <div id="btn_ingresar">
           <button
-            id="BtnIngreso"
-            className="BtnIngreso"
+            id="BtnIngresoLogin"
+            className="BtnIngresoLogin"
             onClick={() => {
               signInWithEmailAndPassword(
                 auth,
@@ -137,7 +137,7 @@ function Body() {
             <span>BROKEN HAND</span>
           </p>
         </div>
-        <div id="lbl_contrasena">
+        <div id="lbl_contrasenaLogin">
           <p>
             <span>Contraseña:</span>
           </p>
@@ -152,8 +152,8 @@ function Body() {
             value={login.password}
             onChange={handleChange}
           />
-          <svg className="Lnea_4" viewBox="0 0 314 5">
-            <path id="Lnea_4" d="M 0 0 L 314 0"></path>
+          <svg className="Lnea_4Login" viewBox="0 0 314 5">
+            <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
           </svg>
         </div>
 

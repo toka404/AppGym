@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -43,26 +44,29 @@
   box-sizing: border-box;
   border: none;
 }
+
 #Usuario {
   position: absolute;
   width: 428px;
   height: 926px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
   --web-view-name: Usuario;
   --web-view-id: Usuario;
   --web-scale-on-resize: true;
   --web-enable-deep-linking: true;
 }
+
 #img_fondo {
-  fill: rgba(22,21,21,0.929);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .img_fondo {
   position: absolute;
   overflow: visible;
@@ -71,6 +75,7 @@
   left: -3px;
   top: 0px;
 }
+
 #input_correo {
   position: absolute;
   width: 337px;
@@ -79,13 +84,15 @@
   top: 496px;
   overflow: visible;
 }
+
 #Input_correo {
-  fill: rgba(80,77,77,0.302);
+  fill: rgba(80, 77, 77, 0.302);
 }
+
 .Input_correo {
   text-align: center;
   color: #F0F0F0;
-  background-color: rgba(80,77,77,0.302);
+  background-color: rgba(80, 77, 77, 0.302);
   position: absolute;
   overflow: visible;
   width: 337px;
@@ -93,15 +100,17 @@
   left: 0px;
   top: 0px;
 }
+
 #Lnea_1_c {
   fill: transparent;
-  stroke: rgba(255,255,255,1);
+  stroke: rgba(255, 255, 255, 1);
   stroke-width: 5px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Lnea_1_c {
   overflow: visible;
   position: absolute;
@@ -109,8 +118,9 @@
   height: 5px;
   left: 15px;
   top: 42px;
-  transform: matrix(1,0,0,1,0,0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #lbl_correo {
   left: 55px;
   top: 468px;
@@ -123,8 +133,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
+
 #btn_ingresar {
   position: absolute;
   width: 370px;
@@ -133,16 +144,17 @@
   top: 718px;
   overflow: visible;
 }
-#BtnIngreso{
+
+#BtnIngresoLogin {
   border-radius: 10px;
   text-align: center;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  color: rgba(254, 63, 30, 1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
@@ -150,17 +162,17 @@
   shape-rendering: auto;
 }
 
-.BtnIngreso {
+.BtnIngresoLogin {
   position: absolute;
   overflow: visible;
   width: 370px;
   height: 62px;
   left: 0px;
-  top: 0px;
+  top: -50px;
 }
 
 
-#Btn_google{
+#Btn_google {
   padding: .375rem .75rem !important;
   border-radius: 10px;
   text-align: right;
@@ -168,9 +180,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(254,63,30,1);
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  color: rgba(254, 63, 30, 1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
@@ -178,7 +190,7 @@
   shape-rendering: auto;
 }
 
-.Btn_google{
+.Btn_google {
   position: absolute;
   overflow: visible;
   width: 182px;
@@ -194,7 +206,7 @@
   left: 29px;
   top: 803px;
   overflow: visible;
-} 
+}
 
 
 #Ingresar_dc {
@@ -209,8 +221,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #lbl_registrate {
   left: 32px;
   top: 874px;
@@ -223,8 +236,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
+
 #lbl_broken_hand {
   filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
   left: 69px;
@@ -238,9 +252,10 @@
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
-#lbl_contrasena {
+
+#lbl_contrasenaLogin {
   left: 57px;
   top: 581px;
   position: absolute;
@@ -252,8 +267,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
+
 #img_cuerda {
   position: absolute;
   width: 306px;
@@ -262,6 +278,7 @@
   top: 27px;
   overflow: visible;
 }
+
 #img_contrasea {
   position: absolute;
   width: 337px;
@@ -270,12 +287,14 @@
   top: 609px;
   overflow: visible;
 }
+
 #Input_Contra {
-  fill: rgba(80,77,77,0.302);
+  fill: rgba(80, 77, 77, 0.302);
 }
-.Input_Contra{
+
+.Input_Contra {
   text-align: center;
-  background-color:rgba(80,77,77,0.302) ;
+  background-color: rgba(80, 77, 77, 0.302);
   color: #F0F0F0;
   overflow: visible;
   position: absolute;
@@ -283,25 +302,47 @@
   height: 55px;
   left: 0px;
   top: 0px;
-  transform: matrix(1,0,0,1,0,0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
-#Lnea_4 {
+
+#Lnea_4Login {
   fill: transparent;
-  stroke: rgba(255,255,255,1);
+  stroke: rgba(255, 255, 255, 1);
   stroke-width: 5px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
-.Lnea_4 {
+
+.Lnea_4Login {
+  overflow: visible;
+  position: absolute;
+  width: 314px;
+  height: 5px;
+  left: 11px;
+  top: 45px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Lnea_4Registro {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Lnea_4Registro {
   overflow: visible;
   position: absolute;
   width: 314px;
   height: 5px;
   left: 11px;
   top: 43px;
-  transform: matrix(1,0,0,1,0,0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 #Grupo_903 {
@@ -312,15 +353,17 @@
   top: 0px;
   overflow: visible;
 }
+
 #Rectngulo_98_dm {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_98_dm {
   position: absolute;
   overflow: visible;
@@ -329,6 +372,7 @@
   left: 0px;
   top: 0px;
 }
+
 #Ingresar_dn {
   left: 76px;
   top: 17px;
@@ -341,8 +385,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #google_1 {
   position: absolute;
   width: 45px;
@@ -351,6 +396,7 @@
   top: 7px;
   overflow: visible;
 }
+
 #btn_facebook {
   position: absolute;
   width: 182px;
@@ -377,15 +423,16 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(254,63,30,1);
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  color: rgba(254, 63, 30, 1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .BtnFacebook {
   position: absolute;
   overflow: visible;
@@ -407,8 +454,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #facebook {
   position: absolute;
   width: 54px;
@@ -419,1482 +467,1630 @@
 }
 
 
-.btn{
+.btn {
 
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
 }
+
 #Home {
-    position: absolute;
-    width: 428px;
-    height: 926px;
-    background-color: rgba(255,255,255,1);
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
+  position: absolute;
+  width: 428px;
+  height: 926px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Home;
+  --web-view-id: Home;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
 }
+
 #Rectngulo_103_ck {
-    fill: rgba(22,21,21,0.929);
-    stroke: rgba(112,112,112,1);
-    stroke-width: 1px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_103_ck {
-    position: absolute;
-    overflow: visible;
-    width: 428px;
-    height: 926px;
-    left: 0px;
-    top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 428px;
+  height: 926px;
+  left: 0px;
+  top: 0px;
 }
+
 #Hola_Usuario {
-    left: 31px;
-    top: 48px;
-    position: absolute;
-    overflow: visible;
-    width: 192px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    color: rgba(255,255,255,1);
+  left: 31px;
+  top: 48px;
+  position: absolute;
+  overflow: visible;
+  width: 192px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 1);
 }
+
 #Grupo_866 {
-    position: absolute;
-    width: 390px;
-    height: 250px;
-    left: 27px;
-    top: 116px;
-    overflow: visible;
+  position: absolute;
+  width: 390px;
+  height: 250px;
+  left: 27px;
+  top: 116px;
+  overflow: visible;
 }
+
 #ambitious-creative-co-rick-bar {
-    opacity: 0.8;
-    filter: blur(1px);
-    position: absolute;
-    width: 390px;
-    height: 217px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
+  opacity: 0.8;
+  filter: blur(1px);
+  position: absolute;
+  width: 390px;
+  height: 217px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Grupo_de_desplazamiento_1 {
-    mix-blend-mode: normal;
-    position: absolute;
-    width: 400px;
-    height: 80px;
-    left: -6px;
-    top: 50px;
-    overflow: hidden;
+  mix-blend-mode: normal;
+  position: absolute;
+  width: 400px;
+  height: 80px;
+  left: -6px;
+  top: 50px;
+  overflow: hidden;
 }
+
 #Reservas {
-    left: -2px;
-    top: 0px;
-    position: absolute;
-    width: 390px;
-    white-space: nowrap;
-    text-align: right;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    border-color: #3A44A6;
-    color: #F8A08C;
-    padding: .375rem .75rem !important;
+  left: -2px;
+  top: 0px;
+  position: absolute;
+  width: 390px;
+  white-space: nowrap;
+  text-align: right;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  border-color: #3A44A6;
+  color: #F8A08C;
+  padding: .375rem .75rem !important;
 }
 
 #Grupo_868 {
-    position: absolute;
-    width: 184px;
-    height: 494px;
-    left: 231px;
-    top: 345px;
-    overflow: visible;
-}
-#img_fruta {
-    filter: blur(0.5px); 
-    position: absolute;
-    width: 184px;
-    height: 494px;
-    left: 0px;
-    top: 0px;
-    overflow: visible; 
-}
-#Grupo_de_desplazamiento_3 {
-    mix-blend-mode: normal;
-    position: absolute;
-    width: 173px;
-    height: 49px;
-    left: 6px;
-    top: 419px;
-    overflow: hidden;
-}
-#Comidas {
-    /* mix-blend-mode: color-dodge;
-    filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.722)); */
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    overflow: visible;
-    width: 164px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 35px;
-    color: #FAA493;
-}
-#Grupo_867 {
-    position: absolute;
-    width: 184px;
-    height: 494px;
-    left: 30px;
-    top: 345px;
-    overflow: visible;
-}
-#img_ejercicio{
-    filter: blur(0.5px);
-    position: absolute;
-    width: 184px;
-    height: 494px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-#Grupo_de_desplazamiento_2 {
-    mix-blend-mode: normal;
-    position: absolute;
-    width: 184px;
-    height: 56px;
-    left: 0px;
-    top: 47px;
-    overflow: hidden;
-}
-#Eventos_cx {
-    /* mix-blend-mode: color-dodge;
-    filter: drop-shadow(1px 3px 6px rgba(255, 157, 141, 1)); */
-    left: 15px;
-    top: 0px;
-    position: absolute;
-    overflow: visible;
-    width: 163px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    color: #3A44A6;
-}
-#Grupo_865 {
-    position: absolute;
-    width: 428px;
-    height: 62px;
-    left: 0px;
-    top: 864px;
-    overflow: visible;
-}
-#Trazado_52_cz {
-    fill: rgba(255,255,255,1);
-    stroke: rgba(112,112,112,1);
-    stroke-width: 1px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-.Trazado_52_cz {
-    overflow: visible;
-    position: absolute;
-    width: 428px;
-    height: 62px;
-    left: 0px;
-    top: 0px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#n_838764_c {
-    position: absolute;
-    width: 47px;
-    height: 45px;
-    left: 304px;
-    top: 11px;
-    overflow: visible;
-}
-#calendar_c {
-    position: absolute;
-    width: 44px;
-    height: 41px;
-    left: 192px;
-    top: 14px;
-    overflow: visible;
-}
-#home_c {
-    position: absolute;
-    width: 51px;
-    height: 41px;
-    left: 73px;
-    top: 11px;
-    overflow: visible;
+  position: absolute;
+  width: 184px;
+  height: 494px;
+  left: 231px;
+  top: 345px;
+  overflow: visible;
 }
 
-.btn{
-  padding:0 !important;
+#img_fruta {
+  filter: blur(0.5px);
+  position: absolute;
+  width: 184px;
+  height: 494px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+#Grupo_de_desplazamiento_3 {
+  mix-blend-mode: normal;
+  position: absolute;
+  width: 173px;
+  height: 49px;
+  left: 6px;
+  top: 419px;
+  overflow: hidden;
+}
+
+#Comidas {
+  /* mix-blend-mode: color-dodge;
+    filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.722)); */
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 164px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  color: #FAA493;
+}
+
+#Grupo_867 {
+  position: absolute;
+  width: 184px;
+  height: 494px;
+  left: 30px;
+  top: 345px;
+  overflow: visible;
+}
+
+#img_ejercicio {
+  filter: blur(0.5px);
+  position: absolute;
+  width: 184px;
+  height: 494px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+#Grupo_de_desplazamiento_2 {
+  mix-blend-mode: normal;
+  position: absolute;
+  width: 184px;
+  height: 56px;
+  left: 0px;
+  top: 47px;
+  overflow: hidden;
+}
+
+#Eventos_cx {
+  /* mix-blend-mode: color-dodge;
+    filter: drop-shadow(1px 3px 6px rgba(255, 157, 141, 1)); */
+  left: 15px;
+  top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 163px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: #3A44A6;
+}
+
+#Grupo_865 {
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 864px;
+  overflow: visible;
+}
+
+#Trazado_52_cz {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Trazado_52_cz {
+  overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#n_838764_c {
+  position: absolute;
+  width: 47px;
+  height: 45px;
+  left: 304px;
+  top: 11px;
+  overflow: visible;
+}
+
+#calendar_c {
+  position: absolute;
+  width: 44px;
+  height: 41px;
+  left: 192px;
+  top: 14px;
+  overflow: visible;
+}
+
+#home_c {
+  position: absolute;
+  width: 51px;
+  height: 41px;
+  left: 73px;
+  top: 11px;
+  overflow: visible;
+}
+
+.btn {
+  padding: 0 !important;
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
 }
+
 #Perfil {
-position: absolute;
-width: 428px;
-height: 926px;
-background-color: rgba(255,255,255,1);
-overflow: hidden;
---web-view-name: Perfil;
---web-view-id: Perfil;
---web-scale-on-resize: true;
---web-enable-deep-linking: true;
+  position: absolute;
+  width: 428px;
+  height: 926px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Perfil;
+  --web-view-id: Perfil;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
 }
+
 #Trazado_48 {
-fill: rgba(22,21,21,0.929);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Trazado_48 {
-overflow: visible;
-position: absolute;
-width: 429px;
-height: 926px;
-left: -1px;
-top: 0px;
-transform: matrix(1,0,0,1,0,0);
+  overflow: visible;
+  position: absolute;
+  width: 429px;
+  height: 926px;
+  left: -1px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #n_838764_g {
-position: absolute;
-width: 130px;
-height: 118px;
-left: 149px;
-top: 147px;
-overflow: visible;
+  position: absolute;
+  width: 130px;
+  height: 118px;
+  left: 149px;
+  top: 147px;
+  overflow: visible;
 }
+
 #Grupo_816_ha {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 173px;
-top: 296px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 173px;
+  top: 296px;
+  overflow: visible;
 }
+
 #Grupo_815_hb {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Grupo_848 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_400_hd {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_400_hd {
-position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #Emy_he {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 46px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 46px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_849 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_400_hg {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_400_hg {
-position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #Emy_hh {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 46px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 46px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_850 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Input_Nombre {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Input_Nombre {
   padding: .375rem .75rem;
   border-radius: 12px;
   position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #Emy_hk {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 46px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 46px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Polgono_1_hl {
-fill: rgba(255,255,255,1);
+  fill: rgba(255, 255, 255, 1);
 }
+
 .Polgono_1_hl {
-overflow: visible;
-position: absolute;
-width: 24px;
-height: 29px;
-transform: matrix(1,0,0,1,26.5,24.5) rotate(-90deg);
-transform-origin: center;
-left: 0px;
-top: 0px;
+  overflow: visible;
+  position: absolute;
+  width: 24px;
+  height: 29px;
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
 }
+
 #Grupo_853 {
-position: absolute;
-width: 125px;
-height: 39px;
-left: 24px;
-top: 296px;
-overflow: visible;
+  position: absolute;
+  width: 125px;
+  height: 39px;
+  left: 24px;
+  top: 296px;
+  overflow: visible;
 }
+
 #Nombre_hn {
-left: 0px;
-top: 0px;
-position: absolute;
-overflow: visible;
-width: 126px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 28px;
-color: rgba(255,255,255,1);
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 126px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 1);
 }
+
 #Grupo_852 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 173px;
-top: 355px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 173px;
+  top: 355px;
+  overflow: visible;
 }
+
 #Grupo_901 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #input_Correo {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .input_Correo {
   padding: .375rem .75rem;
   border-radius: 12px;
-position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #Emy512gmailcom {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 211px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 211px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Correo {
-left: 24px;
-top: 355px;
-position: absolute;
-overflow: visible;
-width: 111px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 29px;
-color: rgba(255,255,255,1);
+  left: 24px;
+  top: 355px;
+  position: absolute;
+  overflow: visible;
+  width: 111px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+  color: rgba(255, 255, 255, 1);
 }
+
 #Perfil_ht {
-filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
-left: 53px;
-top: 66px;
-position: absolute;
-overflow: visible;
-width: 106px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(254,63,30,1);
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  left: 53px;
+  top: 66px;
+  position: absolute;
+  overflow: visible;
+  width: 106px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(254, 63, 30, 1);
 }
+
 #Grupo_865_hu {
-position: absolute;
-width: 428px;
-height: 62px;
-left: 0px;
-top: 864px;
-overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 864px;
+  overflow: visible;
 }
+
 #Trazado_52_hv {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Trazado_52_hv {
-overflow: visible;
-position: absolute;
-width: 428px;
-height: 62px;
-left: 0px;
-top: 0px;
-transform: matrix(1,0,0,1,0,0);
+  overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #n_838764_hw {
-position: absolute;
-width: 47px;
-height: 45px;
-left: 304px;
-top: 11px;
-overflow: visible;
+  position: absolute;
+  width: 47px;
+  height: 45px;
+  left: 304px;
+  top: 11px;
+  overflow: visible;
 }
+
 #calendar_hx {
-position: absolute;
-width: 44px;
-height: 41px;
-left: 192px;
-top: 14px;
-overflow: visible;
+  position: absolute;
+  width: 44px;
+  height: 41px;
+  left: 192px;
+  top: 14px;
+  overflow: visible;
 }
+
 #home_hy {
-position: absolute;
-width: 51px;
-height: 41px;
-left: 73px;
-top: 11px;
-overflow: visible;
+  position: absolute;
+  width: 51px;
+  height: 41px;
+  left: 73px;
+  top: 11px;
+  overflow: visible;
 }
+
 #Altura {
-left: 24px;
-top: 415px;
-position: absolute;
-overflow: visible;
-width: 103px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 29px;
-color: rgba(255,255,255,1);
+  left: 24px;
+  top: 415px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+  color: rgba(255, 255, 255, 1);
 }
+
 #Peso {
-left: 24px;
-top: 475px;
-position: absolute;
-overflow: visible;
-width: 80px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 29px;
-color: rgba(255,255,255,1);
+  left: 24px;
+  top: 475px;
+  position: absolute;
+  overflow: visible;
+  width: 80px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+  color: rgba(255, 255, 255, 1);
 }
+
 #Grupo_905 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 173px;
-top: 414px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 173px;
+  top: 414px;
+  overflow: visible;
 }
+
 #Grupo_901_h {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #input_peso {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
-.input_peso{
+
+.input_peso {
   padding: .375rem .75rem;
   border-radius: 12px;
-position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_60_cm_h {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 72px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 72px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #n_60_cm_h {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 72px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 72px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_906 {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 173px;
-top: 473px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 173px;
+  top: 473px;
+  overflow: visible;
 }
+
 #Grupo_901_ia {
-position: absolute;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Input_altura {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Input_altura {
   padding: .375rem .75rem;
   border-radius: 12px;
-position: absolute;
-overflow: visible;
-width: 235px;
-height: 43px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 235px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_9_kg {
-left: 14px;
-top: 8px;
-position: absolute;
-overflow: visible;
-width: 56px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-color: rgba(0,0,0,1);
+  left: 14px;
+  top: 8px;
+  position: absolute;
+  overflow: visible;
+  width: 56px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
 }
 
 
-.btn{
+.btn {
   padding: 0 !important;
 }
 
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
 }
+
 #Eventos {
-position: absolute;
-width: 428px;
-height: 926px;
-background-color: rgba(255,255,255,1);
-overflow: hidden;
---web-view-name: Eventos;
---web-view-id: Eventos;
---web-scale-on-resize: true;
---web-enable-deep-linking: true;
+  position: absolute;
+  width: 428px;
+  height: 926px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Eventos;
+  --web-view-id: Eventos;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
 }
+
 #Trazado_47 {
-fill: rgba(22,21,21,0.929);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Trazado_47 {
-overflow: visible;
-position: absolute;
-width: 429px;
-height: 926px;
-left: 0px;
-top: 0px;
-transform: matrix(1,0,0,1,0,0);
+  overflow: visible;
+  position: absolute;
+  width: 429px;
+  height: 926px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #sonny-mauricio-yhc4pSbl01A-uns {
-position: absolute;
-width: 430px;
-height: 134px;
-left: 0px;
-top: 147px;
-overflow: visible;
+  position: absolute;
+  width: 430px;
+  height: 134px;
+  left: 0px;
+  top: 147px;
+  overflow: visible;
 }
+
 #Polgono_1_eu {
-fill: rgba(255,255,255,1);
+  fill: rgba(255, 255, 255, 1);
 }
+
 .Polgono_1_eu {
-overflow: visible;
-position: absolute;
-width: 24px;
-height: 29px;
-transform: matrix(1,0,0,1,26.5,24.5) rotate(-90deg);
-transform-origin: center;
-left: 0px;
-top: 0px;
+  overflow: visible;
+  position: absolute;
+  width: 24px;
+  height: 29px;
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
+  transform-origin: center;
+  left: 0px;
+  top: 0px;
 }
+
 #Plan_alimenticio {
-filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
-left: 47px;
-top: 71px;
-position: absolute;
-overflow: visible;
-width: 335px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(254,63,30,1);
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  left: 47px;
+  top: 71px;
+  position: absolute;
+  overflow: visible;
+  width: 335px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(254, 63, 30, 1);
 }
+
 #Grupo_842 {
-position: absolute;
-width: 330px;
-height: 90px;
-left: 49px;
-top: 411px;
-overflow: visible;
+  position: absolute;
+  width: 330px;
+  height: 90px;
+  left: 49px;
+  top: 411px;
+  overflow: visible;
 }
+
 #Grupo_830 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 227px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 227px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396 {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396 {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_6 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 53px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 53px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_831 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 117px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 117px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_e {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_e {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_5 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 53px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 53px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_832 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fa {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fa {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_4 {
-left: 30px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 54px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 30px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 54px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_841 {
-position: absolute;
-width: 337px;
-height: 90px;
-left: 46px;
-top: 301px;
-overflow: visible;
+  position: absolute;
+  width: 337px;
+  height: 90px;
+  left: 46px;
+  top: 301px;
+  overflow: visible;
 }
+
 #Grupo_824 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fb {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fb {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_1 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 42px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 42px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_825 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 117px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 117px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fc {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fc {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_2 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 50px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 50px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_833 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 234px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 234px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fe {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fe {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_3 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 51px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 51px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_844 {
-position: absolute;
-width: 330px;
-height: 90px;
-left: 49px;
-top: 521px;
-overflow: visible;
+  position: absolute;
+  width: 330px;
+  height: 90px;
+  left: 49px;
+  top: 521px;
+  overflow: visible;
 }
+
 #Grupo_843 {
-position: absolute;
-width: 330px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 330px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Grupo_826 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 110px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 110px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fj {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fj {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_8 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 53px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 53px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_829 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fm {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fm {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_7 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 48px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 48px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_834 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 227px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 227px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fp {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fp {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_9 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 52px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 52px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_846 {
-position: absolute;
-width: 337px;
-height: 90px;
-left: 46px;
-top: 741px;
-overflow: visible;
+  position: absolute;
+  width: 337px;
+  height: 90px;
+  left: 46px;
+  top: 741px;
+  overflow: visible;
 }
+
 #Grupo_827 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_ft {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_ft {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_3_fu {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 40px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 40px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_838 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 117px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 117px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fw {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fw {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_4_fx {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 43px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 43px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_839 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 234px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 234px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_fz {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_fz {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_5_f {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 42px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 42px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_845 {
-position: absolute;
-width: 337px;
-height: 90px;
-left: 46px;
-top: 631px;
-overflow: visible;
+  position: absolute;
+  width: 337px;
+  height: 90px;
+  left: 46px;
+  top: 631px;
+  overflow: visible;
 }
+
 #Grupo_828 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_f {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_f {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_0 {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 42px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 42px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_836 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 234px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 234px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_ga {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_ga {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_2_f {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 39px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 39px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_837 {
-position: absolute;
-width: 103px;
-height: 90px;
-left: 117px;
-top: 0px;
-overflow: visible;
+  position: absolute;
+  width: 103px;
+  height: 90px;
+  left: 117px;
+  top: 0px;
+  overflow: visible;
 }
+
 #Rectngulo_396_gb {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Rectngulo_396_gb {
-position: absolute;
-overflow: visible;
-width: 103px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: absolute;
+  overflow: visible;
+  width: 103px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 }
+
 #n_1_ga {
-left: 29px;
-top: 17px;
-position: absolute;
-overflow: visible;
-width: 31px;
-white-space: nowrap;
-text-align: left;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 40px;
-color: rgba(0,0,0,1);
+  left: 29px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 31px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_865_gb {
-position: absolute;
-width: 428px;
-height: 62px;
-left: 0px;
-top: 864px;
-overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 864px;
+  overflow: visible;
 }
+
 #Trazado_52_gc {
-fill: rgba(255,255,255,1);
-stroke: rgba(112,112,112,1);
-stroke-width: 1px;
-stroke-linejoin: miter;
-stroke-linecap: butt;
-stroke-miterlimit: 4;
-shape-rendering: auto;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
 }
+
 .Trazado_52_gc {
-overflow: visible;
-position: absolute;
-width: 428px;
-height: 62px;
-left: 0px;
-top: 0px;
-transform: matrix(1,0,0,1,0,0);
+  overflow: visible;
+  position: absolute;
+  width: 428px;
+  height: 62px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #n_838764_gd {
-position: absolute;
-width: 47px;
-height: 45px;
-left: 304px;
-top: 11px;
-overflow: visible;
+  position: absolute;
+  width: 47px;
+  height: 45px;
+  left: 304px;
+  top: 11px;
+  overflow: visible;
 }
+
 #calendar_ge {
-position: absolute;
-width: 44px;
-height: 41px;
-left: 192px;
-top: 14px;
-overflow: visible;
+  position: absolute;
+  width: 44px;
+  height: 41px;
+  left: 192px;
+  top: 14px;
+  overflow: visible;
 }
+
 #home_gf {
-position: absolute;
-width: 51px;
-height: 41px;
-left: 73px;
-top: 11px;
-overflow: visible;
+  position: absolute;
+  width: 51px;
+  height: 41px;
+  left: 73px;
+  top: 11px;
+  overflow: visible;
 }
 
 .Reserva_Class {
@@ -1963,14 +2159,14 @@ overflow: visible;
   position: absolute;
   width: 24px;
   height: 29px;
-  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg) ;
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
   transform-origin: center;
   left: 0px;
   top: 0px;
 }
 
-.btnMenu{
-  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg) translate(-310px,-10px);
+.btnMenu {
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg) translate(-310px, -10px);
 }
 
 .formRutinas_Class {
@@ -2118,6 +2314,16 @@ overflow: visible;
   overflow: visible;
 }
 
+.Grupo_819_ClassReserva {
+  position: absolute;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+
 .Rectngulo_101__Class {
   filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
   fill: rgba(255, 255, 255, 1);
@@ -2138,9 +2344,31 @@ overflow: visible;
   top: 0px;
 }
 
-.Fecha__Class {
+.Rectngulo_101__ClassReserva {
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Rectngulo_101_Reserva{
+  position: absolute;
+  overflow: visible;
+  width: 346px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+}
+
+
+
+.Fecha__ClassEventos {
   left: 16px;
-  top: 8px;
+  top: -20px;
   position: absolute;
   overflow: visible;
   width: 69px;
@@ -2150,6 +2378,21 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.NameYoga__ClassEventos {
+  left: 56px;
+  top: -80px;
+  position: absolute;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
   color: rgba(0, 0, 0, 1);
 }
 
@@ -2168,11 +2411,11 @@ overflow: visible;
   color: rgba(0, 0, 0, 1);
 }
 
-.btnReservar_Class {
+.btnReservar_ClassReserva {
   position: absolute;
   width: 189px;
   height: 54px;
-  left: 44px;
+  left: 40px;
   top: 249px;
   overflow: visible;
 }
@@ -2198,7 +2441,7 @@ overflow: visible;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-.Reservar_Class {
+.Reservar_ClassReserva {
   left: 40px;
   top: 18px;
   position: absolute;
@@ -2418,16 +2661,16 @@ overflow: visible;
   color: rgba(0, 0, 0, 1);
 }
 
-.Grupo_819_bp_Class {
+.Grupo_819_bp_ClassReserva {
   position: absolute;
   width: 346px;
   height: 43px;
   left: 0px;
-  top: 0px;
+  top: 10px;
   overflow: visible;
 }
 
-.Rectngulo_101_bq_Class {
+.Rectngulo_101_bq_ClassReserva {
   filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
   fill: rgba(255, 255, 255, 1);
   stroke: rgba(112, 112, 112, 1);
@@ -2438,7 +2681,7 @@ overflow: visible;
   shape-rendering: auto;
 }
 
-.Rectngulo_101_bq {
+.Rectngulo_101_bqReserva {
   position: absolute;
   overflow: visible;
   width: 346px;
@@ -2533,7 +2776,7 @@ overflow: visible;
   overflow: visible;
 }
 
-.btn{
+.btn {
   padding: 0 !important;
 }
 
@@ -2543,26 +2786,29 @@ overflow: visible;
   box-sizing: border-box;
   border: none;
 }
+
 #Calendario {
   position: absolute;
   width: 428px;
   height: 926px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
   --web-view-name: Calendario;
   --web-view-id: Calendario;
   --web-scale-on-resize: true;
   --web-enable-deep-linking: true;
 }
+
 #Trazado_47_ic {
-  fill: rgba(22,21,21,0.929);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Trazado_47_ic {
   overflow: visible;
   position: absolute;
@@ -2570,8 +2816,9 @@ overflow: visible;
   height: 926px;
   left: 0px;
   top: -3px;
-  transform: matrix(1,0,0,1,0,0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #Septiembre_2022 {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 43px;
@@ -2585,8 +2832,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #Grupo_824_ie {
   position: absolute;
   width: 47px;
@@ -2595,15 +2843,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_if {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_if {
   position: absolute;
   overflow: visible;
@@ -2612,6 +2862,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ig {
   left: 12px;
   top: 9px;
@@ -2624,8 +2875,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_865_ih {
   position: absolute;
   width: 428px;
@@ -2634,15 +2886,17 @@ overflow: visible;
   top: 864px;
   overflow: visible;
 }
+
 #Trazado_52_ii {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Trazado_52_ii {
   overflow: visible;
   position: absolute;
@@ -2650,8 +2904,9 @@ overflow: visible;
   height: 62px;
   left: 0px;
   top: 0px;
-  transform: matrix(1,0,0,1,0,0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
 #n_838764_ij {
   position: absolute;
   width: 47px;
@@ -2660,6 +2915,7 @@ overflow: visible;
   top: 11px;
   overflow: visible;
 }
+
 #calendar_ik {
   position: absolute;
   width: 44px;
@@ -2668,6 +2924,7 @@ overflow: visible;
   top: 14px;
   overflow: visible;
 }
+
 #home_il {
   position: absolute;
   width: 51px;
@@ -2676,19 +2933,22 @@ overflow: visible;
   top: 11px;
   overflow: visible;
 }
+
 #Polgono_1_im {
-  fill: rgba(255,255,255,1);
+  fill: rgba(255, 255, 255, 1);
 }
+
 .Polgono_1_im {
   overflow: visible;
   position: absolute;
   width: 24px;
   height: 29px;
-  transform: matrix(1,0,0,1,26.5,24.5) rotate(-90deg);
+  transform: matrix(1, 0, 0, 1, 26.5, 24.5) rotate(-90deg);
   transform-origin: center;
   left: 0px;
   top: 0px;
 }
+
 #S {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 399px;
@@ -2702,8 +2962,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #L {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 24px;
@@ -2717,8 +2978,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #M {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 79px;
@@ -2732,8 +2994,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #X {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 145px;
@@ -2747,8 +3010,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #J {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 206px;
@@ -2762,8 +3026,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #V {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 263px;
@@ -2777,8 +3042,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #Grupo_872 {
   position: absolute;
   width: 47px;
@@ -2787,15 +3053,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_iu {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_iu {
   position: absolute;
   overflow: visible;
@@ -2804,6 +3072,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_2_iv {
   left: 12px;
   top: 9px;
@@ -2816,8 +3085,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_873 {
   position: absolute;
   width: 47px;
@@ -2826,15 +3096,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_ix {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_ix {
   position: absolute;
   overflow: visible;
@@ -2843,6 +3115,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_iy {
   left: 12px;
   top: 9px;
@@ -2855,8 +3128,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_874 {
   position: absolute;
   width: 47px;
@@ -2865,15 +3139,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_i {
-  fill: rgba(254,63,30,0.678);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(254, 63, 30, 0.678);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_i {
   position: absolute;
   overflow: visible;
@@ -2882,6 +3158,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_i {
   left: 12px;
   top: 9px;
@@ -2894,8 +3171,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_875 {
   position: absolute;
   width: 47px;
@@ -2904,15 +3182,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_ja {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_ja {
   position: absolute;
   overflow: visible;
@@ -2921,6 +3201,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ja {
   left: 12px;
   top: 9px;
@@ -2933,8 +3214,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_876 {
   position: absolute;
   width: 47px;
@@ -2943,15 +3225,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_jb {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jb {
   position: absolute;
   overflow: visible;
@@ -2960,6 +3244,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jb {
   left: 12px;
   top: 9px;
@@ -2972,8 +3257,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_877 {
   position: absolute;
   width: 47px;
@@ -2982,15 +3268,17 @@ overflow: visible;
   top: 198px;
   overflow: visible;
 }
+
 #Rectngulo_396_jc {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jc {
   position: absolute;
   overflow: visible;
@@ -2999,6 +3287,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jc {
   left: 12px;
   top: 9px;
@@ -3011,8 +3300,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #D {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 385px;
@@ -3026,8 +3316,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #S_jc {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 324px;
@@ -3041,8 +3332,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #Grupo_878 {
   position: absolute;
   width: 47px;
@@ -3051,15 +3343,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_je {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_je {
   position: absolute;
   overflow: visible;
@@ -3068,6 +3362,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jf {
   left: 12px;
   top: 9px;
@@ -3080,8 +3375,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_879 {
   position: absolute;
   width: 47px;
@@ -3090,15 +3386,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jh {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jh {
   position: absolute;
   overflow: visible;
@@ -3107,6 +3405,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ji {
   left: 12px;
   top: 9px;
@@ -3119,8 +3418,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_880 {
   position: absolute;
   width: 47px;
@@ -3129,15 +3429,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jk {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jk {
   position: absolute;
   overflow: visible;
@@ -3146,6 +3448,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jl {
   left: 12px;
   top: 9px;
@@ -3158,8 +3461,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_881 {
   position: absolute;
   width: 47px;
@@ -3168,15 +3472,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jn {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jn {
   position: absolute;
   overflow: visible;
@@ -3185,6 +3491,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jo {
   left: 12px;
   top: 9px;
@@ -3197,8 +3504,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_882 {
   position: absolute;
   width: 47px;
@@ -3207,15 +3515,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jq {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jq {
   position: absolute;
   overflow: visible;
@@ -3224,6 +3534,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jr {
   left: 12px;
   top: 9px;
@@ -3236,8 +3547,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_883 {
   position: absolute;
   width: 47px;
@@ -3246,15 +3558,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jt {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jt {
   position: absolute;
   overflow: visible;
@@ -3263,6 +3577,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ju {
   left: 12px;
   top: 9px;
@@ -3275,8 +3590,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_884 {
   position: absolute;
   width: 47px;
@@ -3285,15 +3601,17 @@ overflow: visible;
   top: 277px;
   overflow: visible;
 }
+
 #Rectngulo_396_jw {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jw {
   position: absolute;
   overflow: visible;
@@ -3302,6 +3620,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_jx {
   left: 12px;
   top: 9px;
@@ -3314,8 +3633,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_885 {
   position: absolute;
   width: 47px;
@@ -3324,15 +3644,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_jz {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_jz {
   position: absolute;
   overflow: visible;
@@ -3341,6 +3663,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_j {
   left: 12px;
   top: 9px;
@@ -3353,8 +3676,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_886 {
   position: absolute;
   width: 47px;
@@ -3363,15 +3687,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_j {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_j {
   position: absolute;
   overflow: visible;
@@ -3380,6 +3706,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ka {
   left: 12px;
   top: 9px;
@@ -3392,8 +3719,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_887 {
   position: absolute;
   width: 47px;
@@ -3402,15 +3730,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_ka {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_ka {
   position: absolute;
   overflow: visible;
@@ -3419,6 +3749,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kb {
   left: 12px;
   top: 9px;
@@ -3431,8 +3762,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_888 {
   position: absolute;
   width: 47px;
@@ -3441,15 +3773,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_kb {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kb {
   position: absolute;
   overflow: visible;
@@ -3458,6 +3792,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kc {
   left: 12px;
   top: 9px;
@@ -3470,8 +3805,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_889 {
   position: absolute;
   width: 47px;
@@ -3480,15 +3816,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_kc {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kc {
   position: absolute;
   overflow: visible;
@@ -3497,6 +3835,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kd {
   left: 12px;
   top: 9px;
@@ -3509,8 +3848,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_890 {
   position: absolute;
   width: 47px;
@@ -3519,15 +3859,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_ke {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_ke {
   position: absolute;
   overflow: visible;
@@ -3536,6 +3878,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kf {
   left: 12px;
   top: 9px;
@@ -3548,8 +3891,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_891 {
   position: absolute;
   width: 47px;
@@ -3558,15 +3902,17 @@ overflow: visible;
   top: 356px;
   overflow: visible;
 }
+
 #Rectngulo_396_kh {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kh {
   position: absolute;
   overflow: visible;
@@ -3575,6 +3921,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ki {
   left: 12px;
   top: 9px;
@@ -3587,8 +3934,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_892 {
   position: absolute;
   width: 47px;
@@ -3597,15 +3945,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kk {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kk {
   position: absolute;
   overflow: visible;
@@ -3614,6 +3964,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kl {
   left: 12px;
   top: 9px;
@@ -3626,8 +3977,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_893 {
   position: absolute;
   width: 47px;
@@ -3636,15 +3988,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kn {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kn {
   position: absolute;
   overflow: visible;
@@ -3653,6 +4007,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ko {
   left: 12px;
   top: 9px;
@@ -3665,8 +4020,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_894 {
   position: absolute;
   width: 47px;
@@ -3675,15 +4031,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kq {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kq {
   position: absolute;
   overflow: visible;
@@ -3692,6 +4050,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kr {
   left: 12px;
   top: 9px;
@@ -3704,8 +4063,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_895 {
   position: absolute;
   width: 47px;
@@ -3714,15 +4074,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kt {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kt {
   position: absolute;
   overflow: visible;
@@ -3731,6 +4093,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_ku {
   left: 12px;
   top: 9px;
@@ -3743,8 +4106,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_896 {
   position: absolute;
   width: 47px;
@@ -3753,15 +4117,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kw {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kw {
   position: absolute;
   overflow: visible;
@@ -3770,6 +4136,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_kx {
   left: 12px;
   top: 9px;
@@ -3782,8 +4149,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_897 {
   position: absolute;
   width: 47px;
@@ -3792,15 +4160,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_kz {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_kz {
   position: absolute;
   overflow: visible;
@@ -3809,6 +4179,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_k {
   left: 12px;
   top: 9px;
@@ -3821,8 +4192,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #Grupo_898 {
   position: absolute;
   width: 47px;
@@ -3831,15 +4203,17 @@ overflow: visible;
   top: 435px;
   overflow: visible;
 }
+
 #Rectngulo_396_k {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_396_k {
   position: absolute;
   overflow: visible;
@@ -3848,6 +4222,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #n_1_la {
   left: 12px;
   top: 9px;
@@ -3860,8 +4235,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
 }
+
 #n_1092022 {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 20px;
@@ -3875,8 +4251,9 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 29px;
-  color: rgba(254,63,30,1);
+  color: rgba(254, 63, 30, 1);
 }
+
 #Reserva_930-1030 {
   left: 20px;
   top: 614px;
@@ -3889,7 +4266,7 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 29px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 
@@ -3899,26 +4276,29 @@ overflow: visible;
   box-sizing: border-box;
   border: none;
 }
+
 #Carga {
   position: absolute;
   width: 428px;
   height: 926px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
   --web-view-name: Carga;
   --web-view-id: Carga;
   --web-scale-on-resize: true;
   --web-enable-deep-linking: true;
 }
+
 #Rectngulo_103 {
-  fill: rgba(22,21,21,0.929);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(22, 21, 21, 0.929);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_103 {
   position: absolute;
   overflow: visible;
@@ -3927,6 +4307,7 @@ overflow: visible;
   left: 0px;
   top: 0px;
 }
+
 #BROKEN_HAND_ce {
   left: 69px;
   top: 293px;
@@ -3939,17 +4320,19 @@ overflow: visible;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
+
 #Rectngulo_383 {
-  fill: rgba(255,255,255,1);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_383 {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   position: absolute;
@@ -3959,6 +4342,7 @@ overflow: visible;
   left: 37px;
   top: 436px;
 }
+
 #Grupo_812 {
   position: absolute;
   width: 173px;
@@ -3967,15 +4351,17 @@ overflow: visible;
   top: 447px;
   overflow: visible;
 }
+
 #Rectngulo_101_ch {
-  fill: rgba(254,63,30,0.769);
-  stroke: rgba(112,112,112,1);
+  fill: rgba(254, 63, 30, 0.769);
+  stroke: rgba(112, 112, 112, 1);
   stroke-width: 1px;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
 }
+
 .Rectngulo_101_ch {
   position: absolute;
   overflow: visible;
@@ -4341,6 +4727,7 @@ overflow: visible;
   font-size: 20px;
   color: rgba(254, 63, 30, 1);
 }
+
 .btn {
   padding: 0 !important;
 }
@@ -4580,7 +4967,7 @@ overflow: visible;
 .Grupo_820_Class {
   position: absolute;
   width: 346px;
-  height: 500px;
+  height: 620px;
   left: 0px;
   top: 105px;
   overflow: visible;
@@ -4623,7 +5010,7 @@ overflow: visible;
   width: 346px;
   height: 43px;
   left: 0px;
-  top: 0px;
+  top: -100px;
 }
 
 .Fecha__Class {
@@ -4641,7 +5028,7 @@ overflow: visible;
   color: rgba(0, 0, 0, 1);
 }
 
-.Contenido{
+.Contenido {
   left: 15px;
   top: 380px;
   position: absolute;
@@ -4656,7 +5043,7 @@ overflow: visible;
   color: rgba(0, 0, 0, 1);
 }
 
-.imagen_cont{
+.imagen_cont {
   position: absolute;
   width: 325px;
   height: 345px;
@@ -5061,7 +5448,7 @@ overflow: visible;
   overflow: visible;
 }
 
-.evento_class{
+.evento_class {
   position: absolute;
   width: 325px;
   height: 340px;
