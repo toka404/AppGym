@@ -9,16 +9,12 @@ import Perfil from "./Pages/Perfil";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Eventos from "./Pages/Eventos";
 import Registro from "./Pages/Registro";
-import { UserContext } from "./components/UserContext";
-
-import { useState } from "react";
-
-const emptyUser = { mail: "a", nombre: null, apellido: null };
+import { AuthProvider } from "./components/UserContext";
 
 function App() {
   return (
     <div className="App">
-      <UserContext.Provider value={emptyUser}>
+      <AuthProvider>
         <Routes>
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />} />
@@ -31,7 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registro />} />
         </Routes>
-      </UserContext.Provider>
+      </AuthProvider>
     </div>
   );
 }

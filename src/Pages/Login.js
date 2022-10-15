@@ -4,9 +4,8 @@ import { Navigate } from "react-router-dom";
 import { useUser } from "../components/UserContext";
 
 function Login() {
-  const user = useUser();
-  console.log(user);
-  if (user.mail) {
+  const { loged } = useUser();
+  if (loged) {
     return <Navigate to="/" />;
   }
   return (

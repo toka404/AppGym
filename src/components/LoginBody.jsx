@@ -4,29 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../components/UserContext";
 import { Link } from "react-router-dom";
 
-import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAkyN4MoGxrjlbQfh2z8S-DBeZPLlLzd8M",
-  authDomain: "app-gym-f3cf3.firebaseapp.com",
-  databaseURL: "https://app-gym-f3cf3-default-rtdb.firebaseio.com",
-  projectId: "app-gym-f3cf3",
-  storageBucket: "app-gym-f3cf3.appspot.com",
-  messagingSenderId: "1080211709746",
-  appId: "1:1080211709746:web:8bd680f3edcc8c7f1bc12b",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-
 //se declara afuera para no recrearlo en cada render
 const emptyLogin = {
   Input_correo: "",
@@ -35,7 +12,7 @@ const emptyLogin = {
 
 function Body() {
   const [login, setLogin] = useState(emptyLogin);
-  const setUser = useUser();
+  const { loginContext } = useUser();
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -46,6 +23,16 @@ function Body() {
         [e.target.id]: e.target.value,
       };
     });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      await loginContext(login.Input_correo, login.Input_Contra);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -62,51 +49,46 @@ function Body() {
             height="926"
           ></rect>
         </svg>
-        <div id="input_correo">
-          <input
-            className="Input_correo"
-            id="Input_correo"
-            type="email"
-            value={login.email}
-            onChange={handleChange}
-          />
-          <svg className="Lnea_4Login" viewBox="0 0 314 5">
-            <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
-          </svg>
-        </div>
 
-        <div id="lbl_correo">
-          <p>
-            <span>Correos/Email:</span>
-          </p>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div id="lbl_correo">
+            <p>
+              <span>Correos/Email:</span>
+            </p>
+          </div>
 
-        <div id="btn_ingresar">
-          <button
-            id="BtnIngresoLogin"
-            className="BtnIngresoLogin"
-            onClick={() => {
-              signInWithEmailAndPassword(
-                auth,
-                login.Input_correo,
-                login.Input_Contra
-              )
-                .then((userCredential) => {
-                  // Signed in
-                  // const user = userCredential.user;
-                  navigate("/");
-                  // ...
-                })
-                .catch((error) => {
-                  // const errorCode = error.code;
-                  // const errorMessage = error.message;
-                  console.log("Usuario o Contraseña incorrecto");
-                });
-            }}
-          >
-            Ingresar
-          </button>
-        </div>
+          <div id="input_correo">
+            <input
+              className="Input_correo"
+              id="Input_correo"
+              type="email"
+              value={login.email}
+              onChange={handleChange}
+            />
+            <svg className="Lnea_4Login" viewBox="0 0 314 5">
+              <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
+            </svg>
+          </div>
+
+          <div id="img_contrasea">
+            <input
+              className="Input_Contra"
+              id="Input_Contra"
+              type={"password"}
+              value={login.password}
+              onChange={handleChange}
+            />
+            <svg className="Lnea_4Login" viewBox="0 0 314 5">
+              <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
+            </svg>
+          </div>
+
+          <div id="btn_ingresar">
+            <button id="BtnIngresoLogin" className="BtnIngresoLogin">
+              Ingresar
+            </button>
+          </div>
+        </form>
 
         <div id="lbl_registrate">
           <p>
@@ -144,49 +126,9 @@ function Body() {
         </div>
         <img id="img_cuerda" src="images/img_cuerda.png" />
 
-        <div id="img_contrasea">
-          <input
-            className="Input_Contra"
-            id="Input_Contra"
-            type={"password"}
-            value={login.password}
-            onChange={handleChange}
-          />
-          <svg className="Lnea_4Login" viewBox="0 0 314 5">
-            <path id="Lnea_4Login" d="M 0 0 L 314 0"></path>
-          </svg>
-        </div>
-
         <div id="btn_google">
           <div id="Grupo_903">
-            <button
-              id="Btn_google"
-              className="Btn_google"
-              onClick={() => {
-                signInWithPopup(auth, provider)
-                  .then((result) => {
-                    // This gives you a Google Access Token. You can use it to access the Google API.
-                    const credential =
-                      GoogleAuthProvider.credentialFromResult(result);
-                    const token = credential.accessToken;
-                    // The signed-in user info.
-                    const user = result.user;
-                    navigate("/");
-                    // ...
-                  })
-                  .catch((error) => {
-                    // Handle Errors here.
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    // The email of the user's account used.
-                    const email = error.customData.email;
-                    // The AuthCredential type that was used.
-                    const credential =
-                      GoogleAuthProvider.credentialFromError(error);
-                    // ...
-                  });
-              }}
-            >
+            <button id="Btn_google" className="Btn_google">
               Ingresar
             </button>
             <img id="google_1" src="images/google_1.png" />

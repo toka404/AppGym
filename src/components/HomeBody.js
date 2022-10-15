@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "./UserContext";
 
 function HomeBody() {
   const navigate = useNavigate();
-  const [usuario, setUsuario] = useState("Usuario");
+  const { usuarioLoged } = useUser();
 
   return (
     <div>
@@ -21,7 +22,7 @@ function HomeBody() {
         ></rect>
       </svg>
       <div id="Hola_Usuario">
-        <span>Hola {usuario}</span>
+        <span>Hola {usuarioLoged.displayName}</span>
       </div>
       <button
         onClick={() => {

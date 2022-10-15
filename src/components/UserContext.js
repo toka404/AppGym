@@ -1,22 +1,53 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  updateProfile,
+  signOut,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "./Firebase";
 
-export const UserContext = React.createContext(null);
+const emptyUsuario = null;
 
-// export function UserProvider(props) {
-//   const emptyUser = { mail: null, nombre: null, apellido: null };
-//   const [user, setUser] = useState(emptyUser);
+const UserContext = React.createContext(null);
 
-//   const contextValue = {
-//     user,
-//     setUser,
-//   };
-//   return (
-//     <UserContext.Provider value={contextValue}>
-//       {props.children}
-//     </UserContext.Provider>
-//   );
-// }
+export function AuthProvider({ children }) {
+  const [usuarioLoged, setUsuarioLoged] = useState(emptyUsuario);
+
+  const signup = async (email, password) => {
+    await createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const update = async (nombre) => {
+    await updateProfile(auth.currentUser, {
+      displayName: nombre,
+    });
+  };
+
+  const loginContext = async (email, password) => {
+    signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const logOut = () => signOut(auth);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUsuarioLoged(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <UserContext.Provider
+      value={{ signup, loginContext, update, logOut, usuarioLoged }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+}
 
 export function useUser() {
   const context = useContext(UserContext);
