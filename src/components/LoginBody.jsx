@@ -112,7 +112,7 @@ function Body() {
           <p>
             <span>¿No tienes una cuenta? </span>
             <Link
-              to="/registro"
+              to="/registrarse"
               style={{
                 fontStyle: "normal",
                 fontWeight: "normal",
