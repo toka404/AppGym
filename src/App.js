@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Eventos from "./Pages/Eventos";
 import Registro from "./Pages/Registro";
 import { AuthProvider } from "./components/UserContext";
+import AlimentoCalendarioBody from "./components/AlimentoCalendarioBody";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registro />} />
+          <Route path="/alimentos" element={<AlimentoCalendarioBody/>}/>
         </Routes>
       </AuthProvider>
     </div>

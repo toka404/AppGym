@@ -113,6 +113,11 @@ function PerfilBody() {
             />
           </div>
         </div>
+
+        {/* Botón Actualizar */}
+        <div className="BtnActualizar">
+
+        </div>
       </div>
     </div>
   );
