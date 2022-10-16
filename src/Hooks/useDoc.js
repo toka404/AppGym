@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../components/Firebase";
 
+export async function crearDocumento(coleccion, documento, datos) {
+  await setDoc(doc(db, coleccion, documento), datos);
+}
+
 function useConsulta(colleccion, documento) {
-  const [eventoDoc, setEventoDoc] = useState([]);
+  const [eventoDoc, setEventoDoc] = useState(null);
 
   const getEventos = async () => {
     const docRef = doc(db, colleccion, documento);
@@ -16,6 +20,7 @@ function useConsulta(colleccion, documento) {
       console.log("No such document!");
     }
   };
+
   useEffect(() => {
     getEventos();
   }, [colleccion]);

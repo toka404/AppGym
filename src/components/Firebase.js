@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
-import { useEffect } from "react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAkyN4MoGxrjlbQfh2z8S-DBeZPLlLzd8M",
@@ -18,17 +16,17 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+// const provider = new GoogleAuthProvider();
 
 // referencia
-export async function useConsulta() {
-  const docRef = doc(db, "Eventos", "4GxmPNwKrNDBPiwzx9Xu");
-  const docSnap = await getDoc(docRef);
+// export async function useConsulta() {
+//   const docRef = doc(db, "Eventos", "4GxmPNwKrNDBPiwzx9Xu");
+//   const docSnap = await getDoc(docRef);
 
-  if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
-  } else {
-    // doc.data() will be undefined in this case
-    console.log("No such document!");
-  }
-}
+//   if (docSnap.exists()) {
+//     console.log("Document data:", docSnap.data());
+//   } else {
+//     // doc.data() will be undefined in this case
+//     console.log("No such document!");
+//   }
+// }

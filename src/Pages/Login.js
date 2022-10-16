@@ -4,8 +4,8 @@ import { Navigate } from "react-router-dom";
 import { useUser } from "../components/UserContext";
 
 function Login() {
-  const { loged } = useUser();
-  if (loged) {
+  const { usuarioLoged } = useUser();
+  if (usuarioLoged) {
     return <Navigate to="/" />;
   }
   return (

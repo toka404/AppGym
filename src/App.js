@@ -27,7 +27,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registro />} />
-          <Route path="/alimentos" element={<AlimentoCalendarioBody/>}/>
+          <Route path="/alimentos" element={<AlimentoCalendarioBody />} />
         </Routes>
       </AuthProvider>
     </div>

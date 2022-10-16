@@ -1,14 +1,35 @@
 import React from "react";
 import BotonBack from "./BotonBack";
 import { useState } from "react";
+import { useQuery } from "../Hooks/useColeccion";
+
+const fechas = [
+  { value: "Dia1", label: "12/09/2022" },
+  { value: "Dia2", label: "13/09/2022" },
+  { value: "dia3", label: "14/09/2022" },
+];
+
+const horas = [
+  { value: "7:00", label: "7:00" },
+  { value: "8:00", label: "8:00" },
+  { value: "9:00", label: "9:00" },
+  { value: "10:00", label: "10:00" },
+  { value: "16:00", label: "16:00" },
+  { value: "17:00", label: "17:00" },
+  { value: "18:00", label: "18:00" },
+  { value: "19:00", label: "19:00" },
+  { value: "20:00", label: "20:00" },
+];
 
 const datosReserva = {
-  fecha: "",
-  hora: "",
+  fecha: fechas[0].value,
+  hora: horas[0].value,
 };
 
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
+  const aux = useQuery("clases");
+  console.log(aux);
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -18,6 +39,7 @@ function ReservasBody() {
         [e.target.id]: e.target.value,
       };
     });
+    // useQuery("clases", "participantes", "==", "bryancito@hotmail.com");
   }
 
   return (
@@ -90,9 +112,13 @@ function ReservasBody() {
             {/* select para fechas */}
             <div className="n_592022__Class">
               <select value={reserva.fecha} onChange={handleChange} id="fecha">
-                <option value="Dia1">15/9/2022</option>
-                <option value="Dia2">16/9/2022</option>
-                <option value="Dia3">17/9/2022</option>
+                {fechas.map((e) => {
+                  return (
+                    <option value={e.value} key={e.value}>
+                      {e.label}
+                    </option>
+                  );
+                })}
               </select>
             </div>
           </div>
@@ -174,16 +200,13 @@ function ReservasBody() {
             </div>
             <div className="lblHora">
               <select id="hora" value={reserva.hora} onChange={handleChange}>
-                <option value="Manana7">7:00</option>
-                <option value="Manan8">8:00</option>
-                <option value="Manan9">9:00</option>
-                <option value="Manan10">10:00</option>
-                <option value="Tarde16">16:00</option>
-                <option value="Tarde17">17:00</option>
-                <option value="Tarde18">18:00</option>
-                <option value="Tarde19">19:00</option>
-                <option value="Tarde20">20:00</option>
-                <option value="Tarde21">21:00</option>
+                {horas.map((e) => {
+                  return (
+                    <option value={e.value} key={e.value}>
+                      {e.label}
+                    </option>
+                  );
+                })}
               </select>
             </div>
           </div>

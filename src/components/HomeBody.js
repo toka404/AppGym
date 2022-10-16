@@ -4,7 +4,9 @@ import { useUser } from "./UserContext";
 
 function HomeBody() {
   const navigate = useNavigate();
-  const { usuarioLoged } = useUser();
+  const { usuarioLoged, informacion } = useUser();
+
+  console.log(informacion);
 
   return (
     <div>

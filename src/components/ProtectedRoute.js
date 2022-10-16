@@ -3,6 +3,7 @@ import { useUser } from "./UserContext";
 
 function ProtectedRoute({ children }) {
   const { usuarioLoged } = useUser();
+
   if (!usuarioLoged) {
     return <Navigate to={"/login"} />;
   }

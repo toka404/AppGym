@@ -3,6 +3,7 @@ import { useState } from "react";
 import BotonBack from "./BotonBack";
 import { useUser } from "../components/UserContext";
 import { useNavigate } from "react-router-dom";
+import { crearDocumento } from "../Hooks/useDoc";
 
 const emptyRegistro = {
   Input_nombre: "",
@@ -33,6 +34,12 @@ function CrearUsuarioBody() {
       if (registro.Input_contrasena === registro.Input_contrasenaF) {
         await signup(registro.Input_email, registro.Input_contrasena);
         await update(registro.Input_nombre);
+        await crearDocumento("usuarios", registro.Input_email, {
+          nombre: registro.Input_nombre,
+          apellido: registro.Input_apellido,
+          peso: "",
+          altura: "",
+        });
         navigate("/");
       } else console.log("Las contraseñas no coinciden");
     } catch (error) {

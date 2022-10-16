@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 function BotonBack() {
   const navigate = useNavigate();
+
   return (
     <button
       onClick={() => {
