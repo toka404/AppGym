@@ -768,7 +768,7 @@
   width: 130px;
   height: 118px;
   left: 149px;
-  top: 147px;
+  top: 160px;
   overflow: visible;
 }
 
@@ -881,7 +881,7 @@
   width: 235px;
   height: 43px;
   left: 0px;
-  top: 0px;
+  top: 15px;
   overflow: visible;
 }
 
@@ -941,7 +941,7 @@
   width: 125px;
   height: 39px;
   left: 24px;
-  top: 296px;
+  top: 310px;
   overflow: visible;
 }
 
@@ -965,7 +965,7 @@
   width: 235px;
   height: 43px;
   left: 173px;
-  top: 355px;
+  top: 400px;
   overflow: visible;
 }
 
@@ -1016,7 +1016,7 @@
 
 #Correo {
   left: 24px;
-  top: 355px;
+  top: 400px;
   position: absolute;
   overflow: visible;
   width: 111px;
@@ -1031,13 +1031,30 @@
 
 #Perfil_ht {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  left: 160px;
+  top: 80px;
+  position: absolute;
+  overflow: visible;
+  width: 106px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(254, 63, 30, 1);
+}
+
+
+#BtnLog_ht{
+  filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
   left: 53px;
   top: 66px;
   position: absolute;
   overflow: visible;
   width: 106px;
   white-space: nowrap;
-  text-align: left;
+  text-align: center;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
@@ -1103,7 +1120,7 @@
 
 #Altura {
   left: 24px;
-  top: 415px;
+  top: 490px;
   position: absolute;
   overflow: visible;
   width: 103px;
@@ -1118,7 +1135,7 @@
 
 #Peso {
   left: 24px;
-  top: 475px;
+  top: 580px;
   position: absolute;
   overflow: visible;
   width: 80px;
@@ -1136,7 +1153,7 @@
   width: 235px;
   height: 43px;
   left: 173px;
-  top: 414px;
+  top: 490px;
   overflow: visible;
 }
 
@@ -1205,7 +1222,7 @@
   width: 235px;
   height: 43px;
   left: 173px;
-  top: 473px;
+  top: 580px;
   overflow: visible;
 }
 
@@ -7563,11 +7580,88 @@ button.icon-button>span.chevron-arrow-right {
   width: 189px;
   height: 54px;
   left: 130px;
-  top: 650px;
+  top: 680px;
   overflow: visible;
 }
 
+.fondoBtnClassActu {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
 
+.fondoBtnActu{
+  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
+  overflow: visible;
+  position: absolute;
+  width: 207px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.ActualizarPerfilbtn {
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  overflow: visible;
+  width: 93px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(254, 63, 30, 1);
+}
+
+.BtnLogOut {
+  position: absolute;
+  width: 189px;
+  height: 54px;
+  left: 180px;
+  top: -55px;
+  overflow: visible;
+}
+
+.fondoBtnClassLogOut {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.fondoBtnLogOut{
+  overflow: visible;
+  position: absolute;
+  width: 207px;
+  height: 72px;
+  left: 200px;
+  top: -45px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.LogOutPerfilbtn {
+  left: 8px;
+  top: 5px;
+  position: absolute;
+  overflow: visible;
+  width: 93px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 /* Parte Bryan */
 

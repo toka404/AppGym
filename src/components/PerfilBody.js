@@ -34,6 +34,9 @@ function PerfilBody() {
             d="M 0 0 L 429 0 L 429 926 L 0 926 L 0 0 Z"
           ></path>
         </svg>
+
+
+
         {/* imagen de perfil, falta que se agrande */}
         <img
           id="n_838764_g"
@@ -68,7 +71,7 @@ function PerfilBody() {
         <div id="Grupo_852">
           <div id="Grupo_901">
             <input
-              type="email"
+              type="text"
               className="input_Correo"
               id="input_Correo"
               value={user.input_Correo}
@@ -83,6 +86,25 @@ function PerfilBody() {
         <div id="Perfil_ht">
           <span>Perfil</span>
         </div>
+
+        <div id="BtnLog_ht">
+
+          {/* Botón Log out */}
+          <div className="fondoBtnLogOut btn">
+            <svg className="fondoBtn" viewBox="0 0 285 90">
+              <path
+                className="fondoBtnClassLogOut"
+                d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+              ></path>
+            </svg>
+
+            <div className="LogOutPerfilbtn">
+              <span>Cerrar sesión</span>
+            </div>
+          </div>
+
+        </div>
+
         <div id="Altura">
           <span>Altura:</span>
         </div>
@@ -115,9 +137,24 @@ function PerfilBody() {
         </div>
 
         {/* Botón Actualizar */}
-        <div className="BtnActualizar">
+        <div className="BtnActualizar btn">
+          <svg className="fondoBtnActu" viewBox="0 0 225 60">
+            <path
+              className="fondoBtnClassActu"
+              d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+            ></path>
+          </svg>
 
+          <div className="ActualizarPerfilbtn">
+            <span>Actualizar</span>
+          </div>
         </div>
+
+
+
+
+
+
       </div>
     </div>
   );
