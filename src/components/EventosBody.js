@@ -1,9 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Evento from "./Evento";
+import BotonBack from "./BotonBack";
+import useColeccion from "../Hooks/useColeccion";
 
 function EventosBody() {
-  const navigate = useNavigate();
-
+  const [eventoDoc] = useColeccion("Eventos");
   return (
     <div>
       <div id="Reserva" className="Reserva_Class">
@@ -18,68 +19,20 @@ function EventosBody() {
             height="926"
           ></rect>
         </svg>
+        <BotonBack />
+        {/* titulo de la pagina */}
         <div className="lblReserva_Class">
           <span>Eventos</span>
         </div>
-
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <svg className="btnBack btn" viewBox="0 0 24 29">
-            <path className="btnBack_Class" d="M 12 0 L 24 29 L 0 29 Z"></path>
-          </svg>
-        </button>
-        <div className="formFecha_Class">
-          <div className="Grupo_820_Class">
-            <svg className="Rectngulo_101_">
-              <rect
-                className="Rectngulo_101__Class"
-                rx="9"
-                ry="9"
-                x="0"
-                y="0"
-                width="346"
-                height="620"
-              ></rect>
-            </svg>
-
-            <div className="NameYoga__ClassEventos">
-              <span>Yoga con Carla</span>
-            </div>
-            <div className="Fecha__ClassEventos">
-              <span>Fecha:</span>
-              <span>15/9/2022</span>
-            </div>
-            <div className="imagen_cont">
-              <img className="evento_class" src="images/Eventos/Yoga1.png" />
-            </div>
-
-            <div className="Contenido">
-              <span>Clase de yoga</span>
-              <br />
-              <span>Precio:</span>
-              <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}>
-                Gratis
-              </span>
-              <br />
-              <span>Profesora:</span>
-              <span
-                style={{
-                  "fontStyle}": "{normal}",
-                  "{color}": "{rgba(236,66,36,1)",
-                }}
-              >
-                Carla
-              </span>
-              <br />
-              <span>Hora:</span>
-              <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}>
-                7:00 a.m
-              </span>
-            </div>
-          </div>
+        {/* Eventos */}
+        <div className="ScrollSpace">
+          {eventoDoc.map((evento) => {
+            return (
+              <>
+                <Evento datos={evento} key={evento.id.id} />;
+              </>
+            );
+          })}
         </div>
       </div>
     </div>

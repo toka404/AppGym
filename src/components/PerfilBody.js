@@ -1,6 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import BotonBack from "./BotonBack";
+import { useState, useEffect } from "react";
+import useDoc from "../Hooks/useDoc";
+import { useUser } from "./UserContext";
 
 const emptyUser = {
   Input_Nombre: "",
@@ -10,8 +12,8 @@ const emptyUser = {
 };
 
 function PerfilBody() {
-  const navigate = useNavigate();
   const [user, setUser] = useState(emptyUser);
+  const { usuarioLoged } = useUser();
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -33,7 +35,12 @@ function PerfilBody() {
           ></path>
         </svg>
         {/* imagen de perfil, falta que se agrande */}
-        <img id="n_838764_g" src="/images/Perfil/n_838764_g.png" />
+        <img
+          id="n_838764_g"
+          src="/images/Perfil/n_838764_g.png"
+          alt="foto de perfil"
+        />
+
         {/* input nombre */}
         <div id="Grupo_816_ha">
           <div id="Grupo_815_hb">
@@ -48,16 +55,10 @@ function PerfilBody() {
             </div>
           </div>
         </div>
+
         {/* boton de regreso */}
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <svg className="Polgono_1_im btn" viewBox="0 0 24 29">
-            <path id="Polgono_1_im" d="M 12 0 L 24 29 L 0 29 Z"></path>
-          </svg>
-        </button>
+        <BotonBack />
+
         <div id="Grupo_853">
           <div id="Nombre_hn">
             <span>Nombre:</span>
@@ -72,6 +73,7 @@ function PerfilBody() {
               id="input_Correo"
               value={user.input_Correo}
               onChange={handleChange}
+              readOnly="readOnly"
             />
           </div>
         </div>

@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import BotonBack from "./BotonBack";
 
 function CalendarioBody() {
-  const navigate = useNavigate();
-
   return (
     <div>
       <div id="Calendario">
@@ -32,15 +30,9 @@ function CalendarioBody() {
             <span>01</span>
           </div>
         </div>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <svg className="Polgono_1_im btn" viewBox="0 0 24 29">
-            <path id="Polgono_1_im" d="M 12 0 L 24 29 L 0 29 Z"></path>
-          </svg>
-        </button>
+
+        <BotonBack />
+
         <div id="L">
           <span>L</span>
         </div>

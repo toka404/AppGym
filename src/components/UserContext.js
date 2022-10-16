@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
   };
 
   const loginContext = async (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => signOut(auth);

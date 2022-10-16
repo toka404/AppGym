@@ -124,14 +124,18 @@ function Body() {
             <span>Contraseña:</span>
           </p>
         </div>
-        <img id="img_cuerda" src="images/img_cuerda.png" />
+        <img
+          id="img_cuerda"
+          src="images/img_cuerda.png"
+          alt="cuerdas de gimnacio"
+        />
 
         <div id="btn_google">
           <div id="Grupo_903">
             <button id="Btn_google" className="Btn_google">
               Ingresar
             </button>
-            <img id="google_1" src="images/google_1.png" />
+            <img id="google_1" src="images/google_1.png" alt="boton google" />
           </div>
         </div>
 
@@ -140,7 +144,7 @@ function Body() {
             <button id="BtnFacebook" className="BtnFacebook">
               Ingresar
             </button>
-            <img id="facebook" src="images/facebook.png" />
+            <img id="facebook" src="images/facebook.png" alt="boton facebook" />
           </div>
         </div>
       </div>

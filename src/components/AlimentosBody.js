@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import BotonBack from "./BotonBack";
 
 function AlimentosBody() {
-  const navigate = useNavigate();
-
   return (
     <div>
       <div id="Eventos">
@@ -16,21 +14,10 @@ function AlimentosBody() {
         <img
           id="sonny-mauricio-yhc4pSbl01A-uns"
           src="/images/Alimentos/sonny-mauricio-yhc4pSbl01A-uns.png"
+          alt="Comida saludable"
         />
 
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <svg className="Polgono_1_eu" viewBox="0 0 24 29">
-            <path
-              id="Polgono_1_eu"
-              d="M 12 0 L 24 29 L 0 29 Z"
-              className="btn"
-            ></path>
-          </svg>
-        </button>
+        <BotonBack />
         <div id="Plan_alimenticio">
           <span>Plan alimenticio</span>
         </div>

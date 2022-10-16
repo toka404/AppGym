@@ -21,6 +21,7 @@ function Footer() {
         <img
           id="n_838764_c"
           src="/images/Home/n_838764_c.png"
+          alt="icono imagen perfil"
           className="btn"
         />
       </button>
@@ -33,6 +34,7 @@ function Footer() {
         <img
           id="calendar_c"
           src="/images/Home/calendar_c.png"
+          alt="icono calendario"
           className="btn"
         />
       </button>
@@ -42,7 +44,12 @@ function Footer() {
           navigate("/");
         }}
       >
-        <img id="home_c" src="/images/Home/home_c.png" className="btn" />
+        <img
+          id="home_c"
+          src="/images/Home/home_c.png"
+          className="btn"
+          alt="icono home"
+        />
       </button>
     </div>
   );

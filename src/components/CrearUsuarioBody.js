@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import BotonBack from "./BotonBack";
 import { useUser } from "../components/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const emptyRegistro = {
   Input_nombre: "",
@@ -29,7 +30,7 @@ function CrearUsuarioBody() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      if (registro.Input_contrasena == registro.Input_contrasenaF) {
+      if (registro.Input_contrasena === registro.Input_contrasenaF) {
         await signup(registro.Input_email, registro.Input_contrasena);
         await update(registro.Input_nombre);
         navigate("/");
@@ -55,15 +56,7 @@ function CrearUsuarioBody() {
         </svg>
 
         {/* boton regreso */}
-        <button
-          onClick={() => {
-            navigate("/login");
-          }}
-        >
-          <svg className="btnBack btn" viewBox="0 0 24 29">
-            <path className="btnBack_Class" d="M 12 0 L 24 29 L 0 29 Z"></path>
-          </svg>
-        </button>
+        <BotonBack />
 
         <form onSubmit={handleSubmit}>
           <div id="lbl_Crear_Usuario">

@@ -2238,15 +2238,6 @@
   color: rgba(0, 0, 0, 1);
 }
 
-.formFecha_Class {
-  position: absolute;
-  width: 346px;
-  height: 43px;
-  left: 44px;
-  top: 113px;
-  overflow: visible;
-}
-
 .Grupo_818_Class {
   position: absolute;
   width: 346px;
@@ -2254,16 +2245,6 @@
   left: 0px;
   top: 0px;
   overflow: visible;
-}
-
-.Rectngulo_101_Class {
-  fill: rgba(255, 255, 255, 1);
-  stroke: rgba(112, 112, 112, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
 }
 
 .Rectngulo_101 {
@@ -2333,16 +2314,28 @@
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
+
 }
 
 .Rectngulo_101_ {
+  position: absolute;
+  width: 446px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  padding-bottom: 10px;
+  border-radius: 18px;
+
+}
+
+/* .Rectngulo_101_ {
   position: absolute;
   overflow: visible;
   width: 346px;
   height: 43px;
   left: 0px;
   top: 0px;
-}
+} */
 
 .Rectngulo_101__ClassReserva {
   filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
@@ -2364,9 +2357,20 @@
   top: 0px;
 }
 
-
-
 .Fecha__ClassEventos {
+  position: relative;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* .Fecha__ClassEventos {
   left: 16px;
   top: -20px;
   position: absolute;
@@ -2379,9 +2383,22 @@
   font-weight: bold;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
-}
+} */
 
 .NameYoga__ClassEventos {
+  position: relative;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* .NameYoga__ClassEventos {
   left: 56px;
   top: -80px;
   position: absolute;
@@ -2394,7 +2411,7 @@
   font-weight: bold;
   font-size: 30px;
   color: rgba(0, 0, 0, 1);
-}
+} */
 
 .n_592022__Class {
   left: 94px;
@@ -4785,10 +4802,6 @@
   color: rgba(254, 63, 30, 1);
 }
 
-.btnBack_Class {
-  fill: rgba(255, 255, 255, 1);
-}
-
 .btnBack {
   overflow: visible;
   position: absolute;
@@ -4870,7 +4883,7 @@
 }
 
 .formFecha_Class {
-  position: absolute;
+  position: relative;
   width: 346px;
   height: 43px;
   left: 44px;
@@ -4982,17 +4995,6 @@
   overflow: visible;
 }
 
-.Rectngulo_101__Class {
-  filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
-  fill: rgba(255, 255, 255, 1);
-  stroke: rgba(112, 112, 112, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
-}
-
 .Rectngulo_102__Class {
   filter: drop-shadow(1px 3px 6px rgba(58, 0, 255, 0.678));
   fill: rgba(255, 255, 255, 1);
@@ -5004,14 +5006,15 @@
   shape-rendering: auto;
 }
 
-.Rectngulo_101_ {
+/* este esta repedito la etiqueta pero es distinto */
+/* .Rectngulo_101_ {
   position: absolute;
   overflow: visible;
   width: 346px;
   height: 43px;
   left: 0px;
   top: -100px;
-}
+} */
 
 .Fecha__Class {
   left: 16px;
@@ -5029,6 +5032,19 @@
 }
 
 .Contenido {
+  position: relative;
+  overflow: visible;
+  width: 69px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* .Contenido {
   left: 15px;
   top: 380px;
   position: absolute;
@@ -5041,17 +5057,25 @@
   font-weight: bold;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
-}
+} */
 
 .imagen_cont {
+  position: relative;
+  width: 325px;
+  height: 345px;
+  left: 0px;
+
+  overflow: visible;
+}
+
+/* .imagen_cont {
   position: absolute;
   width: 325px;
   height: 345px;
   left: 10px;
   top: 25px;
   overflow: visible;
-}
-
+} */
 
 .Cl_areo {
   left: 16px;
@@ -5450,10 +5474,10 @@
 
 .evento_class {
   position: absolute;
-  width: 325px;
-  height: 340px;
+  width: 315px;
+  height: 330px;
   left: 0px;
-  top: -10px;
+  top: 5px;
   overflow: visible;
 }
 
@@ -5466,10 +5490,6 @@
   padding: 0;
   box-sizing: border-box;
   border: none;
-}
-
-.btnBack_Class {
-  fill: rgba(255, 255, 255, 1);
 }
 
 .btnBack {
@@ -6023,4 +6043,45 @@
   left: 8px;
   top: 7px;
   overflow: visible;
+}
+
+.ScrollSpace{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 400px;
+  height: 75%;
+  top: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.ScrollSpace::-webkit-scrollbar {
+  display: none;
+}
+
+ .CuadroEvento{
+  display: block;
+  float: left;
+  position: relative;
+  width: 346px;
+  left: 40px;
+  top: 0px;
+  overflow: visible;
+  padding-left: 15px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.aux{
+  left: 40px;
+}
+
+.CajaContenido{
+
+}
+
+.CajaContenido__Class{
+  background-color: white;
 }

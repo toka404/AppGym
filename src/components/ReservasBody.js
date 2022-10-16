@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import BotonBack from "./BotonBack";
 import { useState } from "react";
 
 const datosReserva = {
@@ -9,7 +9,6 @@ const datosReserva = {
 
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
-  const navigate = useNavigate();
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -38,16 +37,10 @@ function ReservasBody() {
         <div className="lblReserva_Class">
           <span>Reserva</span>
         </div>
+
         {/* boton regreso */}
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <svg className="btnBack btn" viewBox="0 0 24 29">
-            <path className="btnBack_Class" d="M 12 0 L 24 29 L 0 29 Z"></path>
-          </svg>
-        </button>
+        <BotonBack />
+
         {/* rutinas */}
         <div className="formRutinas_Class">
           <svg className="Rectngulo_386">
@@ -134,7 +127,11 @@ function ReservasBody() {
           <span>Participantes:</span>
         </div>
         {/* participantes */}
-        <img className="n_838764_Class" src="/images/Reservas/n_838764.png" />
+        <img
+          className="n_838764_Class"
+          src="/images/Reservas/n_838764.png"
+          alt="foto de perfil"
+        />
         <div className="Emy_Class">
           <span>Emy</span>
         </div>
