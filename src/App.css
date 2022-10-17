@@ -171,7 +171,6 @@
   top: -50px;
 }
 
-
 #Btn_google {
   padding: .375rem .75rem !important;
   border-radius: 10px;
@@ -5950,15 +5949,6 @@
   overflow: visible;
 }
 
-#Grupo_903 {
-  position: absolute;
-  width: 182px;
-  height: 62px;
-  left: 0px;
-  top: 0px;
-  overflow: visible;
-}
-
 #Rectngulo_98_dm {
   fill: rgba(255, 255, 255, 1);
   stroke: rgba(112, 112, 112, 1);
@@ -7739,6 +7729,7 @@ button.icon-button>span.chevron-arrow-right {
 
 
 .AppCalen{
+  width: 430px !important;
   height: 865px !important;
   background-color: rgb(38 40 48) !important;
 }
