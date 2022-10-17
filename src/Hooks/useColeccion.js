@@ -8,7 +8,29 @@ import {
 } from "firebase/firestore";
 import { db } from "../components/Firebase";
 
-export function useQuery(coleccion, campo, comparador, busqueda) {
+export function useQueryReservas(coleccion, usuario) {
+  const [eventoDoc, setEventoDoc] = useState([]);
+
+  const getEventos = async () => {
+    const queryRef = collection(db, "clases");
+
+    const q = query(queryRef, where("participantes", "!=", usuario));
+
+    const querySnapshot = await getDocs(q);
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      // console.log(doc.data());
+      docs.push({ ...doc.data(), id: doc });
+    });
+    setEventoDoc(docs);
+  };
+  useEffect(() => {
+    getEventos();
+  }, [coleccion]);
+  return [eventoDoc];
+}
+
+export function useQuery(coleccion) {
   const [eventoDoc, setEventoDoc] = useState([]);
 
   const date1 = Timestamp.fromDate(new Date("2022-10-18 07:00:00"));
@@ -25,7 +47,7 @@ export function useQuery(coleccion, campo, comparador, busqueda) {
     const querySnapshot = await getDocs(q);
     const docs = [];
     querySnapshot.forEach((doc) => {
-      console.log(doc.data());
+      // console.log(doc.data());
       docs.push({ ...doc.data(), id: doc });
     });
     setEventoDoc(docs);

@@ -6,7 +6,7 @@ function HomeBody() {
   const navigate = useNavigate();
   const { usuarioLoged, informacion } = useUser();
 
-  console.log(informacion);
+  // console.log(informacion);
 
   return (
     <div>

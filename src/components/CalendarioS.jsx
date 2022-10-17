@@ -1,5 +1,5 @@
-import { Menu, Transition } from "@headlessui/react";
-import { DotsVerticalIcon } from "@heroicons/react/outline";
+// import { Menu, Transition } from "@headlessui/react";
+// import { DotsVerticalIcon } from "@heroicons/react/outline";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import {
   add,
@@ -17,48 +17,8 @@ import {
 } from "date-fns";
 import { Fragment, useState } from "react";
 import BotonBack from "./BotonBack";
-
-// COLOCAMOS LAS COMIDAS
-const meetings = [
-  {
-    id: 1,
-    name: "Desayuno",
-    Description: "Pan con un poco de ajo",
-    startDatetime: "2022-10-16T13:00",
-    endDatetime: "2022-10-16T14:30",
-  },
-  {
-    id: 2,
-    name: "Media mañana",
-    Description: "Pan con un poco de ajo",
-    startDatetime: "2022-10-16T13:00",
-    endDatetime: "2022-10-16T14:30",
-  },
-  {
-    id: 3,
-    name: "Dries Vincent",
-    imageUrl:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    startDatetime: "2022-05-20T17:00",
-    endDatetime: "2022-05-20T18:30",
-  },
-  {
-    id: 4,
-    name: "Leslie Alexander",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    startDatetime: "2022-06-09T13:00",
-    endDatetime: "2022-06-09T14:30",
-  },
-  {
-    id: 5,
-    name: "Michael Foster",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    startDatetime: "2022-05-13T14:00",
-    endDatetime: "2022-05-13T14:30",
-  },
-];
+import { useQueryReservas } from "../Hooks/useColeccion";
+import { useUser } from "./UserContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -69,6 +29,23 @@ function Calend() {
   let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
   let firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+  const [meeting, setMeeting] = useState();
+
+  const { usuarioLoged } = useUser();
+  // console.log(usuarioLoged.email);
+  const aux = useQueryReservas("usuarios", usuarioLoged.email)[0];
+  // const meetings = [
+  //   {
+  //     id: 1,
+  //     name: "Desayuno",
+  //     Description: "Pan con un poco de ajo",
+  //     fecha: "2022-10-18T14:00:00.558Z",
+  //     endDatetime: "2022-10-16T14:30",
+  //   },
+  // ];
+
+  const meetings = aux;
+  console.log(aux);
 
   let days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -86,7 +63,7 @@ function Calend() {
   }
 
   let selectedDayMeetings = meetings.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+    isSameDay(parseISO(meeting.fecha.toDate().toISOString()), selectedDay)
   );
 
   return (
@@ -179,7 +156,10 @@ function Calend() {
                   {/* Puntos debajo de cada fecha */}
                   <div className="w-1 h-1 mx-auto mt-1">
                     {meetings.some((meeting) =>
-                      isSameDay(parseISO(meeting.startDatetime), day)
+                      isSameDay(
+                        parseISO(meeting.fecha.toDate().toISOString()),
+                        day
+                      )
                     ) && (
                       <div className="w-1 h-1 rounded-full bg-naranja"></div>
                     )}
@@ -198,7 +178,7 @@ function Calend() {
             <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
               {selectedDayMeetings.length > 0 ? (
                 selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} />
+                  <Meeting meeting={meeting} key={meeting.id.id} />
                 ))
               ) : (
                 <p className="text-blanco font-medium font-poppins text-center">
@@ -223,61 +203,9 @@ function Meeting({ meeting }) {
         </p>
         {/* Lo que va a comer*/}
         <p className="text-blanco font-medium font-poppins text-left">
-          *{meeting.Description}
+          *{meeting.rutina}
         </p>
       </div>
-      <Menu
-        as="div"
-        className="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100"
-      >
-        <div>
-          <Menu.Button className="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600">
-            <span className="sr-only">Open options</span>
-            <DotsVerticalIcon className="w-6 h-6" aria-hidden="true" />
-          </Menu.Button>
-        </div>
-
-        <Transition
-          as={Fragment}
-          enter="transition ease-out duration-100"
-          enterFrom="transform opacity-0 scale-95"
-          enterTo="transform opacity-100 scale-100"
-          leave="transition ease-in duration-75"
-          leaveFrom="transform opacity-100 scale-100"
-          leaveTo="transform opacity-0 scale-95"
-        >
-          <Menu.Items className="absolute right-0 z-10 mt-2 origin-top-right bg-white rounded-md shadow-lg w-36 ring-1 ring-black ring-opacity-5 focus:outline-none">
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Edit
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? "bg-naranja text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Cancel
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-          </Menu.Items>
-        </Transition>
-      </Menu>
     </li>
   );
 }

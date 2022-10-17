@@ -49,7 +49,6 @@ export function AuthProvider({ children }) {
 
   const logOut = () => {
     signOut(auth);
-    window.location.reload(true);
   };
 
   useEffect(() => {
