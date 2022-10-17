@@ -1,11 +1,11 @@
 import "../App.css";
-import CalendarioBody from "../components/CalendarioBody";
 import Footer from "../components/Footer";
+import Calend from '../components/CalendarioS';
 
 function Calendario() {
   return (
-    <div className="App">
-      <CalendarioBody />
+    <div className="AppCalen">
+      <Calend />
       <Footer />
     </div>
   );

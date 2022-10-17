@@ -109,6 +109,25 @@ function PerfilBody() {
               <span>Nombre:</span>
             </div>
           </div>
+
+          {/* input apellido */}
+          <div id="Grupo_870">
+            <div id="Apellido_hn">
+              <span>Apellido:</span>
+            </div>
+          </div>
+
+          <div id="Grupo_925">
+              <input
+                type="text"
+                className="Input_Apellido_Perf"
+                id="Input_Apellido_Perf"
+                value={user.Input_Apellido}
+                onChange={handleChange}
+                readOnly="readOnly"
+              />
+            </div>
+
           {/* input correo */}
           <div id="Grupo_852">
             <div id="Grupo_901">
@@ -128,7 +147,7 @@ function PerfilBody() {
 
           {/* input peso */}
           <div id="Peso">
-            <span>Altura:</span>
+            <span>Peso:</span>
           </div>
 
           <div id="Grupo_905">
@@ -144,7 +163,7 @@ function PerfilBody() {
           </div>
           {/* input altura */}
           <div id="Altura">
-            <span>Peso:</span>
+            <span>Altura:</span>
           </div>
           <div id="Grupo_906">
             <div id="Grupo_901_ia">
