@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  Timestamp,
+} from "firebase/firestore";
 import { db } from "../components/Firebase";
 
 export function useQuery(coleccion, campo, comparador, busqueda) {
   const [eventoDoc, setEventoDoc] = useState([]);
 
+  const date1 = Timestamp.fromDate(new Date("2022-10-18 07:00:00"));
+  const date2 = Timestamp.fromDate(new Date("2022-10-18 09:00:00"));
+  console.log(date1);
   const getEventos = async () => {
     const queryRef = collection(db, "clases");
     const q = query(
       queryRef,
-      where("participantes", "array-contains", "bryancito@hotmail.com")
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
     );
 
     const querySnapshot = await getDocs(q);
