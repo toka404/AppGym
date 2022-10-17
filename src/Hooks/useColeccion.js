@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../components/Firebase";
 
-export function useQueryReservas(coleccion, usuario) {
+export function QueryReservas(coleccion, usuario) {
   const [eventoDoc, setEventoDoc] = useState([]);
 
   const getEventos = async () => {

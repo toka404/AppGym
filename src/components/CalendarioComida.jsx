@@ -15,15 +15,20 @@ import {
 } from "date-fns";
 import { useState, useEffect } from "react";
 import BotonBack from "./BotonBack";
-import { QueryReservas } from "../Hooks/useColeccion";
 import { useUser } from "./UserContext";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../components/Firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  Timestamp,
+} from "firebase/firestore";
+import { db } from "./Firebase";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Calend() {
+function CalendCom() {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
@@ -32,17 +37,18 @@ function Calend() {
   const [loading, setLoading] = useState(true);
   const { usuarioLoged } = useUser();
 
+  //metodo para la consulta
   const getEventos = async () => {
     setLoading(true);
-    const queryRef = collection(db, "clases");
-
-    const q = query(queryRef, where("participantes", "!=", usuarioLoged.email));
-
+    const queryRef = collection(db, "comida");
+    const q = query(
+      queryRef,
+      where("fecha", ">", Timestamp.fromDate(new Date(today.toISOString())))
+    );
     const querySnapshot = await getDocs(q);
     const docs = [];
     setLoading(false);
     querySnapshot.forEach((doc) => {
-      // console.log(doc.data());
       docs.push({ ...doc.data(), id: doc });
     });
     setConsulta(docs);
@@ -76,8 +82,8 @@ function Calend() {
     <div className="pt-28 bg-pes ">
       <BotonBack />
 
-      <div className="lblCalendario_Class">
-        <span>Calendario</span>
+      <div className="lblCalendarioAl_Class">
+        <span>Plan Alimenticio</span>
       </div>
 
       <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 ">
@@ -208,7 +214,7 @@ function Meeting({ meeting }) {
         </p>
         {/* Lo que va a comer*/}
         <p className="text-blanco font-medium font-poppins text-left">
-          *{meeting.rutina}
+          *{meeting.descripcion}
         </p>
       </div>
     </li>
@@ -225,4 +231,4 @@ let colStartClasses = [
   "col-start-7",
 ];
 
-export default Calend;
+export default CalendCom;
