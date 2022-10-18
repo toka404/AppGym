@@ -36,7 +36,10 @@ function Calend() {
     setLoading(true);
     const queryRef = collection(db, "clases");
 
-    const q = query(queryRef, where("participantes", "!=", usuarioLoged.email));
+    const q = query(
+      queryRef,
+      where("participantes", "array-contains", usuarioLoged.email)
+    );
 
     const querySnapshot = await getDocs(q);
     const docs = [];

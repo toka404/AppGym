@@ -35,7 +35,6 @@ export function useQuery(coleccion) {
 
   const date1 = Timestamp.fromDate(new Date("2022-10-18 07:00:00"));
   const date2 = Timestamp.fromDate(new Date("2022-10-18 09:00:00"));
-  console.log(date1);
   const getEventos = async () => {
     const queryRef = collection(db, "clases");
     const q = query(

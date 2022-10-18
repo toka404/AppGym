@@ -1,24 +1,44 @@
 import React from "react";
 import BotonBack from "./BotonBack";
-import { useState } from "react";
-import { useQuery } from "../Hooks/useColeccion";
+import { useState, useEffect } from "react";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  Timestamp,
+} from "firebase/firestore";
+import { db } from "../components/Firebase";
 
+const today = new Date();
 const fechas = [
-  { value: "Dia1", label: "12/09/2022" },
-  { value: "Dia2", label: "13/09/2022" },
-  { value: "dia3", label: "14/09/2022" },
+  {
+    value:
+      today.getFullYear() +
+      "/" +
+      (today.getMonth() + 1) +
+      "/" +
+      today.getDate(),
+    label:
+      today.getDate() +
+      "/" +
+      (today.getMonth() + 1) +
+      "/" +
+      today.getFullYear(),
+  },
 ];
 
 const horas = [
-  { value: "7:00", label: "7:00" },
-  { value: "8:00", label: "8:00" },
-  { value: "9:00", label: "9:00" },
-  { value: "10:00", label: "10:00" },
-  { value: "16:00", label: "16:00" },
-  { value: "17:00", label: "17:00" },
-  { value: "18:00", label: "18:00" },
-  { value: "19:00", label: "19:00" },
-  { value: "20:00", label: "20:00" },
+  { value: "06:00:00", label: "6:00" },
+  { value: "07:00:00", label: "7:00" },
+  { value: "08:00:00", label: "8:00" },
+  { value: "09:00:00", label: "9:00" },
+  { value: "16:00:00", label: "16:00" },
+  { value: "17:00:00", label: "17:00" },
+  { value: "18:00:00", label: "18:00" },
+  { value: "19:00:00", label: "19:00" },
+  { value: "20:00:00", label: "20:00" },
+  { value: "21:00:00", label: "21:00" },
 ];
 
 const datosReserva = {
@@ -26,10 +46,11 @@ const datosReserva = {
   hora: horas[0].value,
 };
 
+// main function
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
-  const aux = useQuery("clases");
-  console.log(aux);
+  const [loading, setLoading] = useState(true);
+  const [consulta, setConsulta] = useState([]);
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -39,8 +60,41 @@ function ReservasBody() {
         [e.target.id]: e.target.value,
       };
     });
-    // useQuery("clases", "participantes", "==", "bryancito@hotmail.com");
   }
+
+  const getEventos = async () => {
+    setLoading(true);
+    const date = new Date(reserva.fecha + " " + reserva.hora);
+    const date1 = Timestamp.fromDate(date);
+
+    const date2 = Timestamp.fromDate(
+      new Date(date.setHours(date.getHours() + 1))
+    );
+
+    const queryRef = collection(db, "clases");
+
+    const q = query(
+      queryRef,
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
+
+    const querySnapshot = await getDocs(q);
+    const docs = [];
+    setLoading(false);
+
+    querySnapshot.forEach((doc) => {
+      docs.push({ ...doc.data(), id: doc });
+    });
+    setConsulta(docs[0]);
+  };
+
+  // console.log();
+  //consulta cuando cambie la fecha o la hora
+  useEffect(() => {
+    getEventos();
+    return () => {};
+  }, [reserva]);
 
   return (
     <div>
@@ -59,10 +113,8 @@ function ReservasBody() {
         <div className="lblReserva_Class">
           <span>Reserva</span>
         </div>
-
         {/* boton regreso */}
         <BotonBack />
-
         {/* rutinas */}
         <div className="formRutinas_Class">
           <svg className="Rectngulo_386">
@@ -82,13 +134,18 @@ function ReservasBody() {
             </div>
             {/* Informacion de las rutinas */}
             <div className="n_0_Abdominales_50_Sentadillas_Class">
-              <span>10 Abdominales</span>
-              <br />
-              <span>50 Sentadillas</span>
-              <br />
-              <span>5 Muscle up</span>
-              <br />
-              <span>8 Flexiones</span>
+              {consulta.rutina ? (
+                consulta.rutina.split(",").map((e) => {
+                  return (
+                    <>
+                      <span>{e}</span>
+                      <br />
+                    </>
+                  );
+                })
+              ) : (
+                <span>No se encontro rutinas</span>
+              )}
             </div>
           </div>
         </div>
@@ -141,8 +198,11 @@ function ReservasBody() {
             </div>
           </div>
         </button>
+
+        {/* participantes */}
+
         <div className="formParticipantes_Class">
-          <svg className="Trazado_39" viewBox="0 0 352 272.333">
+          <svg className="CuadroParticipantes" viewBox="0 0 352 272.333">
             <path
               className="Trazado_39_Class"
               d="M 32.74418640136719 0 L 319.2558288574219 0 C 337.3399353027344 0 352 17.81593322753906 352 39.79300308227539 L 352 232.5403594970703 C 352 254.5174255371094 337.3399353027344 272.3333740234375 319.2558288574219 272.3333740234375 L 32.74418640136719 272.3333740234375 C 14.66007041931152 272.3333740234375 0 254.5174255371094 0 232.5403594970703 L 0 39.79300308227539 C 0 17.81593322753906 14.66007041931152 0 32.74418640136719 0 Z"
@@ -152,15 +212,38 @@ function ReservasBody() {
         <div className="lblParticipantes_Class">
           <span>Participantes:</span>
         </div>
-        {/* participantes */}
-        <img
+        <div className="CajaContenidos">
+          {consulta.rutina ? (
+            consulta.rutina.split(",").map((e) => {
+              return (
+                <>
+                  <div className="participante">
+                    <img
+                      className="FotoPP"
+                      src="/images/Reservas/n_838764.png"
+                      alt="foto de perfil"
+                    />
+                    <div className="nomPart">
+                      <span>Emy</span>
+                    </div>
+                  </div>
+                  <br />
+                </>
+              );
+            })
+          ) : (
+            <span>No se encontro rutinas</span>
+          )}
+          {/* <img
           className="n_838764_Class"
           src="/images/Reservas/n_838764.png"
           alt="foto de perfil"
         />
         <div className="Emy_Class">
-          <span>Emy</span>
+          [ <span>Emy</span>]
+        </div> */}
         </div>
+
         {/* Boton eliminar */}
         <button
           onClick={() => {
@@ -179,8 +262,8 @@ function ReservasBody() {
             </div>
           </div>
         </button>
-        {/* Se debe agregar el resto de participantes */}
 
+        {/* Se debe agregar el resto de participantes */}
         {/* Seleccion hora */}
         <div className="formHora_Class">
           <div className="Grupo_819_bp_ClassReserva">

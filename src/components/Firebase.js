@@ -16,17 +16,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-// const provider = new GoogleAuthProvider();
-
-// referencia
-// export async function useConsulta() {
-//   const docRef = doc(db, "Eventos", "4GxmPNwKrNDBPiwzx9Xu");
-//   const docSnap = await getDoc(docRef);
-
-//   if (docSnap.exists()) {
-//     console.log("Document data:", docSnap.data());
-//   } else {
-//     // doc.data() will be undefined in this case
-//     console.log("No such document!");
-//   }
-// }

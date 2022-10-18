@@ -35,7 +35,7 @@ function PerfilBody() {
     e.preventDefault();
     try {
       console.log(user.input_Correo);
-      await crearDocumento("usuarios", "ericksito@hotmail.com", {
+      await crearDocumento("usuarios", user.input_Correo, {
         nombre: user.Input_Nombre,
         apellido: user.Input_Apellido,
         peso: user.input_peso,
@@ -118,15 +118,15 @@ function PerfilBody() {
           </div>
 
           <div id="Grupo_925">
-              <input
-                type="text"
-                className="Input_Apellido_Perf"
-                id="Input_Apellido_Perf"
-                value={user.Input_Apellido}
-                onChange={handleChange}
-                readOnly="readOnly"
-              />
-            </div>
+            <input
+              type="text"
+              className="Input_Apellido_Perf"
+              id="Input_Apellido_Perf"
+              value={user.Input_Apellido}
+              onChange={handleChange}
+              readOnly="readOnly"
+            />
+          </div>
 
           {/* input correo */}
           <div id="Grupo_852">
