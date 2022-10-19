@@ -58,7 +58,6 @@ function ReservasBody() {
   const [consulta, setConsulta] = useState([]);
   const [participantes, setParticipantes] = useState([]);
   const { usuarioLoged } = useUser();
-  const nombres = [];
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -88,20 +87,37 @@ function ReservasBody() {
 
     const querySnapshot = await getDocs(q);
     const docs = [];
+    const nombres = [];
 
     querySnapshot.forEach((docu) => {
+      docu.data().participantes.forEach(async (mail) => {
+        const docRef = doc(db, "usuarios", mail);
+        const querySnapshot = await getDoc(docRef);
+
+        if (querySnapshot.exists()) {
+          nombres.push({ ...querySnapshot.data(), id: mail });
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+
+        // console.log(nombres);
+      });
       docs.push({ ...docu.data(), id: docu.id });
     });
 
+    console.log(nombres.pop());
     setConsulta(docs[0]);
 
     setLoading(false);
   };
 
   const getUsuarios = async () => {
+    const nombres = [];
     if (!isEmpty(consulta)) {
-      consulta.participantes.map(async (mail) => {
+      consulta.participantes.forEach(async (mail) => {
         const docRef = doc(db, "usuarios", mail);
+
         const querySnapshot = await getDoc(docRef);
 
         // consulta
@@ -113,12 +129,11 @@ function ReservasBody() {
           console.log("No such document!");
         }
       });
-      // console.log(nombres);
     }
   };
 
   useEffect(() => {
-    getUsuarios();
+    // getUsuarios();
   }, [consulta]);
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
@@ -238,7 +253,9 @@ function ReservasBody() {
             </div>
           </button>
         ) : (
-          <></>
+          <div className="lblReserva">
+            <span>Ya se encuentra registrado</span>
+          </div>
         )}
         {/* participantes */}
 

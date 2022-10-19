@@ -2453,6 +2453,18 @@
   top: 249px;
   overflow: visible;
 }
+.lblReserva {
+  position: absolute;
+  width: 270px;
+  height: 50px;
+  left: 40px;
+  top: 270px;
+  overflow: visible;
+  font-size: 23px;
+  filter: drop-shadow(0px 5px 3px rgba(58, 0, 255, 0.678));
+   /* color: rgba(254, 63, 30, 1); */
+   color: white;
+}
 
 .Trazado_40_Class {
   fill: rgba(255, 255, 255, 1);
@@ -4787,6 +4799,7 @@
 
 .lblReserva_Class {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
+  color: rgba(254, 63, 30, 1);
   left: 131px;
   top: 54px;
   position: absolute;
@@ -4798,7 +4811,6 @@
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  color: rgba(254, 63, 30, 1);
 }
 
 .btnBack {
@@ -7656,7 +7668,7 @@ button.icon-button>span.chevron-arrow-right {
 .nomPart {
   position: relative;
   left: 105px;
-  top: 10px;
+  top: 8px;
   height: 35px;
   /* overflow: visible; */
   /* width: 46px; */
@@ -7665,7 +7677,7 @@ button.icon-button>span.chevron-arrow-right {
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 1);
 }
 
