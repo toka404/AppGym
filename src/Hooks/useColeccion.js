@@ -30,33 +30,6 @@ export function QueryReservas(coleccion, usuario) {
   return [eventoDoc];
 }
 
-export function useQuery(coleccion) {
-  const [eventoDoc, setEventoDoc] = useState([]);
-
-  const date1 = Timestamp.fromDate(new Date("2022-10-18 07:00:00"));
-  const date2 = Timestamp.fromDate(new Date("2022-10-18 09:00:00"));
-  const getEventos = async () => {
-    const queryRef = collection(db, "clases");
-    const q = query(
-      queryRef,
-      where("fecha", ">", date1),
-      where("fecha", "<", date2)
-    );
-
-    const querySnapshot = await getDocs(q);
-    const docs = [];
-    querySnapshot.forEach((doc) => {
-      // console.log(doc.data());
-      docs.push({ ...doc.data(), id: doc });
-    });
-    setEventoDoc(docs);
-  };
-  useEffect(() => {
-    getEventos();
-  }, [coleccion]);
-  return [eventoDoc];
-}
-
 function useConsulta(coleccion) {
   const [eventoDoc, setEventoDoc] = useState([]);
 

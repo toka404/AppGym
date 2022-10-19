@@ -4,11 +4,16 @@ import { useState, useEffect } from "react";
 import {
   collection,
   getDocs,
+  getDoc,
+  doc,
   query,
   where,
   Timestamp,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "../components/Firebase";
+import { useUser } from "./UserContext";
+import { isEmpty } from "lodash";
 
 const today = new Date();
 const fechas = [
@@ -51,6 +56,9 @@ function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
   const [loading, setLoading] = useState(true);
   const [consulta, setConsulta] = useState([]);
+  const [participantes, setParticipantes] = useState([]);
+  const { usuarioLoged } = useUser();
+  const nombres = [];
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -72,7 +80,6 @@ function ReservasBody() {
     );
 
     const queryRef = collection(db, "clases");
-
     const q = query(
       queryRef,
       where("fecha", ">", date1),
@@ -81,21 +88,43 @@ function ReservasBody() {
 
     const querySnapshot = await getDocs(q);
     const docs = [];
-    setLoading(false);
 
-    querySnapshot.forEach((doc) => {
-      docs.push({ ...doc.data(), id: doc });
+    querySnapshot.forEach((docu) => {
+      docs.push({ ...docu.data(), id: docu.id });
     });
+
     setConsulta(docs[0]);
+
+    setLoading(false);
   };
 
-  // console.log();
+  const getUsuarios = async () => {
+    if (!isEmpty(consulta)) {
+      consulta.participantes.map(async (mail) => {
+        const docRef = doc(db, "usuarios", mail);
+        const querySnapshot = await getDoc(docRef);
+
+        // consulta
+        if (querySnapshot.exists()) {
+          nombres.push({ ...querySnapshot.data(), id: mail });
+          setParticipantes(nombres);
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+      });
+      // console.log(nombres);
+    }
+  };
+
+  useEffect(() => {
+    getUsuarios();
+  }, [consulta]);
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
-    return () => {};
+    // return () => {};
   }, [reserva]);
-
   return (
     <div>
       <div id="Reserva" className="Reserva_Class">
@@ -181,24 +210,36 @@ function ReservasBody() {
           </div>
         </div>
         {/* boton reserva */}
-        <button
-          onClick={() => {
-            console.log("Reservado " + reserva.fecha + ";" + reserva.hora);
-          }}
-        >
-          <div className="btnReservar_ClassReserva btn">
-            <svg className="Trazado_40" viewBox="0 0 225 60">
-              <path
-                className="Trazado_40_Class"
-                d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
-              ></path>
-            </svg>
-            <div className="Reservar_ClassReserva">
-              <span>Reservar</span>
-            </div>
-          </div>
-        </button>
+        {consulta.participantes &&
+        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+          <button
+            onClick={async () => {
+              if (consulta.participantes.indexOf(usuarioLoged.email) === -1) {
+                const nuevoParticipantes = consulta.participantes;
+                nuevoParticipantes.push(usuarioLoged.email);
 
+                const claseRef = doc(db, "clases", consulta.id);
+                await updateDoc(claseRef, {
+                  participantes: nuevoParticipantes,
+                });
+              }
+            }}
+          >
+            <div className="btnReservar_ClassReserva btn">
+              <svg className="Trazado_40" viewBox="0 0 225 60">
+                <path
+                  className="Trazado_40_Class"
+                  d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                ></path>
+              </svg>
+              <div className="Reservar_ClassReserva">
+                <span>Reservar</span>
+              </div>
+            </div>
+          </button>
+        ) : (
+          <></>
+        )}
         {/* participantes */}
 
         <div className="formParticipantes_Class">
@@ -213,8 +254,8 @@ function ReservasBody() {
           <span>Participantes:</span>
         </div>
         <div className="CajaContenidos">
-          {consulta.rutina ? (
-            consulta.rutina.split(",").map((e) => {
+          {!isEmpty(participantes) ? (
+            participantes.map((e) => {
               return (
                 <>
                   <div className="participante">
@@ -224,44 +265,48 @@ function ReservasBody() {
                       alt="foto de perfil"
                     />
                     <div className="nomPart">
-                      <span>Emy</span>
+                      <span>{e.nombre + " " + e.apellido}</span>
                     </div>
+                    {e.id === usuarioLoged.email ? (
+                      // boton eliminar
+                      <button
+                        onClick={async () => {
+                          const nuevoParticipantes =
+                            consulta.participantes.filter(
+                              (item) => item !== usuarioLoged.email
+                            );
+                          const claseRef = doc(db, "clases", consulta.id);
+                          await updateDoc(claseRef, {
+                            participantes: nuevoParticipantes,
+                          });
+                        }}
+                      >
+                        <div className="btnEliminar_Class btn">
+                          <svg className="Trazado_50" viewBox="0 0 215 95 ">
+                            <path
+                              className="Trazado_50_Class"
+                              d="M 14.19047546386719 0 L 134.8095245361328 0 C 142.6467132568359 0 149 8.058874130249023 149 18 L 149 36 C 149 45.94112396240234 142.6467132568359 54 134.8095245361328 54 L 14.19047546386719 54 C 6.353291988372803 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 6.353291988372803 0 14.19047546386719 0 Z"
+                            ></path>
+                          </svg>
+                          <div className="Eliminar_Class">
+                            <span>Eliminar</span>
+                          </div>
+                        </div>
+                      </button>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                   <br />
                 </>
               );
             })
           ) : (
-            <span>No se encontro rutinas</span>
-          )}
-          {/* <img
-          className="n_838764_Class"
-          src="/images/Reservas/n_838764.png"
-          alt="foto de perfil"
-        />
-        <div className="Emy_Class">
-          [ <span>Emy</span>]
-        </div> */}
-        </div>
-
-        {/* Boton eliminar */}
-        <button
-          onClick={() => {
-            console.log("Se elimino el registro");
-          }}
-        >
-          <div className="btnEliminar_Class btn">
-            <svg className="Trazado_50" viewBox="0 0 170 75">
-              <path
-                className="Trazado_50_Class"
-                d="M 14.19047546386719 0 L 134.8095245361328 0 C 142.6467132568359 0 149 8.058874130249023 149 18 L 149 36 C 149 45.94112396240234 142.6467132568359 54 134.8095245361328 54 L 14.19047546386719 54 C 6.353291988372803 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 6.353291988372803 0 14.19047546386719 0 Z"
-              ></path>
-            </svg>
-            <div className="Eliminar_Class">
-              <span>Eliminar</span>
+            <div className="nomPart">
+              <span>No existen participantes</span>
             </div>
-          </div>
-        </button>
+          )}
+        </div>
 
         {/* Se debe agregar el resto de participantes */}
         {/* Seleccion hora */}

@@ -1,24 +1,20 @@
 import React from "react";
 import BotonBack from "./BotonBack";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { crearDocumento } from "../Hooks/useDoc";
 import { useUser } from "./UserContext";
-
-// const emptyUser = {
-//   Input_Nombre: "",
-//   input_Correo: "",
-//   input_peso: "",
-//   Input_altura: "",
-// };
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../components/Firebase";
 
 function PerfilBody() {
-  const { usuarioLoged, logOut, informacion } = useUser();
+  const { usuarioLoged, logOut } = useUser();
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({
-    Input_Nombre: informacion.nombre,
-    Input_Apellido: informacion.apellido,
-    input_Correo: usuarioLoged.email,
-    input_peso: informacion.peso,
-    Input_altura: informacion.altura,
+    Input_Nombre: "",
+    Input_Apellido: "",
+    input_Correo: "",
+    input_peso: "",
+    Input_altura: "",
   });
 
   function handleChange(e) {
@@ -34,18 +30,42 @@ function PerfilBody() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      console.log(user.input_Correo);
       await crearDocumento("usuarios", user.input_Correo, {
         nombre: user.Input_Nombre,
         apellido: user.Input_Apellido,
         peso: user.input_peso,
         altura: user.Input_altura,
       });
-      alert("done");
+      // alert("done");
     } catch (error) {
       console.log(error);
     }
   }
+
+  const getEventos = async () => {
+    setLoading(true);
+    const docRef = doc(db, "usuarios", usuarioLoged.email);
+    const querySnapshot = await getDoc(docRef);
+
+    if (querySnapshot.exists()) {
+      // console.log(querySnapshot.data());
+      setUser({
+        Input_Nombre: querySnapshot.data().nombre,
+        Input_Apellido: querySnapshot.data().apellido,
+        input_Correo: usuarioLoged.email,
+        input_peso: querySnapshot.data().peso,
+        Input_altura: querySnapshot.data().altura,
+      });
+      setLoading(false);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  };
+
+  useEffect(() => {
+    getEventos();
+  }, []);
 
   return (
     <div>
@@ -121,10 +141,9 @@ function PerfilBody() {
             <input
               type="text"
               className="Input_Apellido_Perf"
-              id="Input_Apellido_Perf"
+              id="Input_Apellido"
               value={user.Input_Apellido}
               onChange={handleChange}
-              readOnly="readOnly"
             />
           </div>
 
