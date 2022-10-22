@@ -10,6 +10,7 @@ import {
   isSameMonth,
   isToday,
   parse,
+  subDays,
   parseISO,
   startOfToday,
 } from "date-fns";
@@ -57,21 +58,12 @@ function CalendCom() {
   useEffect(() => {
     getEventos();
   }, []);
-
+  
+// Se cambia para los dias dias exclusivos de la semana
   let days = eachDayOfInterval({
-    start: firstDayCurrentMonth,
-    end: endOfMonth(firstDayCurrentMonth),
+    start: subDays(new Date(), 6),
+    end: new Date(),
   });
-
-  function previousMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
-    setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
-  }
-
-  function nextMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
-    setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
-  }
 
   let selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.fecha.toDate().toISOString()), selectedDay)
@@ -96,23 +88,6 @@ function CalendCom() {
                 {/* Flecha para mes previo*/}
                 {format(firstDayCurrentMonth, "MMMM yyyy")}
               </h2>
-              <button
-                type="button"
-                onClick={previousMonth}
-                className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-naranja hover:text-naranja"
-              >
-                <span className="sr-only">Previous month</span>
-                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-              </button>
-              {/* Flecha para mes siguiente*/}
-              <button
-                onClick={nextMonth}
-                type="button"
-                className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-naranja hover:text-gray-500"
-              >
-                <span className="sr-only">Next month</span>
-                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-              </button>
             </div>
             {/* Para los días de la semana */}
             <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-center text-blanco">
