@@ -53,7 +53,7 @@ function Body() {
         <form onSubmit={handleSubmit}>
           <div id="lbl_correo">
             <p>
-              <span>Correos/Email:</span>
+              <span>Correo:</span>
             </p>
           </div>
 
