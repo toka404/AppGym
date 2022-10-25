@@ -11,9 +11,10 @@ import {
   Timestamp,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "../components/Firebase";
+import { db } from "./Firebase";
 import { useUser } from "./UserContext";
 import { isEmpty } from "lodash";
+import { useLocation } from "react-router-dom";
 
 const today = new Date();
 const fechas = [
@@ -52,11 +53,16 @@ const datosReserva = {
 };
 
 // main function
-function ReservasBody() {
+function ReservasEventosBody({ algo }) {
   const [reserva, setReserva] = useState(datosReserva);
   const [loading, setLoading] = useState(true);
+
+  const [fechas2, setFechas2] = useState(null);
+  const [horas2, setHoras2] = useState(null);
+
   const [consulta, setConsulta] = useState([]);
   const [participantes, setParticipantes] = useState([]);
+  const location = useLocation();
   const { usuarioLoged } = useUser();
 
   function handleChange(e) {
@@ -71,70 +77,25 @@ function ReservasBody() {
 
   const getEventos = async () => {
     setLoading(true);
-    const date = new Date(reserva.fecha + " " + reserva.hora);
-    const date1 = Timestamp.fromDate(date);
+    const reservaRef = collection(db, "reserva");
+    const q = query(reservaRef, where("evento", "==", location.state.id));
 
-    const date2 = Timestamp.fromDate(
-      new Date(date.setHours(date.getHours() + 1))
-    );
-
-    const queryRef = collection(db, "clases");
-    const q = query(
-      queryRef,
-      where("fecha", ">", date1),
-      where("fecha", "<", date2)
-    );
+    const eventos = [];
+    const fechas = [];
 
     const querySnapshot = await getDocs(q);
-    const docs = [];
-    const nombres = [];
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
 
-    querySnapshot.forEach((docu) => {
-      docu.data().participantes.forEach(async (mail) => {
-        const docRef = doc(db, "usuarios", mail);
-        const querySnapshot = await getDoc(docRef);
-
-        if (querySnapshot.exists()) {
-          nombres.push({ ...querySnapshot.data(), id: mail });
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-
-        // console.log(nombres);
+      fechas.push({
+        ...doc.data().fecha,
+        id: doc.id,
       });
-      docs.push({ ...docu.data(), id: docu.id });
     });
-
-    console.log(nombres.pop());
-    setConsulta(docs[0]);
-
+    console.log(fechas);
     setLoading(false);
   };
 
-  const getUsuarios = async () => {
-    const nombres = [];
-    if (!isEmpty(consulta)) {
-      consulta.participantes.forEach(async (mail) => {
-        const docRef = doc(db, "usuarios", mail);
-
-        const querySnapshot = await getDoc(docRef);
-
-        // consulta
-        if (querySnapshot.exists()) {
-          nombres.push({ ...querySnapshot.data(), id: mail });
-          setParticipantes(nombres);
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      });
-    }
-  };
-
-  useEffect(() => {
-    // getUsuarios();
-  }, [consulta]);
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
@@ -362,4 +323,4 @@ function ReservasBody() {
   );
 }
 
-export default ReservasBody;
+export default ReservasEventosBody;
