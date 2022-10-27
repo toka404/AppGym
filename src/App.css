@@ -7932,9 +7932,36 @@ button.icon-button>span.chevron-arrow-right {
   /* pantalla de login */
   /* Responsive Iphone 12 Pro*/
 
+
+  #Usuario {
+    position: absolute;
+    width: 390px;
+    height: 844px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    --web-view-name: Usuario;
+    --web-view-id: Usuario;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  
+  }
+
+  body {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    position: absolute;
+    overflow: visible;
+    width: 396px !important;
+    height: 850px !important;
+  }
+
   #img_cuerda {
-    width: 60%;
-    height: 30%;
+    width: 65%;
+    height: 35%;
   }
 
   #lbl_broken_hand {
@@ -7971,11 +7998,13 @@ button.icon-button>span.chevron-arrow-right {
   #Grupo_903 {
     left: -15px;
     top: -60px;
+    width: 185px;
   }
 
   #Grupo_904 {
     left: -15px;
     top: -60px;
+    width: 185px;
   }
 
   #lbl_registrate {
@@ -7990,8 +8019,35 @@ button.icon-button>span.chevron-arrow-right {
   /* pantalla de login */
   /* Responsive Iphone XR*/
 
+
+  #Usuario {
+    position: absolute;
+    width: 414px;
+    height: 926px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    --web-view-name: Usuario;
+    --web-view-id: Usuario;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  
+  }
+
+  body {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    position: absolute;
+    overflow: visible;
+    width: 418px !important;
+    height: 900px !important;
+  }
+
   #img_cuerda {
-    width: 60%;
+    width: 63%;
     height: 30%;
   }
 
