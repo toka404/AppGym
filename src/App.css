@@ -56,6 +56,7 @@
   --web-view-id: Usuario;
   --web-scale-on-resize: true;
   --web-enable-deep-linking: true;
+
 }
 
 #img_fondo {
@@ -8046,8 +8047,34 @@ button.icon-button>span.chevron-arrow-right {
   /* pantalla de login */
   /* Responsive Sam Galaxy S8+ */
 
+  #Usuario {
+    position: absolute;
+    width: 360px;
+    height: 926px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    --web-view-name: Usuario;
+    --web-view-id: Usuario;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  
+  }
+
+  body {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    position: absolute;
+    overflow: visible;
+    width: 365px !important;
+    height: 745px !important;
+  }
+
   #img_cuerda {
-    width: 40%;
+    width: 50%;
     height: 25%;
     left: 90px;
   }
