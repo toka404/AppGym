@@ -8011,6 +8011,122 @@ button.icon-button>span.chevron-arrow-right {
     left: 10px;
     top: 810px;
   }
+
+/* Pantalla Home */
+
+#Home {
+  position: absolute;
+  width: 390px !important;
+  height: 844px !important;
+  overflow: hidden;
+  --web-view-name: Home;
+  --web-view-id: Home;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+
+.Rectngulo_103_ck {
+  position: absolute;
+  overflow: visible;
+  width: 390px !important;
+  height: 844px !important;
+}
+
+#Rectngulo_103_ck {
+  width: 390px !important;
+  height: 844px !important;
+}
+
+#Hola_Usuario {
+  left: 31px;
+  top: 48px;
+  width: 192px;
+  font-size: 40px;
+}
+
+#Grupo_866 {
+  width: 350px;
+  height: 190px;
+  left: 27px;
+  top: 116px;
+}
+
+#ambitious-creative-co-rick-bar {
+  width: 105%;
+  height: 90%;
+}
+
+#Grupo_de_desplazamiento_1 {
+  width: 305px;
+  height: 80px;
+  left: 40px;
+  top: 50px;
+}
+
+#Reservas {
+  left: -75px;
+  width: 390px;
+  font-size: 45px;
+  padding: .375rem .75rem !important;
+}
+
+#Grupo_867 {
+  width: 204px;
+  height: 450px;
+  left: 25px;
+  top: 300px;
+}
+
+#img_ejercicio {
+  width: 80%;
+  height: 100%;
+}
+
+#Eventos_cx {
+  left: 6px;
+  top: 0px;
+  width: 163px;
+  font-size: 38px;
+}
+
+#Grupo_868 {
+  width: 180px;
+  height: 450px;
+  left: 195px;
+  top: 300px;
+}
+
+#img_fruta {
+  width: 105%;
+  height: 100%;
+}
+
+#Grupo_de_desplazamiento_3 {
+  width: 170px;
+  height: 49px;
+  left: 10px;
+  top: 340px;
+}
+
+#Comidas {
+  width: 164px;
+  font-size: 35px;
+}
+
+#Grupo_865 {
+  width: 390px;
+  height: 50px;
+  left: 0px;
+  top: 785px;
+}
+
+.Trazado_52_cz {
+  width: 390px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+}
+
 }
 
 
@@ -8095,6 +8211,122 @@ button.icon-button>span.chevron-arrow-right {
   #lbl_registrate {
     left: 15px;
     top: 820px;
+  }
+
+  /* Pantalla Home */
+
+  #Home {
+    position: absolute;
+    width: 414px !important;
+    height: 896px !important;
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+
+  .Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 414px !important;
+    height: 896px !important;
+  }
+
+  #Rectngulo_103_ck {
+    width: 414px !important;
+    height: 896px !important;
+  }
+
+  #Hola_Usuario {
+    left: 31px;
+    top: 48px;
+    width: 192px;
+    font-size: 40px;
+  }
+
+  #Grupo_866 {
+    width: 370px;
+    height: 190px;
+    left: 27px;
+    top: 116px;
+  }
+
+  #ambitious-creative-co-rick-bar {
+    width: 105%;
+    height: 90%;
+  }
+
+  #Grupo_de_desplazamiento_1 {
+    width: 330px;
+    height: 80px;
+    left: 40px;
+    top: 50px;
+  }
+
+  #Reservas {
+    left: -55px;
+    width: 390px;
+    font-size: 50px;
+    padding: .375rem .75rem !important;
+  }
+
+  #Grupo_867 {
+    width: 224px;
+    height: 510px;
+    left: 25px;
+    top: 300px;
+  }
+
+  #img_ejercicio {
+    width: 80%;
+    height: 100%;
+  }
+
+  #Eventos_cx {
+    left: 6px;
+    top: 0px;
+    width: 163px;
+    font-size: 40px;
+  }
+
+  #Grupo_868 {
+    width: 180px;
+    height: 510px;
+    left: 215px;
+    top: 300px;
+  }
+
+  #img_fruta {
+    width: 105%;
+    height: 100%;
+  }
+
+  #Grupo_de_desplazamiento_3 {
+    width: 170px;
+    height: 49px;
+    left: 10px;
+    top: 380px;
+  }
+
+  #Comidas {
+    width: 164px;
+    font-size: 35px;
+  }
+
+  #Grupo_865 {
+    width: 360px;
+    height: 60px;
+    left: 0px;
+    top: 834px;
+  }
+
+  .Trazado_52_cz {
+    width: 414px;
+    height: 62px;
+    left: 0px;
+    top: 0px;
   }
 }
 
@@ -8302,9 +8534,9 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #Grupo_868 {
-    width: 154px;
+    width: 160px;
     height: 370px;
-    left: 195px;
+    left: 185px;
     top: 300px;
   }
 
