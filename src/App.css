@@ -7927,7 +7927,7 @@ button.icon-button>span.chevron-arrow-right {
   top: 0px
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 390px) and (max-height: 844px) {
 
   /* pantalla de login */
   /* Responsive Iphone 12 Pro*/
@@ -8012,125 +8012,124 @@ button.icon-button>span.chevron-arrow-right {
     top: 810px;
   }
 
-/* Pantalla Home */
+  /* Pantalla Home */
 
-#Home {
-  position: absolute;
-  width: 390px !important;
-  height: 844px !important;
-  overflow: hidden;
-  --web-view-name: Home;
-  --web-view-id: Home;
-  --web-scale-on-resize: true;
-  --web-enable-deep-linking: true;
+  #Home {
+    position: absolute;
+    width: 390px !important;
+    height: 844px !important;
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 390px !important;
+    height: 844px !important;
+  }
+
+  #Rectngulo_103_ck {
+    width: 390px !important;
+    height: 844px !important;
+  }
+
+  #Hola_Usuario {
+    left: 31px;
+    top: 48px;
+    width: 192px;
+    font-size: 40px;
+  }
+
+  #Grupo_866 {
+    width: 350px;
+    height: 190px;
+    left: 27px;
+    top: 116px;
+  }
+
+  #ambitious-creative-co-rick-bar {
+    width: 105%;
+    height: 90%;
+  }
+
+  #Grupo_de_desplazamiento_1 {
+    width: 305px;
+    height: 80px;
+    left: 60px;
+    top: 50px;
+  }
+
+  #Reservas {
+    left: -75px;
+    width: 350px;
+    font-size: 35px;
+  }
+
+  #Grupo_867 {
+    width: 204px;
+    height: 450px;
+    left: 25px;
+    top: 300px;
+  }
+
+  #img_ejercicio {
+    width: 80%;
+    height: 100%;
+  }
+
+  #Eventos_cx {
+    left: 6px;
+    top: 0px;
+    width: 163px;
+    font-size: 38px;
+  }
+
+  #Grupo_868 {
+    width: 180px;
+    height: 450px;
+    left: 195px;
+    top: 300px;
+  }
+
+  #img_fruta {
+    width: 105%;
+    height: 100%;
+  }
+
+  #Grupo_de_desplazamiento_3 {
+    width: 170px;
+    height: 49px;
+    left: 10px;
+    top: 340px;
+  }
+
+  #Comidas {
+    width: 164px;
+    font-size: 35px;
+  }
+
+  #Grupo_865 {
+    width: 390px;
+    height: 50px;
+    left: 0px;
+    top: 785px;
+  }
+
+  .Trazado_52_cz {
+    width: 390px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+  }
+
 }
 
-.Rectngulo_103_ck {
-  position: absolute;
-  overflow: visible;
-  width: 390px !important;
-  height: 844px !important;
-}
 
-#Rectngulo_103_ck {
-  width: 390px !important;
-  height: 844px !important;
-}
-
-#Hola_Usuario {
-  left: 31px;
-  top: 48px;
-  width: 192px;
-  font-size: 40px;
-}
-
-#Grupo_866 {
-  width: 350px;
-  height: 190px;
-  left: 27px;
-  top: 116px;
-}
-
-#ambitious-creative-co-rick-bar {
-  width: 105%;
-  height: 90%;
-}
-
-#Grupo_de_desplazamiento_1 {
-  width: 305px;
-  height: 80px;
-  left: 40px;
-  top: 50px;
-}
-
-#Reservas {
-  left: -75px;
-  width: 390px;
-  font-size: 45px;
-  padding: .375rem .75rem !important;
-}
-
-#Grupo_867 {
-  width: 204px;
-  height: 450px;
-  left: 25px;
-  top: 300px;
-}
-
-#img_ejercicio {
-  width: 80%;
-  height: 100%;
-}
-
-#Eventos_cx {
-  left: 6px;
-  top: 0px;
-  width: 163px;
-  font-size: 38px;
-}
-
-#Grupo_868 {
-  width: 180px;
-  height: 450px;
-  left: 195px;
-  top: 300px;
-}
-
-#img_fruta {
-  width: 105%;
-  height: 100%;
-}
-
-#Grupo_de_desplazamiento_3 {
-  width: 170px;
-  height: 49px;
-  left: 10px;
-  top: 340px;
-}
-
-#Comidas {
-  width: 164px;
-  font-size: 35px;
-}
-
-#Grupo_865 {
-  width: 390px;
-  height: 50px;
-  left: 0px;
-  top: 785px;
-}
-
-.Trazado_52_cz {
-  width: 390px;
-  height: 60px;
-  left: 0px;
-  top: 0px;
-}
-
-}
-
-
-@media only screen and (min-width: 393px) and (max-width: 414px) {
+@media only screen and (min-width: 393px) and (max-width: 414px) and (max-height: 896px) {
 
   /* pantalla de login */
   /* Responsive Iphone XR*/
@@ -8261,14 +8260,14 @@ button.icon-button>span.chevron-arrow-right {
   #Grupo_de_desplazamiento_1 {
     width: 330px;
     height: 80px;
-    left: 40px;
+    left: 30px;
     top: 50px;
   }
 
   #Reservas {
     left: -55px;
     width: 390px;
-    font-size: 50px;
+    font-size: 45px;
     padding: .375rem .75rem !important;
   }
 
@@ -8304,15 +8303,15 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #Grupo_de_desplazamiento_3 {
-    width: 170px;
+    width: 190px;
     height: 49px;
-    left: 10px;
+    left: -5px;
     top: 380px;
   }
 
   #Comidas {
     width: 164px;
-    font-size: 35px;
+    font-size: 40px;
   }
 
   #Grupo_865 {
@@ -8330,7 +8329,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 360px) and (max-height: 740px) {
 
   /* pantalla de login */
   /* Responsive Sam Galaxy S8+ */
@@ -8504,9 +8503,16 @@ button.icon-button>span.chevron-arrow-right {
     height: 90%;
   }
 
+  #Grupo_de_desplazamiento_1 {
+    width: 270px !important;
+    height: 80px;
+    left: 60px;
+    top: 50px;
+  }
+
   #Reservas {
-    left: -55px;
-    width: 390px;
+    left: -40px;
+    width: 300px;
     font-size: 40px;
     padding: .375rem .75rem !important;
   }
@@ -8560,14 +8566,14 @@ button.icon-button>span.chevron-arrow-right {
   #Grupo_865 {
     width: 360px;
     height: 60px;
-    left: -10px;
+    left: -25px;
     top: 684px;
   }
 
   .Trazado_52_cz {
     overflow: visible;
     position: absolute;
-    width: 370px;
+    width: 383px;
     height: 62px;
     left: 0px;
     top: 0px;
