@@ -550,7 +550,7 @@
 #Grupo_de_desplazamiento_1 {
   mix-blend-mode: normal;
   position: absolute;
-  width: 400px;
+  width: 300px;
   height: 80px;
   left: -6px;
   top: 50px;
@@ -7943,7 +7943,7 @@ button.icon-button>span.chevron-arrow-right {
     --web-view-id: Usuario;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
-  
+
   }
 
   body {
@@ -8030,7 +8030,7 @@ button.icon-button>span.chevron-arrow-right {
     --web-view-id: Usuario;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
-  
+
   }
 
   body {
@@ -8113,7 +8113,7 @@ button.icon-button>span.chevron-arrow-right {
     --web-view-id: Usuario;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
-  
+
   }
 
   body {
@@ -8224,5 +8224,121 @@ button.icon-button>span.chevron-arrow-right {
   #lbl_registrate {
     left: 5px;
     top: 705px;
+  }
+
+
+  /* Pantalla Home */
+
+  #Home {
+    position: absolute;
+    width: 360px !important;
+    height: 740px !important;
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+
+  .Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 360px !important;
+    height: 926px !important;
+  }
+
+  #Rectngulo_103_ck {
+    width: 360px !important;
+    height: 740px !important;
+  }
+
+  #Hola_Usuario {
+    left: 31px;
+    top: 48px;
+    width: 192px;
+    font-size: 25px;
+  }
+
+  #Grupo_866 {
+    width: 320px;
+    height: 190px;
+    left: 27px;
+    top: 116px;
+  }
+
+  #ambitious-creative-co-rick-bar {
+    width: 105%;
+    height: 90%;
+  }
+
+  #Reservas {
+    left: -55px;
+    width: 390px;
+    font-size: 40px;
+    padding: .375rem .75rem !important;
+  }
+
+
+  #Grupo_867 {
+    position: absolute;
+    width: 184px;
+    height: 370px;
+    left: 25px;
+    top: 300px;
+    overflow: visible;
+  }
+
+  #img_ejercicio {
+    width: 80%;
+    height: 100%;
+  }
+
+  #Eventos_cx {
+    left: 3px;
+    top: 0px;
+    width: 163px;
+    font-size: 35px;
+  }
+
+  #Grupo_868 {
+    width: 154px;
+    height: 370px;
+    left: 195px;
+    top: 300px;
+  }
+
+  #img_fruta {
+    width: 105%;
+    height: 100%;
+  }
+
+  #Grupo_de_desplazamiento_3 {
+    width: 150px;
+    height: 49px;
+    left: 10px;
+    top: 270px;
+  }
+
+  #Comidas {
+    width: 164px;
+    font-size: 30px;
+  }
+
+  #Grupo_865 {
+    width: 360px;
+    height: 60px;
+    left: -10px;
+    top: 684px;
+  }
+
+  .Trazado_52_cz {
+    overflow: visible;
+    position: absolute;
+    width: 370px;
+    height: 62px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
   }
 }
