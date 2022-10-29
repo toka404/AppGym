@@ -37,14 +37,16 @@ function Body() {
 
   return (
     <div>
+      <meta charSet="utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin="anonymous" />
+
       <div id="Usuario">
         <svg className="img_fondo">
           <rect
             id="img_fondo"
-            rx="0"
-            ry="0"
-            x="0"
-            y="0"
             width="431"
             height="926"
           ></rect>
@@ -88,6 +90,24 @@ function Body() {
               Ingresar
             </button>
           </div>
+
+          <div id="btn_google">
+            <div id="Grupo_903">
+              <button id="Btn_google" className="Btn_google">
+                Ingresar
+              </button>
+              <img id="google_1" src="images/google_1.png" alt="boton google" />
+            </div>
+          </div>
+
+          <div id="btn_facebook">
+            <div id="Grupo_904">
+              <button id="BtnFacebook" className="BtnFacebook">
+                Ingresar
+              </button>
+              <img id="facebook" src="images/facebook.png" alt="boton facebook" />
+            </div>
+          </div>
         </form>
 
         <div id="lbl_registrate">
@@ -130,23 +150,7 @@ function Body() {
           alt="cuerdas de gimnacio"
         />
 
-        <div id="btn_google">
-          <div id="Grupo_903">
-            <button id="Btn_google" className="Btn_google">
-              Ingresar
-            </button>
-            <img id="google_1" src="images/google_1.png" alt="boton google" />
-          </div>
-        </div>
 
-        <div id="btn_facebook">
-          <div id="Grupo_904">
-            <button id="BtnFacebook" className="BtnFacebook">
-              Ingresar
-            </button>
-            <img id="facebook" src="images/facebook.png" alt="boton facebook" />
-          </div>
-        </div>
       </div>
     </div>
   );

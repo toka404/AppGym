@@ -142,8 +142,8 @@
   position: absolute;
   width: 370px;
   height: 62px;
-  left: 29px;
-  top: 718px;
+  left: 18px !important;
+  top: 670px !important;
   overflow: visible;
 }
 
@@ -170,7 +170,7 @@
   width: 370px;
   height: 62px;
   left: 0px;
-  top: -50px;
+  top: 0px;
 }
 
 #Btn_google {
@@ -192,20 +192,21 @@
 }
 
 .Btn_google {
-  position: absolute;
+  position: unset;
   overflow: visible;
   width: 182px;
   height: 62px;
   left: 0px;
-  top: 0px;
+  top: 0px !important;
+
 }
 
 #btn_google {
   position: absolute;
   width: 182px;
   height: 62px;
-  left: 29px;
-  top: 803px;
+  left: 15px !important;
+  top: 740px !important;
   overflow: visible;
 }
 
@@ -350,8 +351,8 @@
   position: absolute;
   width: 182px;
   height: 62px;
-  left: 0px;
-  top: 0px;
+  left: 0px !important;
+  top: 0px !important;
   overflow: visible;
 }
 
@@ -370,8 +371,8 @@
   overflow: visible;
   width: 182px;
   height: 62px;
-  left: 0px;
-  top: 0px;
+  left: 0px !important;
+  top: 0px !important;
 }
 
 #Ingresar_dn {
@@ -402,8 +403,8 @@
   position: absolute;
   width: 182px;
   height: 62px;
-  left: 214px;
-  top: 803px;
+  left: 203px !important;
+  top: 740px !important;
   overflow: visible;
 }
 
@@ -5734,15 +5735,6 @@
   color: rgba(255, 255, 255, 1);
 }
 
-#btn_ingresar {
-  position: absolute;
-  width: 370px;
-  height: 62px;
-  left: 29px;
-  top: 780px;
-  overflow: visible;
-}
-
 #Rectngulo_98_db {
   fill: rgba(255, 255, 255, 1);
   stroke: rgba(112, 112, 112, 1);
@@ -7927,79 +7919,72 @@ button.icon-button>span.chevron-arrow-right {
   top: 0px
 }
 
-
-@media (min-width: 393px) and (max-width: 414px) and (max-height: 925px) {
+@media screen and (min-width: 393px) and (max-width: 414px) and (max-height: 925px) {
 
   /* pantalla de login */
   /* Responsive Iphone XR*/
-  #Usuario {
+
+  #Usuario { 
     position: absolute;
-    width: 100VW;
-    height: 250VW;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    --web-view-name: Usuario;
-    --web-view-id: Usuario;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
   }
 
   body {
-    margin: 0 !important;
     height: 50vw !important;
     overflow: hidden !important;
   }
 
   #img_fondo {
-    position: absolute;
-    overflow: visible;
-    width: 418vw !important;
-    height: 900vw !important;
+    width: 100% !important; 
+    height: 100% !important;
   }
 
   #img_cuerda {
-    width: 63vw;
-    height: 70vw;
+    width: 63%;
+    height: 33%;
+    left: 15%;
   }
 
   #lbl_broken_hand {
-    font-size: 8vw;
-    left: 18vw;
-    top: 80vw;
+    font-size: 200%;
+    left: 18%;
+    top: 37%;
   }
 
   #lbl_correo {
-    left: 10VW;
-    top: 98VW;
+    left: 10%;
+    top: 46%;
   }
 
   #input_correo {
-    left: 8vw;
-    top: 110vw;
+    left: 8%;
+    top: 50%;
   }
 
   #lbl_contrasenaLogin {
-    left: 10vw;
-    top: 130vw;
+    left: 10%;
+    top: 61%;
   }
 
   #img_contrasea {
-    left: 8vw;
-    top: 140VW;
+    left: 8%;
+    top: 65%;
   }
 
   #btn_ingresar {
-    left: 3vw;
-    top: 175vw;
+    left: 3%;
+    top: 80%;
   }
 
   #Grupo_903 {
-    left: -4vw;
-    top: -14vw;
+    left: -10%;
+    top: -170%;
   }
 
   #Grupo_904 {
-    left: -4vw;
-    top: -14vw;
+    position: unset;
   }
 
   #lbl_registrate {
@@ -8163,10 +8148,10 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #Grupo_816_ha {
-    width: 180px;
-    height: 43px;
-    left: 173px;
-    top: 236px;
+    width: 180vw;
+    height: 43vw;
+    left: 43vw;
+    top: 57vw;
   }
 
   #Grupo_815_hb {

@@ -11,7 +11,6 @@ import Eventos from "./Pages/Eventos";
 import Registro from "./Pages/Registro";
 import { AuthProvider } from "./components/UserContext";
 import ReservaEvento from "./Pages/ReservaEvento";
-
 function App() {
   return (
     <div className="App">
@@ -26,7 +25,7 @@ function App() {
             <Route path="/perfil" element={<Perfil />} />
           </Route>
           <Route path="/reservae" element={<ReservaEvento />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={ <Login />} />
           <Route path="/registrarse" element={<Registro />} />
         </Routes>
       </AuthProvider>
