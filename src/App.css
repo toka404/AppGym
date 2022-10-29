@@ -48,8 +48,8 @@
 
 #Usuario {
   position: absolute;
-  width: 428px;
-  height: 926px;
+  width: 100vw;
+  height: 250vw;
   background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
   --web-view-name: Usuario;
@@ -62,7 +62,7 @@
 #img_fondo {
   fill: rgba(22, 21, 21, 0.929);
   stroke: rgba(112, 112, 112, 1);
-  stroke-width: 1px;
+  stroke-width: 1vw;
   stroke-linejoin: miter;
   stroke-linecap: butt;
   stroke-miterlimit: 4;
@@ -408,7 +408,7 @@
 }
 
 #Grupo_904 {
-  position: absolute;
+  position: auto;
   width: 182px;
   height: 62px;
   left: 0px;
@@ -7927,7 +7927,372 @@ button.icon-button>span.chevron-arrow-right {
   top: 0px
 }
 
-@media only screen and (max-width: 390px) and (max-height: 844px) {
+
+@media (min-width: 393px) and (max-width: 414px) and (max-height: 925px) {
+
+  /* pantalla de login */
+  /* Responsive Iphone XR*/
+  #Usuario {
+    position: absolute;
+    width: 100VW;
+    height: 250VW;
+    overflow: hidden;
+    --web-view-name: Usuario;
+    --web-view-id: Usuario;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  body {
+    margin: 0 !important;
+    height: 50vw !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    position: absolute;
+    overflow: visible;
+    width: 418vw !important;
+    height: 900vw !important;
+  }
+
+  #img_cuerda {
+    width: 63vw;
+    height: 70vw;
+  }
+
+  #lbl_broken_hand {
+    font-size: 8vw;
+    left: 18vw;
+    top: 80vw;
+  }
+
+  #lbl_correo {
+    left: 10VW;
+    top: 98VW;
+  }
+
+  #input_correo {
+    left: 8vw;
+    top: 110vw;
+  }
+
+  #lbl_contrasenaLogin {
+    left: 10vw;
+    top: 130vw;
+  }
+
+  #img_contrasea {
+    left: 8vw;
+    top: 140VW;
+  }
+
+  #btn_ingresar {
+    left: 3vw;
+    top: 175vw;
+  }
+
+  #Grupo_903 {
+    left: -4vw;
+    top: -14vw;
+  }
+
+  #Grupo_904 {
+    left: -4vw;
+    top: -14vw;
+  }
+
+  #lbl_registrate {
+    left: 5vw;
+    top: 200vw;
+  }
+
+  /* Pantalla Home */
+
+  #Home {
+    position: absolute;
+    width: 100vw !important;
+    height: 250vw !important;
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 100vw !important;
+    height: 250vw !important;
+  }
+
+  #Rectngulo_103_ck {
+    width: 100vw !important;
+    height: 250vw !important;
+  }
+
+  #Hola_Usuario {
+    left: 6vw;
+    top: 3rem;
+    width: 20rem;
+    font-size: 10vw;
+  }
+
+  #Grupo_866 {
+    width: 90vw;
+    height: 45vw;
+    left: 5vw;
+    top: 30vw;
+  }
+
+  #ambitious-creative-co-rick-bar {
+    width: 90vw;
+    height: 40vw;
+  }
+
+  #Grupo_de_desplazamiento_1 {
+    width: 80vw;
+    height: 20vw;
+    left: 8vw;
+    top: 10vw;
+  }
+
+  #Reservas {
+    left: -13vw;
+    width: 95vw;
+    font-size: 12vw;
+    padding: .375rem .75rem !important;
+  }
+
+  #Grupo_867 {
+    width: 53vw;
+    height: 123vw;
+    left: 5vw;
+    top: 73vw;
+  }
+
+  #img_ejercicio {
+    width: 43vw;
+    height: 123vw;
+  }
+
+  #Eventos_cx {
+    left: 3vw;
+    top: 0vw;
+    width: 163vw;
+    font-size: 9vw;
+  }
+
+  #Grupo_868 {
+    width: 43vw;
+    height: 123vw;
+    left: 52vw;
+    top: 73vw;
+  }
+
+  #img_fruta {
+    width: 115vw;
+    height: 123vw;
+  }
+
+  #Grupo_de_desplazamiento_3 {
+    width: 45vw;
+    height: 20vw;
+    left: 0vw;
+    top: 90vw;
+  }
+
+  #Comidas {
+    width: 80vw;
+    font-size: 9vw;
+  }
+
+  #Grupo_865 {
+    width: 100vw;
+    height: 60vw;
+    left: 0vw;
+    top: 200vw;
+  }
+
+  .Trazado_52_cz {
+    width: 100vw;
+    height: 16vw;
+  }
+
+  /* Pantalla perfil  */
+
+  #Perfil {
+    width: 100vw;
+    height: 250vw;
+    overflow: hidden;
+    --web-view-name: Perfil;
+    --web-view-id: Perfil;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Trazado_48 {
+    left: -3vw;
+    width: 143vw;
+    height: 300vw;
+  }
+
+  .fondoBtnLogOut {
+    width: 50vw;
+    height: 40vw;
+    left: 50vw;
+    top: -10vw;
+  }
+
+  #Perfil_ht {
+    left: -5vw;
+    top: 15vw;
+    width: 106vw;
+    font-size: 10vw;
+  }
+
+  #n_838764_g {
+    position: absolute;
+    width: 25vw;
+    height: 20vw;
+    left: 35vw;
+    top: 35vw;
+    overflow: visible;
+
+  }
+
+  #Grupo_816_ha {
+    width: 180px;
+    height: 43px;
+    left: 173px;
+    top: 236px;
+  }
+
+  #Grupo_815_hb {
+    width: 235px;
+    height: 40px;
+    left: -30px;
+    top: 0px;
+  }
+
+  #Grupo_850 {
+    width: 180px;
+    height: 40px;
+  }
+
+  .Input_Nombre {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Nombre_hn {
+    font-size: 24px;
+  }
+
+  #Grupo_853 {
+    width: 125px;
+    height: 39px;
+    left: 24px;
+    top: 250px;
+  }
+
+  #Grupo_870 {
+    width: 125px;
+    height: 39px;
+    left: 24px;
+    top: 320px;
+  }
+
+  #Grupo_925 {
+    width: 235px;
+    left: 143px;
+    top: 320px;
+  }
+
+  #Apellido_hn {
+    left: 0px;
+    top: 0px;
+    width: 126px;
+    font-size: 24px;
+  }
+
+  .Input_Apellido_Perf {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Grupo_852 {
+    width: 235px;
+    height: 43px;
+    left: 143px;
+    top: 390px;
+  }
+
+  .input_Correo {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Correo {
+    left: 24px;
+    top: 390px;
+    width: 111px;
+    font-size: 24px;
+  }
+
+  #Altura {
+    left: 24px;
+    top: 460px;
+    width: 80px;
+    font-size: 24px;
+  }
+
+  #Grupo_906 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 460px;
+  }
+
+  .Input_altura {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Peso {
+    left: 24px;
+    top: 530px;
+    width: 103px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  #Grupo_905 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 530px;
+  }
+
+  .input_peso {
+    width: 200px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+  }
+
+  .BtnActualizar {
+    width: 189px;
+    height: 54px;
+    left: 100px;
+    top: 600px;
+  }
+
+}
+
+
+@media (width: 390px) and (height: 844px) {
 
   /* pantalla de login */
   /* Responsive Iphone 12 Pro*/
@@ -8129,207 +8494,11 @@ button.icon-button>span.chevron-arrow-right {
 }
 
 
-@media only screen and (min-width: 393px) and (max-width: 414px) and (max-height: 896px) {
-
-  /* pantalla de login */
-  /* Responsive Iphone XR*/
 
 
-  #Usuario {
-    position: absolute;
-    width: 414px;
-    height: 926px;
-    background-color: rgba(255, 255, 255, 1);
-    overflow: hidden;
-    --web-view-name: Usuario;
-    --web-view-id: Usuario;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-
-  }
-
-  body {
-    margin: 0 !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-
-  #img_fondo {
-    position: absolute;
-    overflow: visible;
-    width: 418px !important;
-    height: 900px !important;
-  }
-
-  #img_cuerda {
-    width: 63%;
-    height: 30%;
-  }
-
-  #lbl_broken_hand {
-    font-size: 35px;
-    left: 70px;
-    top: 320px;
-  }
-
-  #lbl_correo {
-    left: 40px;
-    top: 400px;
-  }
-
-  #input_correo {
-    left: 30px;
-    top: 450px;
-  }
-
-  #lbl_contrasenaLogin {
-    left: 40px;
-    top: 530px;
-  }
-
-  #img_contrasea {
-    left: 30px;
-    top: 580px;
-  }
-
-  #btn_ingresar {
-    left: 15px;
-    top: 720px;
-  }
-
-  #Grupo_903 {
-    left: -15px;
-    top: -60px;
-  }
-
-  #Grupo_904 {
-    left: -15px;
-    top: -60px;
-  }
-
-  #lbl_registrate {
-    left: 15px;
-    top: 820px;
-  }
-
-  /* Pantalla Home */
-
-  #Home {
-    position: absolute;
-    width: 414px !important;
-    height: 896px !important;
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
 
 
-  .Rectngulo_103_ck {
-    position: absolute;
-    overflow: visible;
-    width: 414px !important;
-    height: 896px !important;
-  }
-
-  #Rectngulo_103_ck {
-    width: 414px !important;
-    height: 896px !important;
-  }
-
-  #Hola_Usuario {
-    left: 31px;
-    top: 48px;
-    width: 192px;
-    font-size: 40px;
-  }
-
-  #Grupo_866 {
-    width: 370px;
-    height: 190px;
-    left: 27px;
-    top: 116px;
-  }
-
-  #ambitious-creative-co-rick-bar {
-    width: 105%;
-    height: 90%;
-  }
-
-  #Grupo_de_desplazamiento_1 {
-    width: 330px;
-    height: 80px;
-    left: 30px;
-    top: 50px;
-  }
-
-  #Reservas {
-    left: -55px;
-    width: 390px;
-    font-size: 45px;
-    padding: .375rem .75rem !important;
-  }
-
-  #Grupo_867 {
-    width: 224px;
-    height: 510px;
-    left: 25px;
-    top: 300px;
-  }
-
-  #img_ejercicio {
-    width: 80%;
-    height: 100%;
-  }
-
-  #Eventos_cx {
-    left: 6px;
-    top: 0px;
-    width: 163px;
-    font-size: 40px;
-  }
-
-  #Grupo_868 {
-    width: 180px;
-    height: 510px;
-    left: 215px;
-    top: 300px;
-  }
-
-  #img_fruta {
-    width: 105%;
-    height: 100%;
-  }
-
-  #Grupo_de_desplazamiento_3 {
-    width: 190px;
-    height: 49px;
-    left: -5px;
-    top: 380px;
-  }
-
-  #Comidas {
-    width: 164px;
-    font-size: 40px;
-  }
-
-  #Grupo_865 {
-    width: 360px;
-    height: 60px;
-    left: 0px;
-    top: 834px;
-  }
-
-  .Trazado_52_cz {
-    width: 414px;
-    height: 62px;
-    left: 0px;
-    top: 0px;
-  }
-}
-
-@media only screen and (max-width: 360px) and (max-height: 740px) {
+@media (width: 360px) and (height: 740px) {
 
   /* pantalla de login */
   /* Responsive Sam Galaxy S8+ */
@@ -8578,5 +8747,181 @@ button.icon-button>span.chevron-arrow-right {
     left: 0px;
     top: 0px;
     transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  /* Pantalla perfil  */
+
+  #Perfil {
+    width: 360px;
+    height: 740px;
+    overflow: hidden;
+    --web-view-name: Perfil;
+    --web-view-id: Perfil;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Trazado_48 {
+    overflow: visible;
+    position: absolute;
+    width: 429px;
+    height: 926px;
+    left: -1px;
+    top: 0px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  .fondoBtnLogOut {
+    overflow: visible;
+    position: absolute;
+    width: 207px;
+    height: 72px;
+    left: 160px;
+    top: -45px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  #Perfil_ht {
+    left: 130px;
+    top: 80px;
+    width: 106px;
+    font-size: 30px;
+  }
+
+  #n_838764_g {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    left: 149px;
+    top: 140px;
+    overflow: visible;
+
+  }
+
+  #Grupo_816_ha {
+    width: 180px;
+    height: 43px;
+    left: 173px;
+    top: 236px;
+  }
+
+  #Grupo_815_hb {
+    width: 235px;
+    height: 40px;
+    left: -30px;
+    top: 0px;
+  }
+
+  #Grupo_850 {
+    width: 180px;
+    height: 40px;
+  }
+
+  .Input_Nombre {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Nombre_hn {
+    font-size: 24px;
+  }
+
+  #Grupo_853 {
+    width: 125px;
+    height: 39px;
+    left: 24px;
+    top: 250px;
+  }
+
+  #Grupo_870 {
+    width: 125px;
+    height: 39px;
+    left: 24px;
+    top: 320px;
+  }
+
+  #Grupo_925 {
+    width: 235px;
+    left: 143px;
+    top: 320px;
+  }
+
+  #Apellido_hn {
+    left: 0px;
+    top: 0px;
+    width: 126px;
+    font-size: 24px;
+  }
+
+  .Input_Apellido_Perf {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Grupo_852 {
+    width: 235px;
+    height: 43px;
+    left: 143px;
+    top: 390px;
+  }
+
+  .input_Correo {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Correo {
+    left: 24px;
+    top: 390px;
+    width: 111px;
+    font-size: 24px;
+  }
+
+  #Altura {
+    left: 24px;
+    top: 460px;
+    width: 80px;
+    font-size: 24px;
+  }
+
+  #Grupo_906 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 460px;
+  }
+
+  .Input_altura {
+    width: 200px;
+    height: 40px;
+  }
+
+  #Peso {
+    left: 24px;
+    top: 530px;
+    width: 103px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  #Grupo_905 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 530px;
+  }
+
+  .input_peso {
+    width: 200px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+  }
+
+  .BtnActualizar {
+    width: 189px;
+    height: 54px;
+    left: 100px;
+    top: 600px;
   }
 }
