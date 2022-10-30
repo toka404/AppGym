@@ -2334,7 +2334,6 @@
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
-
 }
 
 .Rectngulo_101_ {
@@ -2345,7 +2344,6 @@
   top: 0px;
   padding-bottom: 10px;
   border-radius: 18px;
-
 }
 
 /* .Rectngulo_101_ {
@@ -5179,8 +5177,8 @@
 
 .Trazado_39 {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
-  width: 250px ;
-  height: 100px ;
+  width: 250px;
+  height: 100px;
   left: 0px;
   top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -7743,9 +7741,11 @@ button.icon-button>span.chevron-arrow-right {
   height: 290.333px;
   left: 0px;
   top: 0px;
+  border-radius: 20px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 1);;
 }
 
 .FotoPP {
@@ -8300,11 +8300,13 @@ button.icon-button>span.chevron-arrow-right {
     top: 85vw;
   }
 
- .CuadroParticipantes {
+  .CuadroParticipantes {
+    width: 90vw;
+    height: 100vw;
     left: -3vw;
     top: 0vw;
-  } 
-  
+  }
+
   .lblParticipantes_Class {
     left: 60px;
     top: 90vw;
@@ -8314,7 +8316,7 @@ button.icon-button>span.chevron-arrow-right {
 
   .CajaContenidos {
     width: 85vw;
-    height: 50vw;
+    height: 80vw;
     top: 100vw;
     left: 10vw;
   }
