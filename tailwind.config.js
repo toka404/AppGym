@@ -4,17 +4,22 @@ module.exports = {
     "./src/**/*.{js,jsx}"
   ],
   theme: {
-    colors:{
+    colors: {
       'fondo': '#212529',
       'blanco': 'rgba(255, 255, 255, 1)',
-      'naranja':'rgba(255, 66, 36, 1)',
-      'purpura':'rgba(58, 0, 255, 0.678)',
-      'pes':'rgb(38 40 48)',
+      'naranja': 'rgba(255, 66, 36, 1)',
+      'purpura': 'rgba(58, 0, 255, 0.678)',
+      'pes': 'rgb(38 40 48)',
     },
 
-    fontFamily:{
+    fontFamily: {
       'poppins': ['Poppins'],
     },
+
+    screens: {
+      'sm':'414px',
+    },
+
     extend: {},
   },
   plugins: [],

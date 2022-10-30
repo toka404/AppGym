@@ -2506,15 +2506,6 @@
   color: rgba(254, 63, 30, 1);
 }
 
-.formParticipantes_Class {
-  position: absolute;
-  width: 352px;
-  height: 272.333px;
-  left: 41px;
-  top: 563px;
-  overflow: visible;
-}
-
 .Trazado_39_Class {
   fill: rgba(255, 255, 255, 1);
   stroke: rgba(112, 112, 112, 1);
@@ -5188,10 +5179,8 @@
 
 .Trazado_39 {
   filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
-  overflow: visible;
-  position: absolute;
-  width: 370px;
-  height: 290.333px;
+  width: 250px ;
+  height: 100px ;
   left: 0px;
   top: 0px;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -7923,8 +7912,7 @@ button.icon-button>span.chevron-arrow-right {
 
   /* pantalla de login */
   /* Responsive Iphone XR*/
-
-  #Usuario { 
+  #Usuario {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -7937,11 +7925,12 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #img_fondo {
-    width: 100% !important; 
+    width: 100% !important;
     height: 100% !important;
   }
 
   #img_cuerda {
+    display: flex;
     width: 63%;
     height: 33%;
     left: 15%;
@@ -8148,35 +8137,35 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #Grupo_816_ha {
-    width: 180vw;
-    height: 43vw;
-    left: 43vw;
+    width: 60vw;
+    height: 15vw;
+    left: 35vw;
     top: 57vw;
   }
 
   #Grupo_815_hb {
-    width: 235px;
-    height: 40px;
-    left: -30px;
+    width: 60vw;
+    height: 15vw;
+    left: 0px;
     top: 0px;
   }
 
   #Grupo_850 {
-    width: 180px;
-    height: 40px;
+    width: 80vw;
+    height: 12vw;
   }
 
   .Input_Nombre {
-    width: 200px;
-    height: 40px;
+    width: 60vw;
+    height: 10vw;
   }
 
   #Nombre_hn {
-    font-size: 24px;
+    font-size: 6vw;
   }
 
   #Grupo_853 {
-    width: 125px;
+    width: 30vw;
     height: 39px;
     left: 24px;
     top: 250px;
@@ -8203,7 +8192,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   .Input_Apellido_Perf {
-    width: 200px;
+    width: 60vw;
     height: 40px;
   }
 
@@ -8215,7 +8204,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   .input_Correo {
-    width: 200px;
+    width: 60vw;
     height: 40px;
   }
 
@@ -8241,7 +8230,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   .Input_altura {
-    width: 200px;
+    width: 60vw;
     height: 40px;
   }
 
@@ -8261,17 +8250,94 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   .input_peso {
-    width: 200px;
+    width: 60vw;
     height: 40px;
-    left: 0px;
-    top: 0px;
   }
 
   .BtnActualizar {
-    width: 189px;
-    height: 54px;
-    left: 100px;
-    top: 600px;
+    width: 50vw;
+    height: 15vw;
+    left: 26vw;
+    top: 155vw;
+  }
+
+  .fondoBtnActu {
+    width: 55vw;
+    height: 72px;
+    left: 0px;
+    top: 0px;
+    font-size: 5vw;
+  }
+
+  .ActualizarPerfilbtn {
+    left: 7vw !important;
+    font-size: 6vw;
+  }
+
+  /* Eventos */
+
+  .NameYoga__ClassEventos {
+    width: 76vw;
+    font-size: 6vw;
+  }
+
+  /*Reservas*/
+
+  .Reserva_Class {
+    position: absolute;
+    width: 414px;
+    height: 926px;
+    overflow: hidden;
+    --web-view-name: Reserva;
+    --web-view-id: Reserva;
+    --web-enable-deep-linking: true;
+  }
+
+  .formParticipantes_Class {
+    width: 88vw;
+    height: 100vw;
+    left: 10vw;
+    top: 85vw;
+  }
+
+ .CuadroParticipantes {
+    left: -3vw;
+    top: 0vw;
+  } 
+  
+  .lblParticipantes_Class {
+    left: 60px;
+    top: 90vw;
+    width: 146px;
+    font-size: 20px;
+  }
+
+  .CajaContenidos {
+    width: 85vw;
+    height: 50vw;
+    top: 100vw;
+    left: 10vw;
+  }
+
+  .nomPart {
+    left: 10vw;
+    top: 8px;
+    width: 70vw;
+    height: 35px;
+  }
+
+  /* Pantalla calendario */
+
+  .AppCalen {
+    width: 414px !important;
+    height: 896px !important;
+  }
+
+  #Grupo_865 {
+    width: 100vw;
+    height: 60vw;
+    left: 0vw;
+    top: 200vw;
   }
 
 }
@@ -8477,9 +8543,6 @@ button.icon-button>span.chevron-arrow-right {
   }
 
 }
-
-
-
 
 
 
@@ -8908,5 +8971,125 @@ button.icon-button>span.chevron-arrow-right {
     height: 54px;
     left: 100px;
     top: 600px;
+  }
+}
+
+
+
+@media screen and (max-width: 280px) and (max-height: 592px) {
+
+  /* pantalla de login */
+  /* Responsive Redmi Pro 20k*/
+  #Usuario {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    height: 50vw !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  #img_cuerda {
+    display: flex;
+    width: 55%;
+    height: 30%;
+    left: 20%;
+    top: 3%;
+  }
+
+  #lbl_broken_hand {
+    font-size: 125%;
+    left: 21%;
+    top: 35%;
+  }
+
+  #lbl_correo {
+    left: 10%;
+    top: 42%;
+    font-size: 100%;
+  }
+
+  #input_correo {
+    left: 8%;
+    top: 47%;
+    width: 85vw;
+    height: 15vw;
+  }
+
+  .Input_correo {
+    width: 85vw;
+    height: 15vw;
+  }
+
+  .Lnea_4Login {
+    width: 215px;
+    height: 5px;
+    left: 11px;
+    top: 33px !important;
+  }
+
+  #lbl_contrasenaLogin {
+    left: 10%;
+    top: 120vw;
+    font-size: 100%;
+  }
+
+  #img_contrasea {
+    left: 8%;
+    top: 130vw;
+    width: 85vw;
+    height: 25px;
+  }
+
+  .Input_Contra {
+    width: 85vw;
+    height: 42px;
+  }
+
+  #btn_ingresar {
+    left: 5% !important;
+    height: 15vw !important;
+    width: 90vw !important;
+    top: 155vw !important;
+  }
+
+  .BtnIngresoLogin {
+    width: 90vw;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    font-size: 8vw !important;
+  }
+
+  #Grupo_903 {
+    left: -5vw !important;
+    top: -93vw !important;
+  }
+
+  .Btn_google {
+    position: unset;
+    overflow: visible;
+    width: 180px;
+    height: 62px;
+    left: 0px !important;
+    top: 0px !important;
+
+  }
+
+  #Grupo_904 {
+    position: unset;
+  }
+
+  #lbl_registrate {
+    left: 5vw;
+    top: 200vw;
   }
 }

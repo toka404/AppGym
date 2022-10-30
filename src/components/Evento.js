@@ -60,14 +60,13 @@ function Evento(datos) {
         <div className="Contenido">
           <span>{informacion.descripcion}</span>
           <br />
-
+ 
           {/* informacion precio */}
-          <span>Precio:</span>
-          <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}>
-            {" "}
-            {informacion.precio}
-          </span>
-          <br />
+          {/* <span>Precio:</span> */}
+          {/* <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}> */}
+            {/* {" "} */}
+            {/* {informacion.precio} */}
+          {/* </span> */}
 
           {/* informacion profesor */}
           <span>Profesora:</span>

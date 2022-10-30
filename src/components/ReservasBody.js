@@ -160,7 +160,7 @@ function ReservasBody() {
         {/* boton regreso */}
         <BotonBack />
         {/* rutinas */}
-        <div className="formRutinas_Class">
+        {/* <div className="formRutinas_Class">
           <svg className="Rectngulo_386">
             <rect
               className="Rectngulo_386_Class"
@@ -177,7 +177,7 @@ function ReservasBody() {
               <span>Rutinas:</span>
             </div>
             {/* Informacion de las rutinas */}
-            <div className="n_0_Abdominales_50_Sentadillas_Class">
+            {/* <div className="n_0_Abdominales_50_Sentadillas_Class">
               {consulta != null && consulta.rutina ? (
                 consulta.rutina.split(",").map((e) => {
                   return (
@@ -192,7 +192,7 @@ function ReservasBody() {
               )}
             </div>
           </div>
-        </div>
+        </div>  */}
         {/* Fecha */}
         <div className="formFecha_Class">
           <div className="Grupo_819_ClassReserva">
@@ -263,7 +263,7 @@ function ReservasBody() {
         <div className="formParticipantes_Class">
           <svg className="CuadroParticipantes" viewBox="0 0 352 272.333">
             <path
-              className="Trazado_39_Class"
+              className="Trazado_39_Class" 
               d="M 32.74418640136719 0 L 319.2558288574219 0 C 337.3399353027344 0 352 17.81593322753906 352 39.79300308227539 L 352 232.5403594970703 C 352 254.5174255371094 337.3399353027344 272.3333740234375 319.2558288574219 272.3333740234375 L 32.74418640136719 272.3333740234375 C 14.66007041931152 272.3333740234375 0 254.5174255371094 0 232.5403594970703 L 0 39.79300308227539 C 0 17.81593322753906 14.66007041931152 0 32.74418640136719 0 Z"
             ></path>
           </svg>

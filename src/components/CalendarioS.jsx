@@ -121,7 +121,7 @@ function Calend() {
               <div>V</div>
               <div>S</div>
             </div>
-            <div className="grid grid-cols-7 mt-2 text-sm">
+            <div className="grid grid-cols-7 mt-2 text-sm sm:text-sm">
               {days.map((day, dayIdx) => (
                 <div
                   key={day.toString()}
@@ -176,7 +176,7 @@ function Calend() {
               ))}
             </div>
           </div>
-          <section className="mt-8 md:mt-0 md:pl-14">
+          <section className="mt-8 md:mt-0 md:pl-14" >
             <h2 className="font-medium font-poppins text-left text-blanco">
               {/* Fecha del calendario */}{" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
