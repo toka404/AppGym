@@ -162,7 +162,7 @@ function CrearUsuarioBody() {
 
           {/* boton Crear Cuenta */}
           <button>
-            <div id="btn_ingresar" className="btn">
+            <div id="btn_ingresarCrearCuenta" className="btn">
               <svg className="Rectngulo_98_db ">
                 <rect
                   id="Rectngulo_98_db"

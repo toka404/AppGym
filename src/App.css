@@ -147,6 +147,15 @@
   overflow: visible;
 }
 
+#btn_ingresarCrearCuenta {
+  position: absolute;
+  width: 370px;
+  height: 62px;
+  left: 18px !important;
+  top: 670px !important;
+  overflow: visible;
+}
+
 #BtnIngresoLogin {
   border-radius: 10px;
   text-align: center;
@@ -8342,6 +8351,9 @@ button.icon-button>span.chevron-arrow-right {
     top: 200vw;
   }
 
+  #btn_ingresarCrearCuenta {
+    top: 185vw !important;
+  }
 }
 
 
