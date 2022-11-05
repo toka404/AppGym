@@ -16,6 +16,12 @@ import { useUser } from "./UserContext";
 import { isEmpty } from "lodash";
 
 const today = new Date();
+
+const tomorr = new Date();
+tomorr.setDate(today.getDate() + 1);
+const dat = new Date();
+dat.setDate(today.getDate() + 2);
+
 const fechas = [
   {
     value:
@@ -30,6 +36,24 @@ const fechas = [
       (today.getMonth() + 1) +
       "/" +
       today.getFullYear(),
+  },
+  {
+    value:
+      tomorr.getFullYear() +
+      "/" +
+      (tomorr.getMonth() + 1) +
+      "/" +
+      tomorr.getDate(),
+    label:
+      tomorr.getDate() +
+      "/" +
+      (tomorr.getMonth() + 1) +
+      "/" +
+      tomorr.getFullYear(),
+  },
+  {
+    value: dat.getFullYear() + "/" + (dat.getMonth() + 1) + "/" + dat.getDate(),
+    label: dat.getDate() + "/" + (dat.getMonth() + 1) + "/" + dat.getFullYear(),
   },
 ];
 
@@ -55,6 +79,7 @@ const datosReserva = {
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
   const [loading, setLoading] = useState(true);
+  const [actualizar, setActualizar] = useState(false);
   const [consulta, setConsulta] = useState([]);
   const [participantes, setParticipantes] = useState([]);
   const { usuarioLoged } = useUser();
@@ -106,40 +131,61 @@ function ReservasBody() {
       docs.push({ ...docu.data(), id: docu.id });
     });
 
-    console.log(nombres.pop());
     setConsulta(docs[0]);
 
     setLoading(false);
   };
 
   const getUsuarios = async () => {
-    const nombres = [];
-    if (!isEmpty(consulta)) {
-      consulta.participantes.forEach(async (mail) => {
-        const docRef = doc(db, "usuarios", mail);
-
-        const querySnapshot = await getDoc(docRef);
-
-        // consulta
-        if (querySnapshot.exists()) {
-          nombres.push({ ...querySnapshot.data(), id: mail });
-          setParticipantes(nombres);
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      });
-    }
+    const querySnapshot = await getDocs(collection(db, "usuarios"));
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      if (
+        consulta.participantes != null &&
+        consulta.participantes.indexOf(doc.id) > -1
+      ) {
+        docs.push({ ...doc.data(), id: doc.id });
+      }
+    });
+    docs.sort((x) => {
+      if (x.id === usuarioLoged.email) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    setParticipantes(docs);
   };
 
   useEffect(() => {
-    // getUsuarios();
+    if (
+      fechas[0].label ===
+        today.getDate() +
+          "/" +
+          (today.getMonth() + 1) +
+          "/" +
+          today.getFullYear() &&
+      today.getHours() >= 21
+    ) {
+      console.log(today.getHours());
+      fechas.shift();
+    }
+
+    setReserva({
+      fecha: fechas[0].value,
+      hora: horas[0].value,
+    });
+  }, []);
+
+  useEffect(() => {
+    getUsuarios();
   }, [consulta]);
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
-    // return () => {};
-  }, [reserva]);
+
+    return () => {};
+  }, [reserva, actualizar]);
   return (
     <div>
       <div id="Reserva" className="Reserva_Class">
@@ -160,7 +206,7 @@ function ReservasBody() {
         {/* boton regreso */}
         <BotonBack />
         {/* rutinas */}
-        {/* <div className="formRutinas_Class">
+        <div className="formRutinas_Class">
           <svg className="Rectngulo_386">
             <rect
               className="Rectngulo_386_Class"
@@ -174,25 +220,16 @@ function ReservasBody() {
           </svg>
           <div className="Grupo_115_Class">
             <div className="Rutinas_Class">
-              <span>Rutinas:</span>
+              <span>Tipo de reserva:</span>
             </div>
             {/* Informacion de las rutinas */}
-            {/* <div className="n_0_Abdominales_50_Sentadillas_Class">
-              {consulta != null && consulta.rutina ? (
-                consulta.rutina.split(",").map((e) => {
-                  return (
-                    <>
-                      <span>{e}</span>
-                      <br />
-                    </>
-                  );
-                })
-              ) : (
-                <span>No se encontro rutinas</span>
-              )}
+            <div className="n_0_Abdominales_50_Sentadillas_Class">
+              <span>Uso de los equipos y espacios</span>
+              <br />
+              <span>del gimnacio</span>
             </div>
           </div>
-        </div>  */}
+        </div>
         {/* Fecha */}
         <div className="formFecha_Class">
           <div className="Grupo_819_ClassReserva">
@@ -238,6 +275,7 @@ function ReservasBody() {
                 await updateDoc(claseRef, {
                   participantes: nuevoParticipantes,
                 });
+                setActualizar(!actualizar);
               }
             }}
           >
@@ -261,8 +299,7 @@ function ReservasBody() {
         {/* participantes */}
 
         <div className="formParticipantes_Class">
-          <svg className="CuadroParticipantes" viewBox="0 0 352 272.333">
-          </svg>
+          <svg className="CuadroParticipantes" viewBox="0 0 352 272.333"></svg>
         </div>
         <div className="lblParticipantes_Class">
           <span>Participantes:</span>
@@ -289,10 +326,12 @@ function ReservasBody() {
                             consulta.participantes.filter(
                               (item) => item !== usuarioLoged.email
                             );
+                          // setParticipantes(nuevoParticipantes);
                           const claseRef = doc(db, "clases", consulta.id);
                           await updateDoc(claseRef, {
                             participantes: nuevoParticipantes,
                           });
+                          setActualizar(!actualizar);
                         }}
                       >
                         <div className="btnEliminar_Class btn">
@@ -343,11 +382,21 @@ function ReservasBody() {
             <div className="lblHora">
               <select id="hora" value={reserva.hora} onChange={handleChange}>
                 {horas.map((e) => {
-                  return (
-                    <option value={e.value} key={e.value}>
-                      {e.label}
-                    </option>
-                  );
+                  if (
+                    +e.label.split(":")[0] > today.getHours() ||
+                    reserva.fecha !=
+                      today.getFullYear() +
+                        "/" +
+                        (today.getMonth() + 1) +
+                        "/" +
+                        today.getDate()
+                  ) {
+                    return (
+                      <option value={e.value} key={e.value}>
+                        {e.label}
+                      </option>
+                    );
+                  }
                 })}
               </select>
             </div>

@@ -568,10 +568,10 @@
 }
 
 #Reservas {
-  left: -2px;
+  left: -4px;
   top: 0px;
   position: absolute;
-  width: 390px;
+  width: 400px;
   white-space: nowrap;
   text-align: right;
   font-family: Poppins;
