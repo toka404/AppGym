@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import {
   collection,
   getDocs,
-  getDoc,
   doc,
   query,
   where,
@@ -82,6 +81,7 @@ function ReservasBody() {
   const [actualizar, setActualizar] = useState(false);
   const [consulta, setConsulta] = useState([]);
   const [participantes, setParticipantes] = useState([]);
+  const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
 
   function handleChange(e) {
@@ -112,22 +112,8 @@ function ReservasBody() {
 
     const querySnapshot = await getDocs(q);
     const docs = [];
-    const nombres = [];
 
     querySnapshot.forEach((docu) => {
-      docu.data().participantes.forEach(async (mail) => {
-        const docRef = doc(db, "usuarios", mail);
-        const querySnapshot = await getDoc(docRef);
-
-        if (querySnapshot.exists()) {
-          nombres.push({ ...querySnapshot.data(), id: mail });
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-
-        // console.log(nombres);
-      });
       docs.push({ ...docu.data(), id: docu.id });
     });
 
@@ -157,7 +143,8 @@ function ReservasBody() {
     setParticipantes(docs);
   };
 
-  useEffect(() => {
+  const mostarFechas = () => {
+    const aux = [];
     if (
       fechas[0].label ===
         today.getDate() +
@@ -167,25 +154,61 @@ function ReservasBody() {
           today.getFullYear() &&
       today.getHours() >= 21
     ) {
-      console.log(today.getHours());
+      // console.log(today.getHours());
       fechas.shift();
+    } else {
+      aux.push(
+        horas.filter((e) => {
+          if (+e.label.split(":")[0] > today.getHours()) {
+            return { e };
+          }
+        })
+      );
     }
 
     setReserva({
       fecha: fechas[0].value,
-      hora: horas[0].value,
+      hora: aux[0][0].value,
     });
+    // console.log(reserva);
+  };
+
+  const cupoMaximo = async () => {
+    let i = 0;
+
+    const date = new Date(reserva.fecha + " " + horas[0].value);
+    const date1 = Timestamp.fromDate(date);
+    const date2 = Timestamp.fromDate(new Date(date.setHours(22)));
+
+    const queryRef = collection(db, "clases");
+    const q = query(
+      queryRef,
+      where("participantes", "array-contains", usuarioLoged.email),
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((docu) => {
+      i++;
+    });
+    setInscripciones(i);
+  };
+
+  useEffect(() => {
+    mostarFechas();
   }, []);
 
   useEffect(() => {
     getUsuarios();
   }, [consulta]);
+
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
-
+    cupoMaximo();
     return () => {};
   }, [reserva, actualizar]);
+
   return (
     <div>
       <div id="Reserva" className="Reserva_Class">
@@ -265,32 +288,47 @@ function ReservasBody() {
         {consulta != null &&
         consulta.participantes &&
         consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
-          <button
-            onClick={async () => {
-              if (consulta.participantes.indexOf(usuarioLoged.email) === -1) {
-                const nuevoParticipantes = consulta.participantes;
-                nuevoParticipantes.push(usuarioLoged.email);
+          inscripciones < 2 ? (
+            <button
+              onClick={async () => {
+                if (consulta.participantes.length < consulta.cupo) {
+                  if (
+                    consulta.participantes.indexOf(usuarioLoged.email) === -1
+                  ) {
+                    const nuevoParticipantes = consulta.participantes;
+                    nuevoParticipantes.push(usuarioLoged.email);
 
-                const claseRef = doc(db, "clases", consulta.id);
-                await updateDoc(claseRef, {
-                  participantes: nuevoParticipantes,
-                });
-                setActualizar(!actualizar);
-              }
-            }}
-          >
-            <div className="btnReservar_ClassReserva btn">
-              <svg className="Trazado_40" viewBox="0 0 225 60">
-                <path
-                  className="Trazado_40_Class"
-                  d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
-                ></path>
-              </svg>
-              <div className="Reservar_ClassReserva">
-                <span>Reservar</span>
+                    const claseRef = doc(db, "clases", consulta.id);
+                    await updateDoc(claseRef, {
+                      participantes: nuevoParticipantes,
+                    });
+                    setActualizar(!actualizar);
+                  }
+                } else {
+                  console.log(consulta.cupo);
+                  console.log(
+                    "Se ha alcansado el cupo maximo para esta actividad"
+                  );
+                }
+              }}
+            >
+              <div className="btnReservar_ClassReserva btn">
+                <svg className="Trazado_40" viewBox="0 0 225 60">
+                  <path
+                    className="Trazado_40_Class"
+                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                  ></path>
+                </svg>
+                <div className="Reservar_ClassReserva">
+                  <span>Reservar</span>
+                </div>
               </div>
+            </button>
+          ) : (
+            <div className="lblReserva">
+              <span>Ya se encuentra registrado en 2 actividades</span>
             </div>
-          </button>
+          )
         ) : (
           <div className="lblReserva">
             <span>Ya se encuentra registrado</span>
@@ -302,7 +340,14 @@ function ReservasBody() {
           <svg className="CuadroParticipantes" viewBox="0 0 352 272.333"></svg>
         </div>
         <div className="lblParticipantes_Class">
-          <span>Participantes:</span>
+          <span>Participantes: </span>
+          {!isEmpty(consulta) ? (
+            <span>
+              Cupo:{consulta.participantes.length}/{consulta.cupo}
+            </span>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="CajaContenidos">
           {!isEmpty(participantes) ? (
@@ -384,7 +429,7 @@ function ReservasBody() {
                 {horas.map((e) => {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
-                    reserva.fecha !=
+                    reserva.fecha !==
                       today.getFullYear() +
                         "/" +
                         (today.getMonth() + 1) +
@@ -396,6 +441,8 @@ function ReservasBody() {
                         {e.label}
                       </option>
                     );
+                  } else {
+                    return null;
                   }
                 })}
               </select>
