@@ -15,7 +15,6 @@ import { useUser } from "./UserContext";
 import { isEmpty } from "lodash";
 
 const today = new Date();
-
 const tomorr = new Date();
 tomorr.setDate(today.getDate() + 1);
 const dat = new Date();
@@ -144,33 +143,34 @@ function ReservasBody() {
   };
 
   const mostarFechas = () => {
-    const aux = [];
+    let aux = [horas[0]];
+
+    // comprueba que se vay a mostrar el dia de hoy o mañana
     if (
       fechas[0].label ===
-        today.getDate() +
-          "/" +
-          (today.getMonth() + 1) +
-          "/" +
-          today.getFullYear() &&
-      today.getHours() >= 21
+      today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear()
     ) {
-      // console.log(today.getHours());
-      fechas.shift();
-    } else {
-      aux.push(
-        horas.filter((e) => {
-          if (+e.label.split(":")[0] > today.getHours()) {
-            return { e };
-          }
-        })
-      );
+      //si es pasado las 9 solo muestro la fecha de mañana
+      if (today.getHours() >= 21) {
+        fechas.shift();
+        aux.push(horas[0]);
+      } else {
+        aux.pop();
+        //si es menos de las 9 filtro las horas que ya pasaron
+        aux.push(
+          horas.filter((e) => {
+            if (+e.label.split(":")[0] > today.getHours()) {
+              return { e };
+            }
+          })[0]
+        );
+      }
     }
 
     setReserva({
       fecha: fechas[0].value,
-      hora: aux[0][0].value,
+      hora: aux[0].value,
     });
-    // console.log(reserva);
   };
 
   const cupoMaximo = async () => {

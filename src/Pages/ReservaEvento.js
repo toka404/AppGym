@@ -1,11 +1,11 @@
 import "../App.css";
-import ReservasEventosBody from "../components/ReservasEventosBody";
+import ReservaEventoBody from "../components/ReservaEventoBody";
 import Footer from "../components/Footer";
 
 function ReservaEvento() {
   return (
     <div className="App">
-      <ReservasEventosBody evento={null} />
+      <ReservaEventoBody />
       <Footer />
     </div>
   );

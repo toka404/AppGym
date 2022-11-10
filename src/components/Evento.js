@@ -19,6 +19,8 @@ function Evento(datos) {
           navigate("/reservae", {
             state: {
               id: informacion.id.id,
+              descripcion: informacion.descripcion,
+              cupo: informacion.cupo,
             },
           });
         }}
@@ -44,7 +46,15 @@ function Evento(datos) {
         {/* Fecha del evento */}
         <div className="Fecha__ClassEventos">
           <span>Fecha:</span>
-          <span> {fireBaseTime.toDateString()}</span>
+          <span>
+            {" "}
+            {fireBaseTime.toLocaleString("es-ES", {
+              weekday: "long",
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            })}
+          </span>
         </div>
 
         {/* imagen del evento */}
@@ -60,12 +70,12 @@ function Evento(datos) {
         <div className="Contenido">
           <span>{informacion.descripcion}</span>
           <br />
- 
+
           {/* informacion precio */}
           {/* <span>Precio:</span> */}
           {/* <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}> */}
-            {/* {" "} */}
-            {/* {informacion.precio} */}
+          {/* {" "} */}
+          {/* {informacion.precio} */}
           {/* </span> */}
 
           {/* informacion profesor */}
