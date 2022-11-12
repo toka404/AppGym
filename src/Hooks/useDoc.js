@@ -5,6 +5,9 @@ import { db } from "../components/Firebase";
 export async function crearDocumento(coleccion, documento, datos) {
   await setDoc(doc(db, coleccion, documento), datos);
 }
+export async function updateDocumento(coleccion, documento, datos) {
+  await updateDoc(doc(db, coleccion, documento), datos);
+}
 
 function useConsulta(colleccion, documento) {
   const [eventoDoc, setEventoDoc] = useState(null);

@@ -43,11 +43,25 @@ function Calend() {
 
     const querySnapshot = await getDocs(q);
     const docs = [];
-    setLoading(false);
     querySnapshot.forEach((doc) => {
       // console.log(doc.data());
       docs.push({ ...doc.data(), id: doc });
     });
+
+    const queryRef2 = collection(db, "reserva");
+
+    const q2 = query(
+      queryRef2,
+      where("participantes", "array-contains", usuarioLoged.email)
+    );
+
+    const querySnapshot2 = await getDocs(q2);
+    setLoading(false);
+    querySnapshot2.forEach((doc) => {
+      // console.log(doc.data());
+      docs.push({ ...doc.data(), id: doc });
+    });
+
     setConsulta(docs);
   };
 
@@ -176,7 +190,7 @@ function Calend() {
               ))}
             </div>
           </div>
-          <section className="mt-8 md:mt-0 md:pl-14" >
+          <section className="mt-8 md:mt-0 md:pl-14">
             <h2 className="font-medium font-poppins text-left text-blanco">
               {/* Fecha del calendario */}{" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>

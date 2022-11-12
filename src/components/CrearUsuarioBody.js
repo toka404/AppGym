@@ -3,49 +3,58 @@ import { useState } from "react";
 import BotonBack from "./BotonBack";
 import { useUser } from "../components/UserContext";
 import { useNavigate } from "react-router-dom";
-import { crearDocumento } from "../Hooks/useDoc";
-
-const emptyRegistro = {
-  Input_nombre: "",
-  Input_apellido: "",
-  Input_email: "",
-  Input_contrasena: "",
-  Input_contrasenaF: "",
-};
+import { updateDocumento } from "../Hooks/useDoc";
+import { useFormik, yupToFormErrors } from "formik";
+import * as Yup from "yup";
+import { Container, Form, Button } from "semantic-ui-react";
 
 function CrearUsuarioBody() {
-  const [registro, setRegistro] = useState(emptyRegistro);
   const navigate = useNavigate();
   const { signup, update } = useUser();
 
-  function handleChange(e) {
-    e.persist(); //persiste el evento
-    setRegistro((curRegistro) => {
-      return {
-        ...curRegistro,
-        [e.target.id]: e.target.value,
-      };
-    });
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(valores) {
+    // e.preventDefault();
     try {
-      if (registro.Input_contrasena === registro.Input_contrasenaF) {
-        await signup(registro.Input_email, registro.Input_contrasena);
-        await update(registro.Input_nombre);
-        await crearDocumento("usuarios", registro.Input_email, {
-          nombre: registro.Input_nombre,
-          apellido: registro.Input_apellido,
-          peso: "",
-          altura: "",
-        });
-        navigate("/");
-      } else console.log("Las contraseñas no coinciden");
+      await signup(valores.Input_email, valores.Input_contrasena);
+      await update(valores.Input_nombre);
+      await updateDocumento("usuarios", valores.Input_email, {
+        nombre: valores.Input_nombre,
+        apellido: valores.Input_apellido,
+        peso: "",
+        altura: "",
+      });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   }
+
+  const formik = useFormik({
+    initialValues: {
+      Input_nombre: "",
+      Input_apellido: "",
+      Input_email: "",
+      Input_contrasena: "",
+      Input_contrasenaF: "",
+    },
+    validationSchema: Yup.object({
+      Input_nombre: Yup.string().required("El nombre es obligatorio"),
+      Input_apellido: Yup.string().required("El apellido es obligatorio"),
+      Input_email: Yup.string()
+        .email("No es un email valido")
+        .required("El email es obligatorio"),
+      Input_contrasena: Yup.string()
+        .required("La contraseña es obligatorio")
+        .oneOf([Yup.ref("Input_contrasenaF")], "Las contraseñas no son iguales")
+        .min(8),
+      Input_contrasenaF: Yup.string()
+        .required("Porfavor confirme su contraseña")
+        .min(8),
+    }),
+    onSubmit: (valores) => {
+      handleSubmit(valores);
+    },
+  });
 
   return (
     <div>
@@ -65,7 +74,7 @@ function CrearUsuarioBody() {
         {/* boton regreso */}
         <BotonBack />
 
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={formik.handleSubmit}>
           <div id="lbl_Crear_Usuario">
             <span>Crear Usuario</span>
           </div>
@@ -75,12 +84,14 @@ function CrearUsuarioBody() {
           </div>
 
           <div id="img_Nombre">
-            <input
+            <Form.Input
               type="text"
               className="Input_nombre"
-              id="Input_nombre"
-              value={registro.Input_nombre}
-              onChange={handleChange}
+              name="Input_nombre"
+              // value={registro.Input_nombre}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_nombre}
+              value={formik.values.Input_nombre}
             />
 
             <svg className="Lnea_1_c" viewBox="0 0 314 5">
@@ -93,12 +104,14 @@ function CrearUsuarioBody() {
           </div>
 
           <div id="img_Email">
-            <input
+            <Form.Input
               type="text"
               className="Input_apellido"
               id="Input_apellido"
-              value={registro.Input_apellido}
-              onChange={handleChange}
+              // value={registro.Input_apellido}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_apellido}
+              value={formik.values.Input_apellido}
             />
 
             <svg className="Lnea_2_c" viewBox="0 0 314 5">
@@ -111,12 +124,14 @@ function CrearUsuarioBody() {
           </div>
 
           <div id="img_email">
-            <input
+            <Form.Input
               type="email"
               className="Input_email"
               id="Input_email"
-              value={registro.Input_email}
-              onChange={handleChange}
+              // value={registro.Input_email}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_email}
+              value={formik.values.Input_email}
             />
 
             <svg className="Lnea_4" viewBox="0 0 314 5">
@@ -129,12 +144,14 @@ function CrearUsuarioBody() {
           </div>
 
           <div id="img_contrasenaIni">
-            <input
+            <Form.Input
               type="password"
               className="Input_contrasena"
               id="Input_contrasena"
-              value={registro.Input_contrasena}
-              onChange={handleChange}
+              // value={registro.Input_contrasena}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_contrasena}
+              value={formik.values.Input_contrasena}
             />
 
             <svg className="Lnea_3_c" viewBox="0 0 314 5">
@@ -147,12 +164,14 @@ function CrearUsuarioBody() {
           </div>
 
           <div id="img_contrasenaF">
-            <input
+            <Form.Input
               type="password"
               className="Input_contrasenaF"
               id="Input_contrasenaF"
-              value={registro.Input_contrasenaF}
-              onChange={handleChange}
+              // value={registro.Input_contrasenaF}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_contrasenaF}
+              value={formik.values.Input_contrasenaF}
             />
 
             <svg className="Lnea_4_c" viewBox="0 0 314 5">
@@ -161,7 +180,7 @@ function CrearUsuarioBody() {
           </div>
 
           {/* boton Crear Cuenta */}
-          <button>
+          <button type="submit">
             <div id="btn_ingresarCrearCuenta" className="btn">
               <svg className="Rectngulo_98_db ">
                 <rect
@@ -179,7 +198,7 @@ function CrearUsuarioBody() {
               </div>
             </div>
           </button>
-        </form>
+        </Form>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import "../App.css";
+// import "../App.css";
 import CrearUsuarioBody from "../components/CrearUsuarioBody";
 
 function Registro() {

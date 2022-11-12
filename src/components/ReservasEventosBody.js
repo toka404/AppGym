@@ -13,11 +13,19 @@ import {
 } from "firebase/firestore";
 import { db } from "./Firebase";
 import { useUser } from "./UserContext";
-import { isEmpty } from "lodash";
 import { useLocation } from "react-router-dom";
+import { isEmpty } from "lodash";
 
 const today = new Date();
-const fechas = [
+// today.setDate(21);
+// today.setHours(21);
+const tomorr = new Date();
+tomorr.setDate(today.getDate() + 1);
+const dat = new Date();
+dat.setDate(today.getDate() + 2);
+
+//cambiar fechas por las de la consulta
+let fechas = [
   {
     value:
       today.getFullYear() +
@@ -31,6 +39,24 @@ const fechas = [
       (today.getMonth() + 1) +
       "/" +
       today.getFullYear(),
+  },
+  {
+    value:
+      tomorr.getFullYear() +
+      "/" +
+      (tomorr.getMonth() + 1) +
+      "/" +
+      tomorr.getDate(),
+    label:
+      tomorr.getDate() +
+      "/" +
+      (tomorr.getMonth() + 1) +
+      "/" +
+      tomorr.getFullYear(),
+  },
+  {
+    value: dat.getFullYear() + "/" + (dat.getMonth() + 1) + "/" + dat.getDate(),
+    label: dat.getDate() + "/" + (dat.getMonth() + 1) + "/" + dat.getFullYear(),
   },
 ];
 
@@ -56,14 +82,12 @@ const datosReserva = {
 function ReservasEventosBody() {
   const [reserva, setReserva] = useState(datosReserva);
   const [loading, setLoading] = useState(true);
-
-  const [fechas2, setFechas2] = useState(null);
-  const [horas2, setHoras2] = useState(null);
-
+  const [actualizar, setActualizar] = useState(false);
   const [consulta, setConsulta] = useState([]);
   const [participantes, setParticipantes] = useState([]);
-  const location = useLocation();
+  const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
+  const location = useLocation();
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -77,32 +101,164 @@ function ReservasEventosBody() {
 
   const getEventos = async () => {
     setLoading(true);
-    const reservaRef = collection(db, "reserva");
-    const q = query(reservaRef, where("evento", "==", location.state.id));
+    const date = new Date(reserva.fecha + " " + reserva.hora);
+    const date1 = Timestamp.fromDate(date);
 
-    const eventos = [];
-    const fechas = [];
+    const date2 = Timestamp.fromDate(
+      new Date(date.setHours(date.getHours() + 1))
+    );
+
+    const queryRef = collection(db, "reserva");
+    const q = query(
+      queryRef,
+      where("evento", "==", location.state.id),
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
 
     const querySnapshot = await getDocs(q);
-    console.log(querySnapshot);
+    const docs = [];
 
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-
-      fechas.push({
-        ...doc.data().fecha,
-        id: doc.id,
-      });
+    querySnapshot.forEach((docu) => {
+      docs.push({ ...docu.data(), id: docu.id });
     });
-    // console.log(fechas);
+
+    setConsulta(docs[0]);
+
     setLoading(false);
   };
+
+  const getFechas = async () => {
+    let docs = [];
+
+    const queryRef = collection(db, "reserva");
+    const q = query(queryRef, where("evento", "==", location.state.id));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      docs.push(
+        doc.data().fecha.toDate().getFullYear() +
+          "/" +
+          (doc.data().fecha.toDate().getMonth() + 1) +
+          "/" +
+          doc.data().fecha.toDate().getDate()
+      );
+    });
+
+    docs = [...new Set(docs)];
+
+    docs.reverse();
+
+    let aux = [horas[0]];
+
+    if (
+      docs[0] ===
+      today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate()
+    ) {
+      //si es pasado las 9 solo muestro la fecha de mañana
+      if (today.getHours() >= 21) {
+        docs.shift();
+        aux.push(horas[0]);
+      } else {
+        aux.pop();
+        //si es menos de las 9 filtro las horas que ya pasaron
+        aux.push(
+          horas.filter((e) => {
+            if (+e.label.split(":")[0] > today.getHours()) {
+              return { e };
+            }
+          })[0]
+        );
+      }
+    }
+
+    // fechas = [];
+    fechas = docs
+      .filter((e) => {
+        const aux = e.split("/");
+
+        if (
+          aux[2] >= today.getDate() &&
+          aux[1] >= today.getMonth() + 1 &&
+          aux[0] >= today.getFullYear()
+        ) {
+          return e;
+        }
+      })
+      .map((e) => {
+        const aux = e.split("/");
+
+        return {
+          value: aux[0] + "/" + aux[1] + "/" + aux[2],
+          label: aux[2] + "/" + aux[1] + "/" + aux[0],
+        };
+      });
+
+    setReserva({
+      fecha: fechas[0].value,
+      hora: horas[0].value,
+    });
+  };
+
+  const getUsuarios = async () => {
+    const querySnapshot = await getDocs(collection(db, "usuarios"));
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      if (
+        consulta != null &&
+        consulta.participantes != null &&
+        consulta.participantes.indexOf(doc.id) > -1
+      ) {
+        docs.push({ ...doc.data(), id: doc.id });
+      }
+    });
+    docs.sort((x) => {
+      if (x.id === usuarioLoged.email) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    setParticipantes(docs);
+  };
+
+  const cupoMaximo = async () => {
+    let i = 0;
+
+    const date = new Date(reserva.fecha + " " + horas[0].value);
+    const date1 = Timestamp.fromDate(date);
+    const date2 = Timestamp.fromDate(new Date(date.setHours(22)));
+
+    const queryRef = collection(db, "reserva");
+    const q = query(
+      queryRef,
+      where("participantes", "array-contains", usuarioLoged.email),
+      where("evento", "==", location.state.id),
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((docu) => {
+      i++;
+    });
+    setInscripciones(i);
+  };
+
+  useEffect(() => {
+    getFechas();
+  }, []);
+
+  useEffect(() => {
+    getUsuarios();
+  }, [consulta]);
 
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
-    // return () => {};
-  }, [reserva]);
+    cupoMaximo();
+    return () => {};
+  }, [reserva, actualizar]);
+
   return (
     <div>
       <div id="Reserva" className="Reserva_Class">
@@ -137,19 +293,12 @@ function ReservasEventosBody() {
           </svg>
           <div className="Grupo_115_Class">
             <div className="Rutinas_Class">
-              <span>Rutinas:</span>
+              <span>Tipo de reserva:</span>
             </div>
             {/* Informacion de las rutinas */}
             <div className="n_0_Abdominales_50_Sentadillas_Class">
-              {consulta != null && consulta.rutina ? (
-                consulta.rutina.split(",").map((e) => {
-                  return (
-                    <>
-                      <span>{e}</span>
-                      <br />
-                    </>
-                  );
-                })
+              {location.state.descripcion != null ? (
+                <span>{location.state.descripcion}</span>
               ) : (
                 <span>No se encontro rutinas</span>
               )}
@@ -191,31 +340,47 @@ function ReservasEventosBody() {
         {consulta != null &&
         consulta.participantes &&
         consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
-          <button
-            onClick={async () => {
-              if (consulta.participantes.indexOf(usuarioLoged.email) === -1) {
-                const nuevoParticipantes = consulta.participantes;
-                nuevoParticipantes.push(usuarioLoged.email);
+          inscripciones < 2 ? (
+            <button
+              onClick={async () => {
+                if (consulta.participantes.length < location.state.cupo) {
+                  if (
+                    consulta.participantes.indexOf(usuarioLoged.email) === -1
+                  ) {
+                    const nuevoParticipantes = consulta.participantes;
+                    nuevoParticipantes.push(usuarioLoged.email);
 
-                const claseRef = doc(db, "clases", consulta.id);
-                await updateDoc(claseRef, {
-                  participantes: nuevoParticipantes,
-                });
-              }
-            }}
-          >
-            <div className="btnReservar_ClassReserva btn">
-              <svg className="Trazado_40" viewBox="0 0 225 60">
-                <path
-                  className="Trazado_40_Class"
-                  d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
-                ></path>
-              </svg>
-              <div className="Reservar_ClassReserva">
-                <span>Reservar</span>
+                    const claseRef = doc(db, "reserva", consulta.id);
+                    await updateDoc(claseRef, {
+                      participantes: nuevoParticipantes,
+                    });
+                    setActualizar(!actualizar);
+                  }
+                } else {
+                  console.log(consulta.cupo);
+                  console.log(
+                    "Se ha alcansado el cupo maximo para esta actividad"
+                  );
+                }
+              }}
+            >
+              <div className="btnReservar_ClassReserva btn">
+                <svg className="Trazado_40" viewBox="0 0 225 60">
+                  <path
+                    className="Trazado_40_Class"
+                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                  ></path>
+                </svg>
+                <div className="Reservar_ClassReserva">
+                  <span>Reservar</span>
+                </div>
               </div>
+            </button>
+          ) : (
+            <div className="lblReserva">
+              <span>Ya se encuentra registrado en 2 actividades</span>
             </div>
-          </button>
+          )
         ) : (
           <div className="lblReserva">
             <span>Ya se encuentra registrado</span>
@@ -224,15 +389,17 @@ function ReservasEventosBody() {
         {/* participantes */}
 
         <div className="formParticipantes_Class">
-          <svg className="CuadroParticipantes" viewBox="0 0 352 272.333">
-            <path
-              className="Trazado_39_Class"
-              d="M 32.74418640136719 0 L 319.2558288574219 0 C 337.3399353027344 0 352 17.81593322753906 352 39.79300308227539 L 352 232.5403594970703 C 352 254.5174255371094 337.3399353027344 272.3333740234375 319.2558288574219 272.3333740234375 L 32.74418640136719 272.3333740234375 C 14.66007041931152 272.3333740234375 0 254.5174255371094 0 232.5403594970703 L 0 39.79300308227539 C 0 17.81593322753906 14.66007041931152 0 32.74418640136719 0 Z"
-            ></path>
-          </svg>
+          <svg className="CuadroParticipantes" viewBox="0 0 352 272.333"></svg>
         </div>
         <div className="lblParticipantes_Class">
-          <span>Participantes:</span>
+          <span>Participantes: </span>
+          {!isEmpty(consulta) ? (
+            <span>
+              Cupo:{consulta.participantes.length}/{location.state.cupo}
+            </span>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="CajaContenidos">
           {!isEmpty(participantes) ? (
@@ -256,10 +423,12 @@ function ReservasEventosBody() {
                             consulta.participantes.filter(
                               (item) => item !== usuarioLoged.email
                             );
-                          const claseRef = doc(db, "clases", consulta.id);
+                          // setParticipantes(nuevoParticipantes);
+                          const claseRef = doc(db, "reserva", consulta.id);
                           await updateDoc(claseRef, {
                             participantes: nuevoParticipantes,
                           });
+                          setActualizar(!actualizar);
                         }}
                       >
                         <div className="btnEliminar_Class btn">
@@ -310,11 +479,23 @@ function ReservasEventosBody() {
             <div className="lblHora">
               <select id="hora" value={reserva.hora} onChange={handleChange}>
                 {horas.map((e) => {
-                  return (
-                    <option value={e.value} key={e.value}>
-                      {e.label}
-                    </option>
-                  );
+                  if (
+                    +e.label.split(":")[0] > today.getHours() ||
+                    reserva.fecha !==
+                      today.getFullYear() +
+                        "/" +
+                        (today.getMonth() + 1) +
+                        "/" +
+                        today.getDate()
+                  ) {
+                    return (
+                      <option value={e.value} key={e.value}>
+                        {e.label}
+                      </option>
+                    );
+                  } else {
+                    return null;
+                  }
                 })}
               </select>
             </div>

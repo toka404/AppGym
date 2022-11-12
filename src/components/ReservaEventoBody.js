@@ -17,7 +17,8 @@ import { useLocation } from "react-router-dom";
 import { isEmpty } from "lodash";
 
 const today = new Date();
-
+// today.setDate(21);
+// today.setHours(21);
 const tomorr = new Date();
 tomorr.setDate(today.getDate() + 1);
 const dat = new Date();
@@ -122,7 +123,6 @@ function ReservaEventoBody() {
       docs.push({ ...docu.data(), id: docu.id });
     });
 
-    // console.log(docs);
     setConsulta(docs[0]);
 
     setLoading(false);
@@ -146,14 +146,53 @@ function ReservaEventoBody() {
     });
 
     docs = [...new Set(docs)];
+
+    docs.reverse();
+
+    let aux = [horas[0]];
+
+    if (
+      docs[0] ===
+      today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate()
+    ) {
+      //si es pasado las 9 solo muestro la fecha de mañana
+      if (today.getHours() >= 21) {
+        docs.shift();
+        aux.push(horas[0]);
+      } else {
+        aux.pop();
+        //si es menos de las 9 filtro las horas que ya pasaron
+        aux.push(
+          horas.filter((e) => {
+            if (+e.label.split(":")[0] > today.getHours()) {
+              return { e };
+            }
+          })[0]
+        );
+      }
+    }
+
     // fechas = [];
-    fechas = docs.map((e) => {
-      const aux = e.split("/");
-      return {
-        value: aux[0] + "/" + aux[1] + "/" + aux[2],
-        label: aux[2] + "/" + aux[1] + "/" + aux[0],
-      };
-    });
+    fechas = docs
+      .filter((e) => {
+        const aux = e.split("/");
+
+        if (
+          aux[2] >= today.getDate() &&
+          aux[1] >= today.getMonth() + 1 &&
+          aux[0] >= today.getFullYear()
+        ) {
+          return e;
+        }
+      })
+      .map((e) => {
+        const aux = e.split("/");
+
+        return {
+          value: aux[0] + "/" + aux[1] + "/" + aux[2],
+          label: aux[2] + "/" + aux[1] + "/" + aux[0],
+        };
+      });
 
     setReserva({
       fecha: fechas[0].value,
@@ -194,6 +233,7 @@ function ReservaEventoBody() {
     const q = query(
       queryRef,
       where("participantes", "array-contains", usuarioLoged.email),
+      where("evento", "==", location.state.id),
       where("fecha", ">", date1),
       where("fecha", "<", date2)
     );

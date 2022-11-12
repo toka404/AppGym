@@ -23,9 +23,9 @@ function App() {
             <Route path="/comidas" element={<Alimentos />} />
             <Route path="/calendario" element={<Calendario />} />
             <Route path="/perfil" element={<Perfil />} />
+            <Route path="/reservae" element={<ReservaEvento />} />
           </Route>
-          <Route path="/reservae" element={<ReservaEvento />} />
-          <Route path="/login" element={ <Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/registrarse" element={<Registro />} />
         </Routes>
       </AuthProvider>

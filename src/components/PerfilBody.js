@@ -5,36 +5,51 @@ import { crearDocumento } from "../Hooks/useDoc";
 import { useUser } from "./UserContext";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../components/Firebase";
+import { useFormik, yupToFormErrors } from "formik";
+import * as Yup from "yup";
+import { Container, Form, Button, Message } from "semantic-ui-react";
 
 function PerfilBody() {
   const { usuarioLoged, logOut } = useUser();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({
-    Input_Nombre: "",
-    Input_Apellido: "",
-    input_Correo: "",
-    input_peso: "",
-    Input_altura: "",
+
+  const formik = useFormik({
+    initialValues: {
+      Input_Nombre: " ",
+      Input_Apellido: " ",
+      input_Correo: "",
+      input_peso: "",
+      Input_altura: "",
+    },
+    validationSchema: Yup.object({
+      Input_Nombre: Yup.string().required("El nombre es obligatorio"),
+      Input_Apellido: Yup.string().required("El apellido es obligatorio"),
+      // input_Correo: Yup.string()
+      //   .email("No es un email valido")
+      //   .required("El email es obligatorio"),
+      input_peso: Yup.number()
+        .integer("Solo se admite números enteros")
+        .moreThan(40, "El peso debe ser mayor a 40kg")
+        .lessThan(250, "El peso debe ser menor a 250kg"),
+      Input_altura: Yup.number()
+        .integer("Solo se admite números enteros")
+        .moreThan(130, "La altura debe ser mayor a 130 cm")
+        .lessThan(250, "La altura debe ser menor a 250 cm"),
+    }),
+    onSubmit: (valores) => {
+      // console.log(valores);
+      handleSubmit(valores);
+    },
   });
 
-  function handleChange(e) {
-    e.persist(); //persiste el evento
-    setUser((curUser) => {
-      return {
-        ...curUser,
-        [e.target.id]: e.target.value,
-      };
-    });
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(valores) {
+    // e.preventDefault();
     try {
-      await crearDocumento("usuarios", user.input_Correo, {
-        nombre: user.Input_Nombre,
-        apellido: user.Input_Apellido,
-        peso: user.input_peso,
-        altura: user.Input_altura,
+      await crearDocumento("usuarios", valores.input_Correo, {
+        nombre: valores.Input_Nombre,
+        apellido: valores.Input_Apellido,
+        peso: valores.input_peso,
+        altura: valores.Input_altura,
       });
       // alert("done");
     } catch (error) {
@@ -46,16 +61,22 @@ function PerfilBody() {
     setLoading(true);
     const docRef = doc(db, "usuarios", usuarioLoged.email);
     const querySnapshot = await getDoc(docRef);
-
+    let valores;
     if (querySnapshot.exists()) {
-      // console.log(querySnapshot.data());
-      setUser({
+      valores = {
         Input_Nombre: querySnapshot.data().nombre,
         Input_Apellido: querySnapshot.data().apellido,
         input_Correo: usuarioLoged.email,
         input_peso: querySnapshot.data().peso,
         Input_altura: querySnapshot.data().altura,
-      });
+      };
+
+      // console.log(valores);
+      formik.setFieldValue("Input_Nombre", querySnapshot.data().nombre);
+      formik.setFieldValue("Input_Apellido", querySnapshot.data().apellido);
+      formik.setFieldValue("input_Correo", usuarioLoged.email);
+      formik.setFieldValue("input_peso", querySnapshot.data().peso);
+      formik.setFieldValue("Input_altura", querySnapshot.data().altura);
       setLoading(false);
     } else {
       // doc.data() will be undefined in this case
@@ -101,7 +122,7 @@ function PerfilBody() {
           <span>Perfil</span>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={formik.handleSubmit}>
           {/* imagen de perfil, falta que se agrande */}
           <img
             id="n_838764_g"
@@ -113,12 +134,13 @@ function PerfilBody() {
           <div id="Grupo_816_ha">
             <div id="Grupo_815_hb">
               <div id="Grupo_850">
-                <input
+                <Form.Input
                   type="text"
                   className="Input_Nombre"
-                  id="Input_Nombre"
-                  value={user.Input_Nombre}
-                  onChange={handleChange}
+                  name="Input_Nombre"
+                  value={formik.values.Input_Nombre}
+                  onChange={formik.handleChange}
+                  error={formik.errors.Input_Nombre}
                 />
               </div>
             </div>
@@ -138,24 +160,26 @@ function PerfilBody() {
           </div>
 
           <div id="Grupo_925">
-            <input
+            <Form.Input
               type="text"
               className="Input_Apellido_Perf"
-              id="Input_Apellido"
-              value={user.Input_Apellido}
-              onChange={handleChange}
+              name="Input_Apellido"
+              value={formik.values.Input_Apellido}
+              onChange={formik.handleChange}
+              error={formik.errors.Input_Apellido}
             />
           </div>
 
           {/* input correo */}
           <div id="Grupo_852">
             <div id="Grupo_901">
-              <input
+              <Form.Input
                 type="text"
                 className="input_Correo"
-                id="input_Correo"
-                value={user.input_Correo}
-                onChange={handleChange}
+                name="input_Correo"
+                value={formik.values.input_Correo}
+                onChange={formik.handleChange}
+                error={formik.errors.input_Correo}
                 readOnly="readOnly"
               />
             </div>
@@ -171,12 +195,14 @@ function PerfilBody() {
 
           <div id="Grupo_905">
             <div id="Grupo_901_h">
-              <input
+              <Form.Input
                 type="number"
                 className="input_peso"
-                id="input_peso"
-                value={user.input_peso}
-                onChange={handleChange}
+                name="input_peso"
+                placeholder="65 kg"
+                value={formik.values.input_peso}
+                onChange={formik.handleChange}
+                error={formik.errors.input_peso}
               />
             </div>
           </div>
@@ -186,18 +212,20 @@ function PerfilBody() {
           </div>
           <div id="Grupo_906">
             <div id="Grupo_901_ia">
-              <input
+              <Form.Input
                 type="number"
                 className="Input_altura"
-                id="Input_altura"
-                value={user.Input_altura}
-                onChange={handleChange}
+                name="Input_altura"
+                placeholder="165 cm"
+                value={formik.values.Input_altura}
+                onChange={formik.handleChange}
+                error={formik.errors.Input_altura}
               />
             </div>
           </div>
 
           {/* Botón Actualizar */}
-          <button>
+          <button type="submit">
             <div className="BtnActualizar btn">
               <svg className="fondoBtnActu" viewBox="0 0 225 60">
                 <path
@@ -210,7 +238,7 @@ function PerfilBody() {
               </div>
             </div>
           </button>
-        </form>
+        </Form>
       </div>
     </div>
   );

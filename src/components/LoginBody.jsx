@@ -3,6 +3,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../components/UserContext";
 import { Link } from "react-router-dom";
+import { useFormik, yupToFormErrors } from "formik";
+import * as Yup from "yup";
+import { Container, Form, Button } from "semantic-ui-react";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { crearDocumento } from "../Hooks/useDoc";
+import { db } from "../components/Firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 //se declara afuera para no recrearlo en cada render
 const emptyLogin = {
@@ -14,6 +21,8 @@ function Body() {
   const [login, setLogin] = useState(emptyLogin);
   const { loginContext } = useUser();
   const navigate = useNavigate();
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -35,21 +44,41 @@ function Body() {
     }
   }
 
+  async function crearCuenta(user) {
+    const auxNombre = user.displayName.split(" ");
+    const docRef = doc(db, "usuarios", user.email);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+      try {
+        await crearDocumento("usuarios", user.email, {
+          nombre: auxNombre[0],
+          apellido: auxNombre[1],
+          peso: "",
+          altura: "",
+        });
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
   return (
     <div>
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin="anonymous" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossOrigin="anonymous"
+      />
 
       <div id="Usuario">
         <svg className="img_fondo">
-          <rect
-            id="img_fondo"
-            width="431"
-            height="926"
-          ></rect>
+          <rect id="img_fondo" width="431" height="926"></rect>
         </svg>
 
         <form onSubmit={handleSubmit}>
@@ -93,7 +122,34 @@ function Body() {
 
           <div id="btn_google">
             <div id="Grupo_903">
-              <button id="Btn_google" className="Btn_google">
+              <button
+                id="Btn_google"
+                className="Btn_google"
+                onClick={(e) => {
+                  e.preventDefault();
+                  signInWithPopup(auth, provider)
+                    .then((result) => {
+                      // This gives you a Google Access Token. You can use it to access the Google API.
+                      const credential =
+                        GoogleAuthProvider.credentialFromResult(result);
+                      const token = credential.accessToken;
+                      // The signed-in user info.
+                      const user = result.user;
+                      crearCuenta(user);
+                    })
+                    .catch((error) => {
+                      // Handle Errors here.
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      // The email of the user's account used.
+                      const email = error.customData.email;
+                      // The AuthCredential type that was used.
+                      const credential =
+                        GoogleAuthProvider.credentialFromError(error);
+                      // ...
+                    });
+                }}
+              >
                 Ingresar
               </button>
               <img id="google_1" src="images/google_1.png" alt="boton google" />
@@ -102,10 +158,21 @@ function Body() {
 
           <div id="btn_facebook">
             <div id="Grupo_904">
-              <button id="BtnFacebook" className="BtnFacebook">
+              <button
+                id="BtnFacebook"
+                className="BtnFacebook"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log("facebook");
+                }}
+              >
                 Ingresar
               </button>
-              <img id="facebook" src="images/facebook.png" alt="boton facebook" />
+              <img
+                id="facebook"
+                src="images/facebook.png"
+                alt="boton facebook"
+              />
             </div>
           </div>
         </form>
@@ -149,8 +216,6 @@ function Body() {
           src="images/img_cuerda.png"
           alt="cuerdas de gimnacio"
         />
-
-
       </div>
     </div>
   );
