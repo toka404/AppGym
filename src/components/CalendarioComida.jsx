@@ -10,13 +10,11 @@ import {
   isSameMonth,
   isToday,
   parse,
-  getISOWeek,
-  subDays,
   parseISO,
-  eachWeekOfInterval,
   startOfToday,
   startOfWeek,
 } from "date-fns";
+import es from 'date-fns/locale/es'
 import { useState, useEffect } from "react";
 import BotonBack from "./BotonBack";
 import { useUser } from "./UserContext";
@@ -36,7 +34,7 @@ function classNames(...classes) {
 function CalendCom() {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
-  let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
+  let [currentMonth] = useState(format(today, "MMM-yyyy"));
   let firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
   let [meetings, setConsulta] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +73,7 @@ let selectedDayMeetings = meetings.filter((meeting) =>
 
 return (
   // div que controla todo
-  <div className="pt-28 bg-pes ">
+  <div className="pt-40 bg-pes ">
     <BotonBack />
 
     <div className="lblCalendarioAl_Class">
@@ -88,13 +86,12 @@ return (
         <div className="md:pr-14 bg-fondo rounded-md">
           <div className="flex items-center">
             {/* Mes */}
-            <h2 className="flex-auto font-semibold text-blanco ">
-              {/* Flecha para mes previo*/}
-              {format(firstDayCurrentMonth, "MMMM yyyy")}
+            <h2 className="flex-auto font-semibold text-blanco text-lg ">
+              {format(firstDayCurrentMonth, "MMMM yyyy",{locale:es})}
             </h2>
           </div>
           {/* Para los días de la semana */}
-          <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-center text-blanco">
+          <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
             <div>D</div>
             <div>L</div>
             <div>M</div>
@@ -103,7 +100,7 @@ return (
             <div>V</div>
             <div>S</div>
           </div>
-          <div className="grid grid-cols-7 mt-2 text-sm">
+          <div className="grid grid-cols-7 mt-2 text-base">
             {days.map((day, dayIdx) => (
               <div
                 key={day.toString()}
@@ -139,9 +136,10 @@ return (
                     "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
                   )}
                 >
-                  <time dateTime={format(day, "yyyy-MM-dd")}>
+                  <time dateTime={format(day, "yyyy-MMMM-dd",{locale:es})}>
                     {format(day, "d")}
                   </time>
+      
                 </button>
                 {/* Puntos debajo de cada fecha */}
                 <div className="w-1 h-1 mx-auto mt-1">
@@ -159,14 +157,14 @@ return (
           </div>
         </div>
         <section className="mt-8 md:mt-0 md:pl-14">
-          <h2 className="font-medium font-poppins text-left text-blanco">
+          <h2 className="font-medium font-poppins text-left text-blanco text-lg">
             {/* Fecha del calendario */}{" "}
             <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
               {format(selectedDay, "MMM dd, yyy")}
             </time>
           </h2>
           <div className="scrollCalendario">
-            <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
+            <ol className="mt-4 space-y-1 text-base leading-6 text-gray-500">
               {selectedDayMeetings.length > 0 ? (
                 selectedDayMeetings.map((meeting) => (
                   <Meeting meeting={meeting} key={meeting.id.id} />

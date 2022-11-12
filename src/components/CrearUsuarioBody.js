@@ -46,10 +46,10 @@ function CrearUsuarioBody() {
       Input_contrasena: Yup.string()
         .required("La contraseña es obligatorio")
         .oneOf([Yup.ref("Input_contrasenaF")], "Las contraseñas no son iguales")
-        .min(8),
+        .min(8, "La contraseña debe tener una longitud mayor o igual a 8 caracteres"),
       Input_contrasenaF: Yup.string()
         .required("Porfavor confirme su contraseña")
-        .min(8),
+        .min(8, "La contraseña debe tener una longitud mayor o igual a 8 caracteres"),
     }),
     onSubmit: (valores) => {
       handleSubmit(valores);
@@ -74,7 +74,7 @@ function CrearUsuarioBody() {
         {/* boton regreso */}
         <BotonBack />
 
-        <Form onSubmit={formik.handleSubmit}>
+        <Form onSubmit={formik.handleSubmit} className="registro_user">
           <div id="lbl_Crear_Usuario">
             <span>Crear Usuario</span>
           </div>

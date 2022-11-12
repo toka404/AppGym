@@ -13,6 +13,7 @@ import {
   parseISO,
   startOfToday,
 } from "date-fns";
+import es from 'date-fns/locale/es'
 import { useState, useEffect } from "react";
 import BotonBack from "./BotonBack";
 import { QueryReservas } from "../Hooks/useColeccion";
@@ -90,7 +91,7 @@ function Calend() {
 
   return (
     // div que controla todo
-    <div className="pt-28 bg-pes ">
+    <div className="pt-36 bg-pes ">
       <BotonBack />
 
       <div className="lblCalendario_Class">
@@ -103,9 +104,9 @@ function Calend() {
           <div className="md:pr-14 bg-fondo rounded-md">
             <div className="flex items-center">
               {/* Mes */}
-              <h2 className="flex-auto font-semibold text-blanco ">
+              <h2 className="flex-auto font-semibold text-blanco text-lg">
                 {/* Flecha para mes previo*/}
-                {format(firstDayCurrentMonth, "MMMM yyyy")}
+                {format(firstDayCurrentMonth, "MMMM yyyy",{locale:es})}
               </h2>
               <button
                 type="button"
@@ -126,7 +127,7 @@ function Calend() {
               </button>
             </div>
             {/* Para los días de la semana */}
-            <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-center text-blanco">
+            <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
               <div>D</div>
               <div>L</div>
               <div>M</div>
@@ -135,7 +136,7 @@ function Calend() {
               <div>V</div>
               <div>S</div>
             </div>
-            <div className="grid grid-cols-7 mt-2 text-sm sm:text-sm">
+            <div className="grid grid-cols-7 mt-2 text-base">
               {days.map((day, dayIdx) => (
                 <div
                   key={day.toString()}
@@ -191,7 +192,7 @@ function Calend() {
             </div>
           </div>
           <section className="mt-8 md:mt-0 md:pl-14">
-            <h2 className="font-medium font-poppins text-left text-blanco">
+            <h2 className="font-medium font-poppins text-left text-blanco text-lg">
               {/* Fecha del calendario */}{" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
                 {format(selectedDay, "MMM dd, yyy")}

@@ -5824,9 +5824,6 @@ body {
   font-weight: bold;
   font-size: 40px;
   color: rgba(254, 63, 30, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #lbl_apellido {
@@ -8064,7 +8061,7 @@ button.icon-button>span.chevron-arrow-right {
   #Home {
     position: absolute;
     width: 100vw !important;
-    height: 250vw !important;
+    height: 220vw !important;
     overflow: hidden;
     --web-view-name: Home;
     --web-view-id: Home;
@@ -8076,12 +8073,12 @@ button.icon-button>span.chevron-arrow-right {
     position: absolute;
     overflow: visible;
     width: 100vw !important;
-    height: 250vw !important;
+    height: 220vw !important;
   }
 
   #Rectngulo_103_ck {
     width: 100vw !important;
-    height: 250vw !important;
+    height: 220vw !important;
   }
 
   #Hola_Usuario {
@@ -8104,7 +8101,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #Grupo_de_desplazamiento_1 {
-    width: 100vw;
+    width: 80vw;
     height: 20vw;
     left: 8vw;
     top: 10vw;
@@ -8421,7 +8418,7 @@ button.icon-button>span.chevron-arrow-right {
 
   .btnEliminar_Class {
     top: -6vw;
-    left: 50vw ;
+    left: 50vw;
   }
 
   /* Pantalla calendario */
@@ -8440,5 +8437,17 @@ button.icon-button>span.chevron-arrow-right {
 
   #btn_ingresarCrearCuenta {
     top: 185vw !important;
+
+  }
+
+  /*Registro*/
+
+  .lbl_Crear_Usuario {
+    left: 0vw;
+    top: -2vw !important;
+  }
+
+  .registro_user {
+    top: -100vw;
   }
 }
