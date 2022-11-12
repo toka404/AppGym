@@ -49,7 +49,7 @@ function CrearUsuarioBody() {
         .min(8, "La contraseña debe tener una longitud mayor o igual a 8 caracteres"),
       Input_contrasenaF: Yup.string()
         .required("Porfavor confirme su contraseña")
-        .min(8, "La contraseña debe tener una longitud mayor o igual a 8 caracteres"),
+        .min(8, "La contraseña debe contener 8 o más caracteres"),
     }),
     onSubmit: (valores) => {
       handleSubmit(valores);

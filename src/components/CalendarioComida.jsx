@@ -171,7 +171,7 @@ return (
                 ))
               ) : (
                 <p className="text-blanco font-medium font-poppins text-center">
-                  No meetings for today.
+                  No hay plan para hoy
                 </p>
               )}
             </ol>

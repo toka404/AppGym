@@ -206,7 +206,7 @@ function Calend() {
                   ))
                 ) : (
                   <p className="text-blanco font-medium font-poppins text-center">
-                    No meetings for today.
+                    
                   </p>
                 )}
               </ol>

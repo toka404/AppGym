@@ -13,6 +13,8 @@ import {
 import { db } from "../components/Firebase";
 import { useUser } from "./UserContext";
 import { isEmpty } from "lodash";
+import Modal from "../components/Modal";
+import styled from "styled-components";
 
 const today = new Date();
 const tomorr = new Date();
@@ -206,8 +208,10 @@ function ReservasBody() {
   useEffect(() => {
     getEventos();
     cupoMaximo();
-    return () => {};
+    return () => { };
   }, [reserva, actualizar]);
+
+  const [estadoModal, cambiarEstadoModal] = useState(false);
 
   return (
     <div>
@@ -283,58 +287,8 @@ function ReservasBody() {
             </div>
           </div>
         </div>
-        {/* boton reserva */}
-        {consulta != null &&
-        consulta.participantes &&
-        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
-          inscripciones < 2 ? (
-            <button
-              onClick={async () => {
-                if (consulta.participantes.length < consulta.cupo) {
-                  if (
-                    consulta.participantes.indexOf(usuarioLoged.email) === -1
-                  ) {
-                    const nuevoParticipantes = consulta.participantes;
-                    nuevoParticipantes.push(usuarioLoged.email);
 
-                    const claseRef = doc(db, "clases", consulta.id);
-                    await updateDoc(claseRef, {
-                      participantes: nuevoParticipantes,
-                    });
-                    setActualizar(!actualizar);
-                  }
-                } else {
-                  console.log(consulta.cupo);
-                  console.log(
-                    "Se ha alcansado el cupo maximo para esta actividad"
-                  );
-                }
-              }}
-            >
-              <div className="btnReservar_ClassReserva btn">
-                <svg className="Trazado_40" viewBox="0 0 225 60">
-                  <path
-                    className="Trazado_40_Class"
-                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
-                  ></path>
-                </svg>
-                <div className="Reservar_ClassReserva">
-                  <span>Reservar</span>
-                </div>
-              </div>
-            </button>
-          ) : (
-            <div className="lblReserva">
-              <span>Ya se encuentra registrado en 2 actividades</span>
-            </div>
-          )
-        ) : (
-          <div className="lblReserva">
-            <span>Ya se encuentra registrado</span>
-          </div>
-        )}
         {/* participantes */}
-
         <div className="formParticipantes_Class">
           <svg className="CuadroParticipantes" viewBox="0 0 352 272.333"></svg>
         </div>
@@ -359,7 +313,7 @@ function ReservasBody() {
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
                     />
-                    
+
                     <div className="nmPart">
                       <span>{e.nombre + " " + e.apellido}</span>
                     </div>
@@ -425,16 +379,16 @@ function ReservasBody() {
               <span>Hora:</span>
             </div>
             <div className="lblHora">
-              <select id="hora" value={reserva.hora} onChange={handleChange}>
+              <select id="hora" value={reserva.hora} onChange={handleChange} onClick>
                 {horas.map((e) => {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
                     reserva.fecha !==
-                      today.getFullYear() +
-                        "/" +
-                        (today.getMonth() + 1) +
-                        "/" +
-                        today.getDate()
+                    today.getFullYear() +
+                    "/" +
+                    (today.getMonth() + 1) +
+                    "/" +
+                    today.getDate()
                   ) {
                     return (
                       <option value={e.value} key={e.value}>
@@ -449,9 +403,99 @@ function ReservasBody() {
             </div>
           </div>
         </div>
+        {/* boton reserva */}
+        {consulta != null &&
+          consulta.participantes &&
+          consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+          inscripciones < 2 ? (
+            <button
+              onClick={async () => {
+                if (consulta.participantes.length < consulta.cupo) {
+                  if (
+                    consulta.participantes.indexOf(usuarioLoged.email) === -1
+                  ) {
+                    const nuevoParticipantes = consulta.participantes;
+                    nuevoParticipantes.push(usuarioLoged.email);
+
+                    const claseRef = doc(db, "clases", consulta.id);
+                    await updateDoc(claseRef, {
+                      participantes: nuevoParticipantes,
+                    });
+                    setActualizar(!actualizar);
+                  }
+                } else {
+                  console.log(consulta.cupo);
+                  console.log(
+                    "Se ha alcansado el cupo maximo para esta actividad"
+                  );
+                }
+              }}
+            >
+              <div className="btnReservar_ClassReserva btn">
+                <svg className="Trazado_40" viewBox="0 0 225 60">
+                  <path
+                    className="Trazado_40_Class"
+                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                  ></path>
+                </svg>
+                <div className="Reservar_ClassReserva" >
+                  <span>Reservar</span>
+                </div>
+              </div>
+            </button>
+          ) : (
+
+            <div className="btnReservar_ClassReserva btn" onClick={() => cambiarEstadoModal(!estadoModal)}>
+
+              <svg className="Trazado_40" viewBox="0 0 225 60">
+                <path
+                  className="Trazado_40_Class"
+                  d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                ></path>
+              </svg>
+              <div className="Reservar_ClassReserva">
+                <span>Reservar</span>
+              </div>
+
+              <div>
+                <Modal
+                  estado={estadoModal}
+                  cambiarEstado={cambiarEstadoModal}
+                >
+                  <Contenido>
+                    <p>
+                      Usted ya tiene 2 reservas
+                    </p>
+                  </Contenido>
+                </Modal>
+              </div>
+            </div>
+          )
+        ) : (
+          <div className="lblReserva">
+            <span>Ya se encuentra registrado</span>
+          </div>
+        )}
+
       </div>
     </div>
   );
 }
 
 export default ReservasBody;
+
+const Contenido = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom:10px;
+  }
+
+  p{
+    font-size: 35px;
+  }
+`;

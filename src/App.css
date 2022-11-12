@@ -8450,4 +8450,11 @@ button.icon-button>span.chevron-arrow-right {
   .registro_user {
     top: -100vw;
   }
+
+  .error.field.Input_nombre{
+    /* fill: rgba(80, 77, 77, 0.302);
+    background-color: rgba(80, 77, 77, 0.302); */
+
+    
+  }
 }
