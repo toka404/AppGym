@@ -52,7 +52,7 @@ function HomeBody() {
         <div id="Grupo_868" className="btn">
           <img
             id="img_fruta"
-            src="/images/Home/comida.png"
+            src="/images/Home/comida_s.png"
             alt="comida saludabel"
           />
           <div id="Grupo_de_desplazamiento_3">

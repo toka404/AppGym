@@ -46,17 +46,22 @@
   flex-wrap: wrap;
 }
 
+body {
+  display: flex;
+}
+
 #Usuario {
-  position: absolute;
+  position: inherit;
   width: 100vw;
-  height: 250vw;
-  background-color: rgba(255, 255, 255, 1);
-  overflow: hidden;
+  height: 220vw;
+  overflow: hidden !important;
   --web-view-name: Usuario;
   --web-view-id: Usuario;
   --web-scale-on-resize: true;
   --web-enable-deep-linking: true;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #img_fondo {
@@ -67,15 +72,25 @@
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .img_fondo {
   position: absolute;
-  overflow: visible;
   width: 431px;
-  height: 926px;
+  height: 898px;
   left: -3px;
   top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#form_login {
+  align-items: flex-start;
+  left: auto;
 }
 
 #input_correo {
@@ -85,6 +100,9 @@
   left: 42px;
   top: 496px;
   overflow: visible;
+  max-width: 200rem;
+  display: flex;
+  flex-direction: row;
 }
 
 #Input_correo {
@@ -136,6 +154,9 @@
   font-weight: bold;
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: left;
 }
 
 #btn_ingresar {
@@ -145,6 +166,10 @@
   left: 18px !important;
   top: 670px !important;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
 }
 
 #btn_ingresarCrearCuenta {
@@ -171,6 +196,7 @@
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
+
 }
 
 .BtnIngresoLogin {
@@ -180,6 +206,11 @@
   height: 62px;
   left: 0px;
   top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  justify-content: space-around;
 }
 
 #Btn_google {
@@ -207,7 +238,11 @@
   height: 62px;
   left: 0px;
   top: 0px !important;
-
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  max-width: 350px;
+  justify-content: flex-end;
 }
 
 #btn_google {
@@ -218,7 +253,6 @@
   top: 740px !important;
   overflow: visible;
 }
-
 
 #Ingresar_dc {
   left: 131px;
@@ -237,7 +271,7 @@
 
 #lbl_registrate {
   left: 32px;
-  top: 874px;
+  top: 840px !important;
   position: absolute;
   overflow: visible;
   width: 365px;
@@ -256,7 +290,7 @@
   top: 396px;
   position: absolute;
   overflow: visible;
-  width: 291px;
+  max-width: 291px;
   white-space: nowrap;
   text-align: left;
   font-family: Poppins;
@@ -264,6 +298,8 @@
   font-weight: bold;
   font-size: 40px;
   color: rgba(254, 63, 30, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 #lbl_contrasenaLogin {
@@ -279,15 +315,19 @@
   font-weight: bold;
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
+
 }
 
 #img_cuerda {
   position: absolute;
-  width: 306px;
-  height: 346px;
+  width: auto;
+  height: auto;
+  max-width: min-content;
+  max-height: min-content;
   left: 61px;
   top: 27px;
   overflow: visible;
+  flex-direction: column;
 }
 
 #img_contrasea {
@@ -560,8 +600,8 @@
 #Grupo_de_desplazamiento_1 {
   mix-blend-mode: normal;
   position: absolute;
-  width: 300px;
-  height: 80px;
+  width: 93vw;
+  height: 20vw;
   left: -6px;
   top: 50px;
   overflow: hidden;
@@ -626,7 +666,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
-  color: #FAA493;
+  color: #3A44A6;
 }
 
 #Grupo_867 {
@@ -997,6 +1037,9 @@
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .input_Correo {
@@ -1008,6 +1051,9 @@
   height: 43px;
   left: 0px;
   top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #Emy512gmailcom {
@@ -2227,6 +2273,12 @@
   top: 0px;
 }
 
+.mensaje {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .Grupo_115_Class {
   mix-blend-mode: normal;
   position: absolute;
@@ -2240,8 +2292,6 @@
 .Rutinas_Class {
   left: 0px;
   top: 0px;
-  position: absolute;
-  overflow: visible;
   width: 85px;
   white-space: nowrap;
   text-align: left;
@@ -2250,21 +2300,25 @@
   font-weight: bold;
   font-size: 20px;
   color: rgba(254, 63, 30, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .n_0_Abdominales_50_Sentadillas_Class {
   left: 0px;
   top: 38px;
-  position: absolute;
-  overflow: visible;
+  position: relative;
   width: 164px;
   white-space: nowrap;
-  text-align: left;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .Grupo_818_Class {
@@ -4880,21 +4934,6 @@
   color: rgba(254, 63, 30, 1);
 }
 
-.n_0_Abdominales_50_Sentadillas_Class {
-  left: 0px;
-  top: 38px;
-  position: absolute;
-  overflow: visible;
-  width: 164px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 1);
-}
-
 .formFecha_Class {
   position: relative;
   width: 346px;
@@ -5172,6 +5211,9 @@
   left: 41px;
   top: 563px;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Trazado_39_Class {
@@ -5222,9 +5264,12 @@
   position: relative;
   width: 119px;
   height: 54px;
-  left: 120px;
-  top: 0px;
+  left: 105px;
+  top: 8px;
   overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
 }
 
 .Trazado_50_Class {
@@ -5476,24 +5521,7 @@
   top: 0px;
 }
 
-#img_fondo {
-  fill: rgba(22, 21, 21, 0.929);
-  stroke: rgba(112, 112, 112, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
-}
 
-.img_fondo {
-  position: absolute;
-  overflow: visible;
-  width: 431px;
-  height: 926px;
-  left: -3px;
-  top: 0px;
-}
 
 #img_Nombre {
   position: absolute;
@@ -5796,6 +5824,9 @@
   font-weight: bold;
   font-size: 40px;
   color: rgba(254, 63, 30, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #lbl_apellido {
@@ -5894,6 +5925,10 @@
   left: 29px;
   top: 803px;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
 }
 
 #Rectngulo_98_dm {
@@ -7754,7 +7789,10 @@ button.icon-button>span.chevron-arrow-right {
   transform: matrix(1, 0, 0, 1, 0, 0);
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: rgba(255, 255, 255, 1);;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .FotoPP {
@@ -7763,22 +7801,23 @@ button.icon-button>span.chevron-arrow-right {
   height: 45px;
   left: 50px;
   overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nomPart {
-  position: relative;
   left: 105px;
   top: 8px;
   height: 35px;
-  /* overflow: visible; */
-  /* width: 46px; */
-  /* white-space: nowrap; */
-  text-align: left;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: row;
+  padding: .375rem 1.75rem;
 }
 
 .scrollCalendario {
@@ -7793,12 +7832,15 @@ button.icon-button>span.chevron-arrow-right {
 
 .CajaContenidos {
   position: absolute;
-  width: 390px;
+  width: 90vw;
   height: 23%;
   top: 620px;
-  left: 5px;
+  left: 40px;
   overflow-y: scroll;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  text-align: right;
 }
 
 /* .CajaContenidos::-webkit-scrollbar {
@@ -7811,7 +7853,9 @@ button.icon-button>span.chevron-arrow-right {
 
 .participante {
   display: flex;
-
+  flex-direction: row;
+  align-items: left;
+  max-width: inherit;
 }
 
 .lblCalendario_Class {
@@ -7917,1193 +7961,15 @@ button.icon-button>span.chevron-arrow-right {
   top: 0px
 }
 
-@media screen and (min-width: 393px) and (max-width: 414px) and (max-height: 925px) {
-
-  /* pantalla de login */
-  /* Responsive Iphone XR*/
-  #Usuario {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    height: 50vw !important;
-    overflow: hidden !important;
-  }
-
-  #img_fondo {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  #img_cuerda {
-    display: flex;
-    width: 63%;
-    height: 33%;
-    left: 15%;
-  }
-
-  #lbl_broken_hand {
-    font-size: 200%;
-    left: 18%;
-    top: 37%;
-  }
-
-  #lbl_correo {
-    left: 10%;
-    top: 46%;
-  }
-
-  #input_correo {
-    left: 8%;
-    top: 50%;
-  }
-
-  #lbl_contrasenaLogin {
-    left: 10%;
-    top: 61%;
-  }
-
-  #img_contrasea {
-    left: 8%;
-    top: 65%;
-  }
-
-  #btn_ingresar {
-    left: 3%;
-    top: 80%;
-  }
-
-  #Grupo_903 {
-    left: -10%;
-    top: -170%;
-  }
-
-  #Grupo_904 {
-    position: unset;
-  }
-
-  #lbl_registrate {
-    left: 5vw;
-    top: 200vw;
-  }
-
-  /* Pantalla Home */
-
-  #Home {
-    position: absolute;
-    width: 100vw !important;
-    height: 250vw !important;
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
-
-  .Rectngulo_103_ck {
-    position: absolute;
-    overflow: visible;
-    width: 100vw !important;
-    height: 250vw !important;
-  }
-
-  #Rectngulo_103_ck {
-    width: 100vw !important;
-    height: 250vw !important;
-  }
-
-  #Hola_Usuario {
-    left: 6vw;
-    top: 3rem;
-    width: 20rem;
-    font-size: 10vw;
-  }
-
-  #Grupo_866 {
-    width: 90vw;
-    height: 45vw;
-    left: 5vw;
-    top: 30vw;
-  }
-
-  #ambitious-creative-co-rick-bar {
-    width: 90vw;
-    height: 40vw;
-  }
-
-  #Grupo_de_desplazamiento_1 {
-    width: 80vw;
-    height: 20vw;
-    left: 8vw;
-    top: 10vw;
-  }
-
-  #Reservas {
-    left: -13vw;
-    width: 95vw;
-    font-size: 12vw;
-    padding: .375rem .75rem !important;
-  }
-
-  #Grupo_867 {
-    width: 53vw;
-    height: 123vw;
-    left: 5vw;
-    top: 73vw;
-  }
-
-  #img_ejercicio {
-    width: 43vw;
-    height: 123vw;
-  }
-
-  #Eventos_cx {
-    left: 3vw;
-    top: 0vw;
-    width: 163vw;
-    font-size: 9vw;
-  }
-
-  #Grupo_868 {
-    width: 43vw;
-    height: 123vw;
-    left: 52vw;
-    top: 73vw;
-  }
-
-  #img_fruta {
-    width: 115vw;
-    height: 123vw;
-  }
-
-  #Grupo_de_desplazamiento_3 {
-    width: 45vw;
-    height: 20vw;
-    left: 0vw;
-    top: 90vw;
-  }
-
-  #Comidas {
-    width: 80vw;
-    font-size: 9vw;
-  }
-
-  #Grupo_865 {
-    width: 100vw;
-    height: 60vw;
-    left: 0vw;
-    top: 200vw;
-  }
-
-  .Trazado_52_cz {
-    width: 100vw;
-    height: 16vw;
-  }
-
-  /* Pantalla perfil  */
-
-  #Perfil {
-    width: 100vw;
-    height: 250vw;
-    overflow: hidden;
-    --web-view-name: Perfil;
-    --web-view-id: Perfil;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
-
-  .Trazado_48 {
-    left: -3vw;
-    width: 143vw;
-    height: 300vw;
-  }
-
-  .fondoBtnLogOut {
-    width: 50vw;
-    height: 40vw;
-    left: 50vw;
-    top: -10vw;
-  }
-
-  #Perfil_ht {
-    left: -5vw;
-    top: 15vw;
-    width: 106vw;
-    font-size: 10vw;
-  }
-
-  #n_838764_g {
-    position: absolute;
-    width: 25vw;
-    height: 20vw;
-    left: 35vw;
-    top: 35vw;
-    overflow: visible;
-
-  }
-
-  #Grupo_816_ha {
-    width: 60vw;
-    height: 15vw;
-    left: 35vw;
-    top: 57vw;
-  }
-
-  #Grupo_815_hb {
-    width: 60vw;
-    height: 15vw;
-    left: 0px;
-    top: 0px;
-  }
-
-  #Grupo_850 {
-    width: 80vw;
-    height: 12vw;
-  }
-
-  .Input_Nombre {
-    width: 60vw;
-    height: 10vw;
-  }
-
-  #Nombre_hn {
-    font-size: 6vw;
-  }
-
-  #Grupo_853 {
-    width: 30vw;
-    height: 39px;
-    left: 24px;
-    top: 250px;
-  }
-
-  #Grupo_870 {
-    width: 125px;
-    height: 39px;
-    left: 24px;
-    top: 320px;
-  }
-
-  #Grupo_925 {
-    width: 235px;
-    left: 143px;
-    top: 320px;
-  }
-
-  #Apellido_hn {
-    left: 0px;
-    top: 0px;
-    width: 126px;
-    font-size: 24px;
-  }
-
-  .Input_Apellido_Perf {
-    width: 60vw;
-    height: 40px;
-  }
-
-  #Grupo_852 {
-    width: 235px;
-    height: 43px;
-    left: 143px;
-    top: 390px;
-  }
-
-  .input_Correo {
-    width: 60vw;
-    height: 40px;
-  }
-
-  #Correo {
-    left: 24px;
-    top: 390px;
-    width: 111px;
-    font-size: 24px;
-  }
-
-  #Altura {
-    left: 24px;
-    top: 460px;
-    width: 80px;
-    font-size: 24px;
-  }
-
-  #Grupo_906 {
-    width: 200px;
-    height: 40px;
-    left: 143px;
-    top: 460px;
-  }
-
-  .Input_altura {
-    width: 60vw;
-    height: 40px;
-  }
-
-  #Peso {
-    left: 24px;
-    top: 530px;
-    width: 103px;
-    font-size: 24px;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  #Grupo_905 {
-    width: 200px;
-    height: 40px;
-    left: 143px;
-    top: 530px;
-  }
-
-  .input_peso {
-    width: 60vw;
-    height: 40px;
-  }
-
-  .BtnActualizar {
-    width: 50vw;
-    height: 15vw;
-    left: 26vw;
-    top: 155vw;
-  }
-
-  .fondoBtnActu {
-    width: 55vw;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    font-size: 5vw;
-  }
-
-  .ActualizarPerfilbtn {
-    left: 7vw !important;
-    font-size: 6vw;
-  }
-
-  /* Eventos */
-
-  .NameYoga__ClassEventos {
-    width: 76vw;
-    font-size: 6vw;
-  }
-
-  /*Reservas*/
-
-  .Reserva_Class {
-    position: absolute;
-    width: 414px;
-    height: 926px;
-    overflow: hidden;
-    --web-view-name: Reserva;
-    --web-view-id: Reserva;
-    --web-enable-deep-linking: true;
-  }
-
-  .formParticipantes_Class {
-    width: 88vw;
-    height: 100vw;
-    left: 10vw;
-    top: 85vw;
-  }
-
-  .CuadroParticipantes {
-    width: 90vw;
-    height: 100vw;
-    left: -3vw;
-    top: 0vw;
-  }
-
-  .lblParticipantes_Class {
-    left: 60px;
-    top: 90vw;
-    width: 146px;
-    font-size: 20px;
-  }
-
-  .CajaContenidos {
-    width: 85vw;
-    height: 80vw;
-    top: 100vw;
-    left: 10vw;
-  }
-
-  .nomPart {
-    left: 10vw;
-    top: 8px;
-    width: 70vw;
-    height: 35px;
-  }
-
-  /* Pantalla calendario */
-
-  .AppCalen {
-    width: 414px !important;
-    height: 896px !important;
-  }
-
-  #Grupo_865 {
-    width: 100vw;
-    height: 60vw;
-    left: 0vw;
-    top: 200vw;
-  }
-
-  #btn_ingresarCrearCuenta {
-    top: 185vw !important;
-  }
+.fecha_evento_txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-@media (width: 390px) and (height: 844px) {
-
-  /* pantalla de login */
-  /* Responsive Iphone 12 Pro*/
-
-
-  #Usuario {
-    position: absolute;
-    width: 390px;
-    height: 844px;
-    background-color: rgba(255, 255, 255, 1);
-    overflow: hidden;
-    --web-view-name: Usuario;
-    --web-view-id: Usuario;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-
-  }
-
-  body {
-    margin: 0 !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-
-  #img_fondo {
-    position: absolute;
-    overflow: visible;
-    width: 396px !important;
-    height: 850px !important;
-  }
-
-  #img_cuerda {
-    width: 65%;
-    height: 35%;
-  }
-
-  #lbl_broken_hand {
-    font-size: 35px;
-    left: 70px;
-    top: 320px;
-  }
-
-  #lbl_correo {
-    left: 40px;
-    top: 400px;
-  }
-
-  #input_correo {
-    left: 30px;
-    top: 450px;
-  }
-
-  #lbl_contrasenaLogin {
-    left: 40px;
-    top: 530px;
-  }
-
-  #img_contrasea {
-    left: 30px;
-    top: 580px;
-  }
-
-  #btn_ingresar {
-    left: 15px;
-    top: 720px;
-  }
-
-  #Grupo_903 {
-    left: -15px;
-    top: -60px;
-    width: 185px;
-  }
-
-  #Grupo_904 {
-    left: -15px;
-    top: -60px;
-    width: 185px;
-  }
-
-  #lbl_registrate {
-    left: 10px;
-    top: 810px;
-  }
-
-  /* Pantalla Home */
-
-  #Home {
-    position: absolute;
-    width: 390px !important;
-    height: 844px !important;
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
-
-  .Rectngulo_103_ck {
-    position: absolute;
-    overflow: visible;
-    width: 390px !important;
-    height: 844px !important;
-  }
-
-  #Rectngulo_103_ck {
-    width: 390px !important;
-    height: 844px !important;
-  }
-
-  #Hola_Usuario {
-    left: 31px;
-    top: 48px;
-    width: 192px;
-    font-size: 40px;
-  }
-
-  #Grupo_866 {
-    width: 350px;
-    height: 190px;
-    left: 27px;
-    top: 116px;
-  }
-
-  #ambitious-creative-co-rick-bar {
-    width: 105%;
-    height: 90%;
-  }
-
-  #Grupo_de_desplazamiento_1 {
-    width: 300px;
-    height: 80px;
-    left: 60px;
-    top: 50px;
-  }
-
-  #Reservas {
-    left: -75px;
-    width: 350px;
-    font-size: 35px;
-  }
-
-  #Grupo_867 {
-    width: 204px;
-    height: 450px;
-    left: 25px;
-    top: 300px;
-  }
-
-  #img_ejercicio {
-    width: 80%;
-    height: 100%;
-  }
-
-  #Eventos_cx {
-    left: 6px;
-    top: 0px;
-    width: 163px;
-    font-size: 38px;
-  }
-
-  #Grupo_868 {
-    width: 180px;
-    height: 450px;
-    left: 195px;
-    top: 300px;
-  }
-
-  #img_fruta {
-    width: 105%;
-    height: 100%;
-  }
-
-  #Grupo_de_desplazamiento_3 {
-    width: 170px;
-    height: 49px;
-    left: 10px;
-    top: 340px;
-  }
-
-  #Comidas {
-    width: 164px;
-    font-size: 35px;
-  }
-
-  #Grupo_865 {
-    width: 390px;
-    height: 50px;
-    left: 0px;
-    top: 785px;
-  }
-
-  .Trazado_52_cz {
-    width: 390px;
-    height: 60px;
-    left: 0px;
-    top: 0px;
-  }
-
-}
-
-
-
-@media (width: 360px) and (height: 740px) {
-
-  /* pantalla de login */
-  /* Responsive Sam Galaxy S8+ */
-
-  #Usuario {
-    position: absolute;
-    width: 360px;
-    height: 926px;
-    background-color: rgba(255, 255, 255, 1);
-    overflow: hidden;
-    --web-view-name: Usuario;
-    --web-view-id: Usuario;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-
-  }
-
-  body {
-    margin: 0 !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-
-  #img_fondo {
-    position: absolute;
-    overflow: visible;
-    width: 365px !important;
-    height: 745px !important;
-  }
-
-  #img_cuerda {
-    width: 50%;
-    height: 25%;
-    left: 90px;
-  }
-
-  #lbl_broken_hand {
-    font-size: 30px;
-    left: 70px;
-    top: 270px;
-  }
-
-  #lbl_correo {
-    left: 40px;
-    top: 340px;
-  }
-
-  #input_correo {
-    left: 30px;
-    top: 380px;
-  }
-
-  .Input_correo {
-    width: 90%;
-    height: 85%;
-  }
-
-  .Lnea_4Login {
-    width: 82%;
-    height: 8%;
-    top: 36px;
-  }
-
-  #lbl_contrasenaLogin {
-    left: 40px;
-    top: 440px;
-  }
-
-  #img_contrasea {
-
-    left: 30px;
-    top: 480px;
-  }
-
-  .Input_Contra {
-    width: 90%;
-    height: 85%;
-  }
-
-  #btn_ingresar {
-    left: 15px;
-    top: 620px;
-  }
-
-  .BtnIngresoLogin {
-    width: 90%;
-    height: 85%;
-  }
-
-  #Grupo_903 {
-    left: -15px;
-    top: -170px;
-
-  }
-
-  .Btn_google {
-    width: 90%;
-    height: 85%;
-
-  }
-
-  #google_1 {
-    width: 40px;
-    height: 40px;
-  }
-
-  #Grupo_904 {
-    left: -30px;
-    top: -170px;
-  }
-
-  .BtnFacebook {
-    width: 90%;
-    height: 85%;
-  }
-
-
-  #facebook {
-    width: 50px;
-    height: 43px;
-  }
-
-  #lbl_registrate {
-    left: 5px;
-    top: 705px;
-  }
-
-
-  /* Pantalla Home */
-
-  #Home {
-    position: absolute;
-    width: 360px !important;
-    height: 740px !important;
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
-
-
-  .Rectngulo_103_ck {
-    position: absolute;
-    overflow: visible;
-    width: 360px !important;
-    height: 926px !important;
-  }
-
-  #Rectngulo_103_ck {
-    width: 360px !important;
-    height: 740px !important;
-  }
-
-  #Hola_Usuario {
-    left: 31px;
-    top: 48px;
-    width: 192px;
-    font-size: 25px;
-  }
-
-  #Grupo_866 {
-    width: 320px;
-    height: 190px;
-    left: 27px;
-    top: 116px;
-  }
-
-  #ambitious-creative-co-rick-bar {
-    width: 105%;
-    height: 90%;
-  }
-
-  #Grupo_de_desplazamiento_1 {
-    width: 270px !important;
-    height: 80px;
-    left: 60px;
-    top: 50px;
-  }
-
-  #Reservas {
-    left: -40px;
-    width: 300px;
-    font-size: 40px;
-    padding: .375rem .75rem !important;
-  }
-
-
-  #Grupo_867 {
-    position: absolute;
-    width: 184px;
-    height: 370px;
-    left: 25px;
-    top: 300px;
-    overflow: visible;
-  }
-
-  #img_ejercicio {
-    width: 80%;
-    height: 100%;
-  }
-
-  #Eventos_cx {
-    left: 3px;
-    top: 0px;
-    width: 163px;
-    font-size: 35px;
-  }
-
-  #Grupo_868 {
-    width: 160px;
-    height: 370px;
-    left: 185px;
-    top: 300px;
-  }
-
-  #img_fruta {
-    width: 105%;
-    height: 100%;
-  }
-
-  #Grupo_de_desplazamiento_3 {
-    width: 150px;
-    height: 49px;
-    left: 10px;
-    top: 270px;
-  }
-
-  #Comidas {
-    width: 164px;
-    font-size: 30px;
-  }
-
-  #Grupo_865 {
-    width: 360px;
-    height: 60px;
-    left: -25px;
-    top: 684px;
-  }
-
-  .Trazado_52_cz {
-    overflow: visible;
-    position: absolute;
-    width: 383px;
-    height: 62px;
-    left: 0px;
-    top: 0px;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-
-  /* Pantalla perfil  */
-
-  #Perfil {
-    width: 360px;
-    height: 740px;
-    overflow: hidden;
-    --web-view-name: Perfil;
-    --web-view-id: Perfil;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-  }
-
-  .Trazado_48 {
-    overflow: visible;
-    position: absolute;
-    width: 429px;
-    height: 926px;
-    left: -1px;
-    top: 0px;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-
-  .fondoBtnLogOut {
-    overflow: visible;
-    position: absolute;
-    width: 207px;
-    height: 72px;
-    left: 160px;
-    top: -45px;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-
-  #Perfil_ht {
-    left: 130px;
-    top: 80px;
-    width: 106px;
-    font-size: 30px;
-  }
-
-  #n_838764_g {
-    position: absolute;
-    width: 20%;
-    height: 10%;
-    left: 149px;
-    top: 140px;
-    overflow: visible;
-
-  }
-
-  #Grupo_816_ha {
-    width: 180px;
-    height: 43px;
-    left: 173px;
-    top: 236px;
-  }
-
-  #Grupo_815_hb {
-    width: 235px;
-    height: 40px;
-    left: -30px;
-    top: 0px;
-  }
-
-  #Grupo_850 {
-    width: 180px;
-    height: 40px;
-  }
-
-  .Input_Nombre {
-    width: 200px;
-    height: 40px;
-  }
-
-  #Nombre_hn {
-    font-size: 24px;
-  }
-
-  #Grupo_853 {
-    width: 125px;
-    height: 39px;
-    left: 24px;
-    top: 250px;
-  }
-
-  #Grupo_870 {
-    width: 125px;
-    height: 39px;
-    left: 24px;
-    top: 320px;
-  }
-
-  #Grupo_925 {
-    width: 235px;
-    left: 143px;
-    top: 320px;
-  }
-
-  #Apellido_hn {
-    left: 0px;
-    top: 0px;
-    width: 126px;
-    font-size: 24px;
-  }
-
-  .Input_Apellido_Perf {
-    width: 200px;
-    height: 40px;
-  }
-
-  #Grupo_852 {
-    width: 235px;
-    height: 43px;
-    left: 143px;
-    top: 390px;
-  }
-
-  .input_Correo {
-    width: 200px;
-    height: 40px;
-  }
-
-  #Correo {
-    left: 24px;
-    top: 390px;
-    width: 111px;
-    font-size: 24px;
-  }
-
-  #Altura {
-    left: 24px;
-    top: 460px;
-    width: 80px;
-    font-size: 24px;
-  }
-
-  #Grupo_906 {
-    width: 200px;
-    height: 40px;
-    left: 143px;
-    top: 460px;
-  }
-
-  .Input_altura {
-    width: 200px;
-    height: 40px;
-  }
-
-  #Peso {
-    left: 24px;
-    top: 530px;
-    width: 103px;
-    font-size: 24px;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  #Grupo_905 {
-    width: 200px;
-    height: 40px;
-    left: 143px;
-    top: 530px;
-  }
-
-  .input_peso {
-    width: 200px;
-    height: 40px;
-    left: 0px;
-    top: 0px;
-  }
-
-  .BtnActualizar {
-    width: 189px;
-    height: 54px;
-    left: 100px;
-    top: 600px;
-  }
-}
-
-
-
-@media screen and (max-width: 280px) and (max-height: 592px) {
-
-  /* pantalla de login */
-  /* Responsive Redmi Pro 20k*/
-  #Usuario {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    height: 50vw !important;
-    overflow: hidden !important;
-  }
-
-  #img_fondo {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  #img_cuerda {
-    display: flex;
-    width: 55%;
-    height: 30%;
-    left: 20%;
-    top: 3%;
-  }
-
-  #lbl_broken_hand {
-    font-size: 125%;
-    left: 21%;
-    top: 35%;
-  }
-
-  #lbl_correo {
-    left: 10%;
-    top: 42%;
-    font-size: 100%;
-  }
-
-  #input_correo {
-    left: 8%;
-    top: 47%;
-    width: 85vw;
-    height: 15vw;
-  }
-
-  .Input_correo {
-    width: 85vw;
-    height: 15vw;
-  }
-
-  .Lnea_4Login {
-    width: 215px;
-    height: 5px;
-    left: 11px;
-    top: 33px !important;
-  }
-
-  #lbl_contrasenaLogin {
-    left: 10%;
-    top: 120vw;
-    font-size: 100%;
-  }
-
-  #img_contrasea {
-    left: 8%;
-    top: 130vw;
-    width: 85vw;
-    height: 25px;
-  }
-
-  .Input_Contra {
-    width: 85vw;
-    height: 42px;
-  }
-
-  #btn_ingresar {
-    left: 5% !important;
-    height: 15vw !important;
-    width: 90vw !important;
-    top: 155vw !important;
-  }
-
-  .BtnIngresoLogin {
-    width: 90vw;
-    height: 40px;
-    left: 0px;
-    top: 0px;
-    font-size: 8vw !important;
-  }
-
-  #Grupo_903 {
-    left: -5vw !important;
-    top: -93vw !important;
-  }
-
-  .Btn_google {
-    position: unset;
-    overflow: visible;
-    width: 180px;
-    height: 62px;
-    left: 0px !important;
-    top: 0px !important;
-
-  }
-
-  #Grupo_904 {
-    position: unset;
-  }
-
-  #lbl_registrate {
-    left: 5vw;
-    top: 200vw;
-  }
+.cupo_participantes {
+  display: flexbox;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  align-items: center;
 }

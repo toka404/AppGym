@@ -78,10 +78,10 @@ function Body() {
 
       <div id="Usuario">
         <svg className="img_fondo">
-          <rect id="img_fondo" width="431" height="926"></rect>
+          <rect id="img_fondo" width="431" height="898"></rect>
         </svg>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="form_login">
           <div id="lbl_correo">
             <p>
               <span>Correo:</span>
@@ -213,8 +213,9 @@ function Body() {
         </div>
         <img
           id="img_cuerda"
+          className="rounded mx-auto d-block"
           src="images/img_cuerda.png"
-          alt="cuerdas de gimnacio"
+          alt="images/img_cuerda_2.png"
         />
       </div>
     </div>

@@ -46,10 +46,10 @@ function Evento(datos) {
         {/* Fecha del evento */}
         <div className="Fecha__ClassEventos">
           <span>Fecha:</span>
-          <span>
+          <span className="fecha_evento_txt">
             {" "}
             {fireBaseTime.toLocaleString("es-ES", {
-              weekday: "long",
+              weekday: "short",
               day: "2-digit",
               month: "long",
               year: "numeric",

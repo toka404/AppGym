@@ -248,8 +248,7 @@ function ReservasBody() {
             {/* Informacion de las rutinas */}
             <div className="n_0_Abdominales_50_Sentadillas_Class">
               <span>Uso de los equipos y espacios</span>
-              <br />
-              <span>del gimnacio</span>
+              <span>del gimnasio</span>
             </div>
           </div>
         </div>
@@ -342,7 +341,7 @@ function ReservasBody() {
         <div className="lblParticipantes_Class">
           <span>Participantes: </span>
           {!isEmpty(consulta) ? (
-            <span>
+            <span className="cupo_participantes">
               Cupo:{consulta.participantes.length}/{consulta.cupo}
             </span>
           ) : (
@@ -360,6 +359,7 @@ function ReservasBody() {
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
                     />
+                    
                     <div className="nomPart">
                       <span>{e.nombre + " " + e.apellido}</span>
                     </div>
