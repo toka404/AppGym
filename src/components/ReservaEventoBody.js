@@ -412,7 +412,7 @@ function ReservaEventoBody() {
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
                     />
-                    <div className="nomPart">
+                    <div className="nmPart">
                       <span>{e.nombre + " " + e.apellido}</span>
                     </div>
                     {e.id === usuarioLoged.email ? (

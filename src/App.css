@@ -7820,6 +7820,18 @@ button.icon-button>span.chevron-arrow-right {
   padding: .375rem 1.75rem;
 }
 
+.nmPart {
+  left: 105px;
+  top: 8px;
+  height: 35px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+  padding: .375rem 1.75rem;
+}
+
 .scrollCalendario {
   height: 220px;
   overflow-y: scroll;
@@ -7972,4 +7984,461 @@ button.icon-button>span.chevron-arrow-right {
   flex-direction: row;
   margin-bottom: 1rem;
   align-items: center;
+}
+
+@media screen and (min-width: 393px) and (max-width: 414px) and (max-height: 925px) {
+
+  /* pantalla de login */
+  /* Responsive Iphone XR*/
+  #Usuario {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    height: 50vw !important;
+    overflow: hidden !important;
+  }
+
+  #img_fondo {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  #img_cuerda {
+    display: flex;
+    width: 63%;
+    height: 33%;
+    left: 15%;
+  }
+
+  #lbl_broken_hand {
+    font-size: 200%;
+    left: 18%;
+    top: 37%;
+  }
+
+  #lbl_correo {
+    left: 10%;
+    top: 46%;
+  }
+
+  #input_correo {
+    left: 8%;
+    top: 50%;
+  }
+
+  #lbl_contrasenaLogin {
+    left: 10%;
+    top: 61%;
+  }
+
+  #img_contrasea {
+    left: 8%;
+    top: 65%;
+  }
+
+  #btn_ingresar {
+    left: 3%;
+    top: 80%;
+  }
+
+  #Grupo_903 {
+    left: -10%;
+    top: -170%;
+  }
+
+  #Grupo_904 {
+    position: unset;
+  }
+
+  #lbl_registrate {
+    left: 5vw;
+    top: 200vw;
+  }
+
+  /* Pantalla Home */
+
+  #Home {
+    position: absolute;
+    width: 100vw !important;
+    height: 250vw !important;
+    overflow: hidden;
+    --web-view-name: Home;
+    --web-view-id: Home;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Rectngulo_103_ck {
+    position: absolute;
+    overflow: visible;
+    width: 100vw !important;
+    height: 250vw !important;
+  }
+
+  #Rectngulo_103_ck {
+    width: 100vw !important;
+    height: 250vw !important;
+  }
+
+  #Hola_Usuario {
+    left: 6vw;
+    top: 3rem;
+    width: 20rem;
+    font-size: 10vw;
+  }
+
+  #Grupo_866 {
+    width: 90vw;
+    height: 45vw;
+    left: 5vw;
+    top: 30vw;
+  }
+
+  #ambitious-creative-co-rick-bar {
+    width: 90vw;
+    height: 40vw;
+  }
+
+  #Grupo_de_desplazamiento_1 {
+    width: 100vw;
+    height: 20vw;
+    left: 8vw;
+    top: 10vw;
+  }
+
+  #Reservas {
+    left: -13vw;
+    width: 95vw;
+    font-size: 12vw;
+    padding: .375rem .75rem !important;
+  }
+
+  #Grupo_867 {
+    width: 53vw;
+    height: 123vw;
+    left: 5vw;
+    top: 73vw;
+  }
+
+  #img_ejercicio {
+    width: 43vw;
+    height: 123vw;
+  }
+
+  #Eventos_cx {
+    left: 3vw;
+    top: 0vw;
+    width: 163vw;
+    font-size: 9vw;
+  }
+
+  #Grupo_868 {
+    width: 43vw;
+    height: 123vw;
+    left: 52vw;
+    top: 73vw;
+  }
+
+  #img_fruta {
+    width: 115vw;
+    height: 123vw;
+  }
+
+  #Grupo_de_desplazamiento_3 {
+    width: 45vw;
+    height: 20vw;
+    left: 0vw;
+    top: 100vw;
+  }
+
+  #Comidas {
+    width: 80vw;
+    font-size: 9vw;
+  }
+
+  #Grupo_865 {
+    width: 100vw;
+    height: 60vw;
+    left: 0vw;
+    top: 200vw;
+  }
+
+  .Trazado_52_cz {
+    width: 100vw;
+    height: 16vw;
+  }
+
+  /* Pantalla perfil  */
+
+  #Perfil {
+    width: 100vw;
+    height: 250vw;
+    overflow: hidden;
+    --web-view-name: Perfil;
+    --web-view-id: Perfil;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+  }
+
+  .Trazado_48 {
+    left: -3vw;
+    width: 143vw;
+    height: 300vw;
+  }
+
+  .fondoBtnLogOut {
+    width: 50vw;
+    height: 40vw;
+    left: 50vw;
+    top: -10vw;
+  }
+
+  #Perfil_ht {
+    left: -5vw;
+    top: 15vw;
+    width: 106vw;
+    font-size: 10vw;
+  }
+
+  #n_838764_g {
+    position: absolute;
+    width: 25vw;
+    height: 20vw;
+    left: 35vw;
+    top: 35vw;
+    overflow: visible;
+
+  }
+
+  #Grupo_816_ha {
+    width: 60vw;
+    height: 15vw;
+    left: 35vw;
+    top: 57vw;
+  }
+
+  #Grupo_815_hb {
+    width: 60vw;
+    height: 15vw;
+    left: 0px;
+    top: 0px;
+  }
+
+  #Grupo_850 {
+    width: 80vw;
+    height: 12vw;
+  }
+
+  .Input_Nombre {
+    width: 60vw;
+    height: 10vw;
+  }
+
+  #Nombre_hn {
+    font-size: 6vw;
+  }
+
+  #Grupo_853 {
+    width: 30vw;
+    height: 39px;
+    left: 24px;
+    top: 250px;
+  }
+
+  #Grupo_870 {
+    width: 125px;
+    height: 39px;
+    left: 24px;
+    top: 320px;
+  }
+
+  #Grupo_925 {
+    width: 235px;
+    left: 143px;
+    top: 320px;
+  }
+
+  #Apellido_hn {
+    left: 0px;
+    top: 0px;
+    width: 126px;
+    font-size: 24px;
+  }
+
+  .Input_Apellido_Perf {
+    width: 60vw;
+    height: 40px;
+  }
+
+  #Grupo_852 {
+    width: 235px;
+    height: 43px;
+    left: 143px;
+    top: 390px;
+  }
+
+  .input_Correo {
+    width: 60vw;
+    height: 40px;
+  }
+
+  #Correo {
+    left: 24px;
+    top: 390px;
+    width: 111px;
+    font-size: 24px;
+  }
+
+  #Altura {
+    left: 24px;
+    top: 460px;
+    width: 80px;
+    font-size: 24px;
+  }
+
+  #Grupo_906 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 460px;
+  }
+
+  .Input_altura {
+    width: 60vw;
+    height: 40px;
+  }
+
+  #Peso {
+    left: 24px;
+    top: 530px;
+    width: 103px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  #Grupo_905 {
+    width: 200px;
+    height: 40px;
+    left: 143px;
+    top: 530px;
+  }
+
+  .input_peso {
+    width: 60vw;
+    height: 40px;
+  }
+
+  .BtnActualizar {
+    width: 50vw;
+    height: 15vw;
+    left: 26vw;
+    top: 155vw;
+  }
+
+  .fondoBtnActu {
+    width: 55vw;
+    height: 72px;
+    left: 0px;
+    top: 0px;
+    font-size: 5vw;
+  }
+
+  .ActualizarPerfilbtn {
+    left: 7vw !important;
+    font-size: 6vw;
+  }
+
+  /* Eventos */
+
+  .NameYoga__ClassEventos {
+    width: 76vw;
+    font-size: 6vw;
+  }
+
+  /*Reservas*/
+
+  .Reserva_Class {
+    position: absolute;
+    width: 414px;
+    height: 926px;
+    overflow: hidden;
+    --web-view-name: Reserva;
+    --web-view-id: Reserva;
+    --web-enable-deep-linking: true;
+  }
+
+  .formParticipantes_Class {
+    width: 88vw;
+    height: 55vw;
+    left: 10vw;
+    top: 138vw;
+  }
+
+  .CuadroParticipantes {
+    width: 90vw;
+    height: 55vw;
+    left: -3vw;
+    top: 0vw;
+  }
+
+  .lblParticipantes_Class {
+    left: 60px;
+    top: 143vw;
+    width: 146px;
+    font-size: 20px;
+  }
+
+  .cupo_participantes {
+    padding: .375rem 2.75rem
+  }
+
+  .CajaContenidos {
+    width: 85vw;
+    height: 40vw;
+    top: 150vw;
+    left: 10vw;
+  }
+
+  .participante {
+    width: 80vw;
+    height: 15vw;
+  }
+
+  .nmPart {
+    top: -12vw !important;
+    font-size: 16px;
+    text-align: right;
+    padding: .90rem 5rem;
+  }
+
+  .FotoPP {
+    left: 10px;
+  }
+
+  .btnEliminar_Class {
+    top: -6vw;
+    left: 50vw ;
+  }
+
+  /* Pantalla calendario */
+
+  .AppCalen {
+    width: 414px !important;
+    height: 896px !important;
+  }
+
+  #Grupo_865 {
+    width: 100vw;
+    height: 60vw;
+    left: 0vw;
+    top: 200vw;
+  }
+
+  #btn_ingresarCrearCuenta {
+    top: 185vw !important;
+  }
 }

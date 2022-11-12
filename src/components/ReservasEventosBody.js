@@ -394,7 +394,7 @@ function ReservasEventosBody() {
         <div className="lblParticipantes_Class">
           <span>Participantes: </span>
           {!isEmpty(consulta) ? (
-            <span>
+            <span className="cupo_participantes">
               Cupo:{consulta.participantes.length}/{location.state.cupo}
             </span>
           ) : (
@@ -412,7 +412,7 @@ function ReservasEventosBody() {
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
                     />
-                    <div className="nomPart">
+                    <div className="nmPart">
                       <span>{e.nombre + " " + e.apellido}</span>
                     </div>
                     {e.id === usuarioLoged.email ? (

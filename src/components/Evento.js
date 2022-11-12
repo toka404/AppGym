@@ -95,7 +95,10 @@ function Evento(datos) {
           <span>Hora:</span>
           <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}>
             {" "}
-            {fireBaseTime.toLocaleTimeString()}
+            {fireBaseTime.toLocaleTimeString([],{
+               hour: '2-digit',
+               minute:'2-digit',
+            })}
           </span>
         </div>
         <br />
