@@ -8,7 +8,7 @@ const Modal = ({ children, estado, cambiarEstado }) => {
                 <Overlay>
                     <ContenedorModal>
                         <EncabezadoModal>
-                            <h3>Reserva</h3>
+                            <h3>Límite superado</h3>
                         </EncabezadoModal>
 
                         <BotonCerrar onClick={() => cambiarEstado(false)}>
@@ -47,23 +47,23 @@ const ContenedorModal = styled.div`
     background: #fff;
     position: relative;
     border-radius: 5px;
+    filter: drop-shadow(0px 3px 6px rgba(58, 0, 255, 0.678));
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding: 20px
-
 `;
 
 const EncabezadoModal = styled.div`
 
     display:flex;
-    align-itmes: center;
+    align-items: center;
     justify-content: space-between;
     margin-bottom:20px;
     padding-bottom: 1px solid #E8E8E8;
 
     h3{
-        font-weight:500;
+        font-weight:700;
         font-size: 25px;
-        color: black;
+        color: rgba(254, 63, 30, 1);
     }
 `;
 
@@ -85,7 +85,6 @@ const BotonCerrar = styled.div`
     }
 
     svg{
-        
         width: 100%;
         height:100%;
     }

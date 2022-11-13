@@ -15,6 +15,7 @@ import { useUser } from "./UserContext";
 import { isEmpty } from "lodash";
 import Modal from "../components/Modal";
 import styled from "styled-components";
+import { async } from "@firebase/util";
 
 const today = new Date();
 const tomorr = new Date();
@@ -85,7 +86,8 @@ function ReservasBody() {
   const [participantes, setParticipantes] = useState([]);
   const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
-  const [HoraUser, setHoraUser] = useState([])
+  const [horaParticipante, setHoraParticipante] = useState([]);
+
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -125,8 +127,7 @@ function ReservasBody() {
       let tim = new Date(
         time.seconds * 1000 + time.nanoseconds / 1000000
       );
-      console.log(tim);
-      setHoraUser(tim);
+      setHoraParticipante(tim);
       /* console.log("pene" + tim)
       tim.toLocaleTimeString([], {
         hour: '2-digit',
@@ -136,6 +137,42 @@ function ReservasBody() {
     setConsulta(docs[0]);
     setLoading(false);
   };
+
+  const getHorasParticipante = async () => {
+    const date = new Date(reserva.fecha + " " + horas[0].value);
+    const date1 = Timestamp.fromDate(date);
+    const date2 = Timestamp.fromDate(new Date(date.setHours(22)));
+
+    const queryRef = collection(db, "clases");
+    const q = query(
+      queryRef,
+      where("participantes", "array-contains", usuarioLoged.email),
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
+
+    const querySnapshot = await getDocs(q);
+    const docs = [];
+    const fec = [];
+    querySnapshot.forEach((docu) => {
+      docs.push({ ...docu.data(), id: docu.id });
+    });
+
+    docs.forEach((res) => {
+      let time = res.fecha
+      let tim = new Date(
+        time.seconds * 1000 + time.nanoseconds / 1000000
+      );
+      /*       console.log(tim); */
+      fec.push(tim);
+      /* console.log("pene" + tim)
+      tim.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }) */
+    });
+    setHoraParticipante(fec);
+  }
 
   const getUsuarios = async () => {
     const querySnapshot = await getDocs(collection(db, "usuarios"));
@@ -224,6 +261,10 @@ function ReservasBody() {
     cupoMaximo();
     return () => { };
   }, [reserva, actualizar]);
+
+  useEffect(() => {
+    getHorasParticipante();
+  }, []);
 
   const [estadoModal, cambiarEstadoModal] = useState(false);
 
@@ -478,11 +519,22 @@ function ReservasBody() {
                 >
                   <Contenido>
                     <p>
-                      Limite superado
+                      Usted ya tiene 2 reservaciones:
                     </p>
-                    <p>
-                      Usted ya tiene 2 reservas:
-                    </p>
+                    <div>
+                      {Array.from(horaParticipante).map(e => {
+                        return (
+
+                          <p>
+                            {e.toLocaleTimeString([], {
+                              hour: '2-digit',
+                            minute: '2-digit',
+                          })}
+                          </p>
+                        );
+                      })}
+                    </div>
+
                   </Contenido>
                 </Modal>
               </div>
@@ -513,6 +565,6 @@ const Contenido = styled.div`
   }
 
   p{
-    font-size: 15px;
+    font-size: 20px;
   }
 `;
