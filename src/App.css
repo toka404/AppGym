@@ -8451,10 +8451,15 @@ button.icon-button>span.chevron-arrow-right {
     top: -100vw;
   }
 
-  .error.field.Input_nombre{
-    /* fill: rgba(80, 77, 77, 0.302);
-    background-color: rgba(80, 77, 77, 0.302); */
+  .ui.input {
+    /*     opacity: 0; */
+    font-size: 1.5em;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+  }
 
-    
+  .error.field.Input_nombre {
+    /*     opacity: 0;  */
   }
 }

@@ -56,6 +56,7 @@ function Calend() {
       where("participantes", "array-contains", usuarioLoged.email)
     );
 
+    
     const querySnapshot2 = await getDocs(q2);
     setLoading(false);
     querySnapshot2.forEach((doc) => {
@@ -63,7 +64,11 @@ function Calend() {
       docs.push({ ...doc.data(), id: doc });
     });
 
+    console.log(querySnapshot2)
+
     setConsulta(docs);
+    console.log(docs)
+
   };
 
   useEffect(() => {

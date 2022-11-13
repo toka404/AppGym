@@ -75,6 +75,7 @@ const datosReserva = {
   hora: horas[0].value,
 };
 
+
 // main function
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
@@ -84,6 +85,7 @@ function ReservasBody() {
   const [participantes, setParticipantes] = useState([]);
   const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
+  const [HoraUser, setHoraUser] = useState([])
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -118,8 +120,20 @@ function ReservasBody() {
       docs.push({ ...docu.data(), id: docu.id });
     });
 
+    docs.forEach((res) => {
+      let time = res.fecha
+      let tim = new Date(
+        time.seconds * 1000 + time.nanoseconds / 1000000
+      );
+      console.log(tim);
+      setHoraUser(tim);
+      /* console.log("pene" + tim)
+      tim.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+      }) */
+    });
     setConsulta(docs[0]);
-
     setLoading(false);
   };
 
@@ -464,7 +478,7 @@ function ReservasBody() {
                 >
                   <Contenido>
                     <p>
-                      Usted ya tiene 2 reservas
+                      Usted ya tiene 2 reservas:
                     </p>
                   </Contenido>
                 </Modal>
@@ -496,6 +510,6 @@ const Contenido = styled.div`
   }
 
   p{
-    font-size: 35px;
+    font-size: 15px;
   }
 `;
