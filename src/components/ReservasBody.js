@@ -478,6 +478,9 @@ function ReservasBody() {
                 >
                   <Contenido>
                     <p>
+                      Limite superado
+                    </p>
+                    <p>
                       Usted ya tiene 2 reservas:
                     </p>
                   </Contenido>
