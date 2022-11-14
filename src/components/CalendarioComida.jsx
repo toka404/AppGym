@@ -64,7 +64,7 @@ function CalendCom() {
   // Se cambia para los dias exclusivos de la semana
   let days = eachDayOfInterval({
     start: startOfWeek(today,{ weekStartsOn: 1 }),
-    end: endOfWeek(today, { weekStartsOn: 1 }), 
+    end: endOfWeek(today, { weekStartsOn: 2}), 
 });
 
 let selectedDayMeetings = meetings.filter((meeting) =>

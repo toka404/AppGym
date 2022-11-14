@@ -122,19 +122,8 @@ function ReservasBody() {
       docs.push({ ...docu.data(), id: docu.id });
     });
 
-    docs.forEach((res) => {
-      let time = res.fecha
-      let tim = new Date(
-        time.seconds * 1000 + time.nanoseconds / 1000000
-      );
-      setHoraParticipante(tim);
-      /* console.log("pene" + tim)
-      tim.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }) */
-    });
     setConsulta(docs[0]);
+
     setLoading(false);
   };
 
@@ -163,13 +152,8 @@ function ReservasBody() {
       let tim = new Date(
         time.seconds * 1000 + time.nanoseconds / 1000000
       );
-      /*       console.log(tim); */
+      /*       console.log(tim);  */
       fec.push(tim);
-      /* console.log("pene" + tim)
-      tim.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      }) */
     });
     setHoraParticipante(fec);
   }
@@ -253,6 +237,7 @@ function ReservasBody() {
 
   useEffect(() => {
     getUsuarios();
+    getHorasParticipante();
   }, [consulta]);
 
   //consulta cuando cambie la fecha o la hora
@@ -261,10 +246,6 @@ function ReservasBody() {
     cupoMaximo();
     return () => { };
   }, [reserva, actualizar]);
-
-  useEffect(() => {
-    getHorasParticipante();
-  }, []);
 
   const [estadoModal, cambiarEstadoModal] = useState(false);
 
@@ -363,11 +344,17 @@ function ReservasBody() {
               return (
                 <>
                   <div className="participante">
-                    <img
+                    {/*        <img
                       className="FotoPP"
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
-                    />
+                    /> */}
+
+            {/*         <svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle FotoPP" viewBox="0 0 16 16">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                      <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg> */}
 
                     <div className="nmPart">
                       <span>{e.nombre + " " + e.apellido}</span>
@@ -458,6 +445,7 @@ function ReservasBody() {
             </div>
           </div>
         </div>
+
         {/* boton reserva */}
         {consulta != null &&
           consulta.participantes &&
@@ -524,12 +512,12 @@ function ReservasBody() {
                     <div>
                       {Array.from(horaParticipante).map(e => {
                         return (
-
                           <p>
-                            {e.toLocaleTimeString([], {
-                              hour: '2-digit',
-                            minute: '2-digit',
-                          })}
+                            {
+                              e.toLocaleTimeString([], {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              })}
                           </p>
                         );
                       })}
@@ -545,7 +533,6 @@ function ReservasBody() {
             <span>Ya se encuentra registrado</span>
           </div>
         )}
-
       </div>
     </div>
   );

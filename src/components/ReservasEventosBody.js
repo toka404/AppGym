@@ -15,6 +15,9 @@ import { db } from "./Firebase";
 import { useUser } from "./UserContext";
 import { useLocation } from "react-router-dom";
 import { isEmpty } from "lodash";
+import Modal from "../components/Modal";
+import styled from "styled-components";
+
 
 const today = new Date();
 // today.setDate(21);
@@ -88,6 +91,7 @@ function ReservasEventosBody() {
   const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
   const location = useLocation();
+  const [horaParticipante, setHoraParticipante] = useState([]);
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -138,10 +142,10 @@ function ReservasEventosBody() {
     querySnapshot.forEach((doc) => {
       docs.push(
         doc.data().fecha.toDate().getFullYear() +
-          "/" +
-          (doc.data().fecha.toDate().getMonth() + 1) +
-          "/" +
-          doc.data().fecha.toDate().getDate()
+        "/" +
+        (doc.data().fecha.toDate().getMonth() + 1) +
+        "/" +
+        doc.data().fecha.toDate().getDate()
       );
     });
 
@@ -244,20 +248,53 @@ function ReservasEventosBody() {
     setInscripciones(i);
   };
 
+  const getHorasParticipante = async () => {
+    const date = new Date(reserva.fecha + " " + horas[0].value);
+    const date1 = Timestamp.fromDate(date);
+    const date2 = Timestamp.fromDate(new Date(date.setHours(22)));
+
+    const queryRef = collection(db, "reserva");
+    const q = query(
+      queryRef,
+      where("participantes", "array-contains", usuarioLoged.email),
+      where("fecha", ">", date1),
+      where("fecha", "<", date2)
+    );
+
+    const querySnapshot = await getDocs(q);
+    const docs = [];
+    const fec = [];
+    querySnapshot.forEach((docu) => {
+      docs.push({ ...docu.data(), id: docu.id });
+    });
+
+    docs.forEach((res) => {
+      let time = res.fecha
+      let tim = new Date(
+        time.seconds * 1000 + time.nanoseconds / 1000000
+      );
+      /*       console.log(tim);  */
+      fec.push(tim);
+    });
+    setHoraParticipante(fec);
+  }
+
   useEffect(() => {
     getFechas();
   }, []);
 
   useEffect(() => {
     getUsuarios();
+    getHorasParticipante();
   }, [consulta]);
 
   //consulta cuando cambie la fecha o la hora
   useEffect(() => {
     getEventos();
     cupoMaximo();
-    return () => {};
+    return () => { };
   }, [reserva, actualizar]);
+  const [estadoModal, cambiarEstadoModal] = useState(false);
 
   return (
     <div>
@@ -336,56 +373,7 @@ function ReservasEventosBody() {
             </div>
           </div>
         </div>
-        {/* boton reserva */}
-        {consulta != null &&
-        consulta.participantes &&
-        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
-          inscripciones < 2 ? (
-            <button
-              onClick={async () => {
-                if (consulta.participantes.length < location.state.cupo) {
-                  if (
-                    consulta.participantes.indexOf(usuarioLoged.email) === -1
-                  ) {
-                    const nuevoParticipantes = consulta.participantes;
-                    nuevoParticipantes.push(usuarioLoged.email);
 
-                    const claseRef = doc(db, "reserva", consulta.id);
-                    await updateDoc(claseRef, {
-                      participantes: nuevoParticipantes,
-                    });
-                    setActualizar(!actualizar);
-                  }
-                } else {
-                  console.log(consulta.cupo);
-                  console.log(
-                    "Se ha alcansado el cupo maximo para esta actividad"
-                  );
-                }
-              }}
-            >
-              <div className="btnReservar_ClassReserva btn">
-                <svg className="Trazado_40" viewBox="0 0 225 60">
-                  <path
-                    className="Trazado_40_Class"
-                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
-                  ></path>
-                </svg>
-                <div className="Reservar_ClassReserva">
-                  <span>Reservar</span>
-                </div>
-              </div>
-            </button>
-          ) : (
-            <div className="lblReserva">
-              <span>Ya se encuentra registrado en 2 actividades</span>
-            </div>
-          )
-        ) : (
-          <div className="lblReserva">
-            <span>Ya se encuentra registrado</span>
-          </div>
-        )}
         {/* participantes */}
 
         <div className="formParticipantes_Class">
@@ -407,11 +395,17 @@ function ReservasEventosBody() {
               return (
                 <>
                   <div className="participante">
-                    <img
+                    {/*          <img
                       className="FotoPP"
                       src="/images/Reservas/n_838764.png"
                       alt="foto de perfil"
-                    />
+                    /> */}
+
+                   {/*  <svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle FotoPP" viewBox="0 0 16 16">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                      <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg> */}
                     <div className="nmPart">
                       <span>{e.nombre + " " + e.apellido}</span>
                     </div>
@@ -482,11 +476,11 @@ function ReservasEventosBody() {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
                     reserva.fecha !==
-                      today.getFullYear() +
-                        "/" +
-                        (today.getMonth() + 1) +
-                        "/" +
-                        today.getDate()
+                    today.getFullYear() +
+                    "/" +
+                    (today.getMonth() + 1) +
+                    "/" +
+                    today.getDate()
                   ) {
                     return (
                       <option value={e.value} key={e.value}>
@@ -501,9 +495,113 @@ function ReservasEventosBody() {
             </div>
           </div>
         </div>
+
+        {/* boton reserva */}
+        {consulta != null &&
+          consulta.participantes &&
+          consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+          inscripciones < 2 ? (
+            <button
+              onClick={async () => {
+                if (consulta.participantes.length < location.state.cupo) {
+                  if (
+                    consulta.participantes.indexOf(usuarioLoged.email) === -1
+                  ) {
+                    const nuevoParticipantes = consulta.participantes;
+                    nuevoParticipantes.push(usuarioLoged.email);
+
+                    const claseRef = doc(db, "reserva", consulta.id);
+                    await updateDoc(claseRef, {
+                      participantes: nuevoParticipantes,
+                    });
+                    setActualizar(!actualizar);
+                  }
+                } else {
+                  console.log(consulta.cupo);
+                  console.log(
+                    "Se ha alcansado el cupo maximo para esta actividad"
+                  );
+                }
+              }}
+            >
+              <div className="btnReservar_ClassReserva btn">
+                <svg className="Trazado_40" viewBox="0 0 225 60">
+                  <path
+                    className="Trazado_40_Class"
+                    d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                  ></path>
+                </svg>
+                <div className="Reservar_ClassReserva">
+                  <span>Reservar</span>
+                </div>
+              </div>
+            </button>
+          ) : (
+            <div className="btnReservar_ClassReserva btn" onClick={() => cambiarEstadoModal(!estadoModal)}>
+              <svg className="Trazado_40" viewBox="0 0 225 60">
+                <path
+                  className="Trazado_40_Class"
+                  d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
+                ></path>
+              </svg>
+              <div className="Reservar_ClassReserva">
+                <span>Reservar</span>
+              </div>
+
+              <div>
+                <Modal
+                  estado={estadoModal}
+                  cambiarEstado={cambiarEstadoModal}
+                >
+                  <Contenido>
+                    <p>
+                      Usted ya tiene 2 reservaciones:
+                    </p>
+                    <div>
+                      {Array.from(horaParticipante).map(e => {
+                        return (
+                          <p>
+                            {
+                              e.toLocaleTimeString([], {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              })}
+                          </p>
+                        );
+                      })}
+                    </div>
+
+                  </Contenido>
+                </Modal>
+              </div>
+            </div>
+
+          )
+        ) : (
+          <div className="lblReserva">
+            <span>Ya se encuentra registrado</span>
+          </div>
+        )}
+
       </div>
     </div>
   );
 }
 
 export default ReservasEventosBody;
+
+const Contenido = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom:10px;
+  }
+
+  p{
+    font-size: 20px;
+  }
+`;

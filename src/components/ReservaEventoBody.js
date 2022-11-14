@@ -138,10 +138,10 @@ function ReservaEventoBody() {
     querySnapshot.forEach((doc) => {
       docs.push(
         doc.data().fecha.toDate().getFullYear() +
-          "/" +
-          (doc.data().fecha.toDate().getMonth() + 1) +
-          "/" +
-          doc.data().fecha.toDate().getDate()
+        "/" +
+        (doc.data().fecha.toDate().getMonth() + 1) +
+        "/" +
+        doc.data().fecha.toDate().getDate()
       );
     });
 
@@ -256,7 +256,7 @@ function ReservaEventoBody() {
   useEffect(() => {
     getEventos();
     cupoMaximo();
-    return () => {};
+    return () => { };
   }, [reserva, actualizar]);
 
   return (
@@ -338,8 +338,8 @@ function ReservaEventoBody() {
         </div>
         {/* boton reserva */}
         {consulta != null &&
-        consulta.participantes &&
-        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+          consulta.participantes &&
+          consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
           inscripciones < 2 ? (
             <button
               onClick={async () => {
@@ -359,7 +359,7 @@ function ReservaEventoBody() {
                 } else {
                   console.log(consulta.cupo);
                   console.log(
-                    "Se ha alcansado el cupo maximo para esta actividad"
+                    "Se ha alcanzado el cupo maximo para esta actividad"
                   );
                 }
               }}
@@ -378,7 +378,7 @@ function ReservaEventoBody() {
             </button>
           ) : (
             <div className="lblReserva">
-              <span>Ya se encuentra registrado en 2 actividades</span>
+              <span>Usted ya esta registrado en 2 actividades</span>
             </div>
           )
         ) : (
@@ -482,11 +482,11 @@ function ReservaEventoBody() {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
                     reserva.fecha !==
-                      today.getFullYear() +
-                        "/" +
-                        (today.getMonth() + 1) +
-                        "/" +
-                        today.getDate()
+                    today.getFullYear() +
+                    "/" +
+                    (today.getMonth() + 1) +
+                    "/" +
+                    today.getDate()
                   ) {
                     return (
                       <option value={e.value} key={e.value}>
