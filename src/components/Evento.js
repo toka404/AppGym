@@ -49,7 +49,7 @@ function Evento(datos) {
           <span className="fecha_evento_txt">
             {" "}
             {fireBaseTime.toLocaleString("es-ES", {
-              weekday: "short",
+              // weekday: "short",
               day: "2-digit",
               month: "long",
               year: "numeric",
@@ -61,7 +61,7 @@ function Evento(datos) {
         <div className="imagen_cont">
           <img
             className="evento_class"
-            src="images/Eventos/Yoga1.png"
+            src={informacion.foto}
             alt="imagen yoga"
           />
         </div>
@@ -95,9 +95,9 @@ function Evento(datos) {
           <span>Hora:</span>
           <span style={{ fontStyle: "normal", color: "rgba(236,66,36,1)" }}>
             {" "}
-            {fireBaseTime.toLocaleTimeString([],{
-               hour: '2-digit',
-               minute:'2-digit',
+            {fireBaseTime.toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
             })}
           </span>
         </div>

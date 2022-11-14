@@ -13,7 +13,7 @@ import {
   parseISO,
   startOfToday,
 } from "date-fns";
-import es from 'date-fns/locale/es'
+import es from "date-fns/locale/es";
 import { useState, useEffect } from "react";
 import BotonBack from "./BotonBack";
 import { QueryReservas } from "../Hooks/useColeccion";
@@ -56,7 +56,6 @@ function Calend() {
       where("participantes", "array-contains", usuarioLoged.email)
     );
 
-    
     const querySnapshot2 = await getDocs(q2);
     setLoading(false);
     querySnapshot2.forEach((doc) => {
@@ -64,11 +63,7 @@ function Calend() {
       docs.push({ ...doc.data(), id: doc });
     });
 
-    console.log(querySnapshot2)
-
     setConsulta(docs);
-    console.log(docs)
-
   };
 
   useEffect(() => {
@@ -111,7 +106,7 @@ function Calend() {
               {/* Mes */}
               <h2 className="flex-auto font-semibold text-blanco text-lg">
                 {/* Flecha para mes previo*/}
-                {format(firstDayCurrentMonth, "MMMM yyyy",{locale:es})}
+                {format(firstDayCurrentMonth, "MMMM yyyy", { locale: es })}
               </h2>
               <button
                 type="button"
@@ -210,9 +205,7 @@ function Calend() {
                     <Meeting meeting={meeting} key={meeting.id.id} />
                   ))
                 ) : (
-                  <p className="text-blanco font-medium font-poppins text-center">
-                    
-                  </p>
+                  <p className="text-blanco font-medium font-poppins text-center"></p>
                 )}
               </ol>
             </div>

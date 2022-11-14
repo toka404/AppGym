@@ -150,13 +150,13 @@ function Body() {
                     });
                 }}
               >
-                Ingresar
+                Iniciar sesión con Google
               </button>
               <img id="google_1" src="images/google_1.png" alt="boton google" />
             </div>
           </div>
 
-          <div id="btn_facebook">
+          {/* <div id="btn_facebook">
             <div id="Grupo_904">
               <button
                 id="BtnFacebook"
@@ -174,7 +174,7 @@ function Body() {
                 alt="boton facebook"
               />
             </div>
-          </div>
+          </div> */}
         </form>
 
         <div id="lbl_registrate">

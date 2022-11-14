@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import {
-  add,addDays,
+  add,
+  addDays,
   eachDayOfInterval,
   endOfMonth,
   format,
@@ -14,7 +15,7 @@ import {
   startOfToday,
   startOfWeek,
 } from "date-fns";
-import es from 'date-fns/locale/es'
+import es from "date-fns/locale/es";
 import { useState, useEffect } from "react";
 import BotonBack from "./BotonBack";
 import { useUser } from "./UserContext";
@@ -63,124 +64,125 @@ function CalendCom() {
 
   // Se cambia para los dias exclusivos de la semana
   let days = eachDayOfInterval({
-    start: startOfWeek(today,{ weekStartsOn: 1 }),
-    end: endOfWeek(today, { weekStartsOn: 2}), 
-});
+    start: startOfWeek(today, { weekStartsOn: 1 }),
+    end: endOfWeek(today, { weekStartsOn: 2 }),
+  });
 
-let selectedDayMeetings = meetings.filter((meeting) =>
-  isSameDay(parseISO(meeting.fecha.toDate().toISOString()), selectedDay)
-);
+  let selectedDayMeetings = meetings.filter((meeting) =>
+    isSameDay(parseISO(meeting.fecha.toDate().toISOString()), selectedDay)
+  );
 
-return (
-  // div que controla todo
-  <div className="pt-40 bg-pes ">
-    <BotonBack />
+  return (
+    // div que controla todo
+    <div className="pt-40 bg-pes ">
+      <BotonBack />
 
-    <div className="lblCalendarioAl_Class">
-      <span>Plan Alimenticio</span>
-    </div>
+      <div className="lblCalendarioAl_Class">
+        <span>Plan Alimenticio</span>
+      </div>
 
-    <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 ">
-      <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 border-zinc-50">
-        {/*Menu completo */}
-        <div className="md:pr-14 bg-fondo rounded-md">
-          <div className="flex items-center">
-            {/* Mes */}
-            <h2 className="flex-auto font-semibold text-blanco text-lg ">
-              {format(firstDayCurrentMonth, "MMMM yyyy",{locale:es})}
-            </h2>
-          </div>
-          {/* Para los días de la semana */}
-          <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
-            <div>D</div>
-            <div>L</div>
-            <div>M</div>
-            <div>X</div>
-            <div>J</div>
-            <div>V</div>
-            <div>S</div>
-          </div>
-          <div className="grid grid-cols-7 mt-2 text-base">
-            {days.map((day, dayIdx) => (
-              <div
-                key={day.toString()}
-                className={classNames(
-                  dayIdx === 0 && colStartClasses[getDay(day)],
-                  "py-1.5"
-                )}
-              >
-                {/* Para los días en números realiza una consulta */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedDay(day)}
+      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 ">
+        <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 border-zinc-50">
+          {/*Menu completo */}
+          <div className="md:pr-14 bg-fondo rounded-md">
+            <div className="flex items-center">
+              {/* Mes */}
+              <h2 className="flex-auto font-semibold text-blanco text-lg ">
+                {format(firstDayCurrentMonth, "MMMM yyyy", { locale: es })}
+              </h2>
+            </div>
+            {/* Para los días de la semana */}
+            <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
+              <div>D</div>
+              <div>L</div>
+              <div>M</div>
+              <div>X</div>
+              <div>J</div>
+              <div>V</div>
+              <div>S</div>
+            </div>
+            <div className="grid grid-cols-7 mt-2 text-base">
+              {days.map((day, dayIdx) => (
+                <div
+                  key={day.toString()}
                   className={classNames(
-                    isEqual(day, selectedDay) && "text-white",
-                    !isEqual(day, selectedDay) &&
-                    isToday(day) &&
-                    "text-blanco",
-                    !isEqual(day, selectedDay) &&
-                    !isToday(day) &&
-                    isSameMonth(day, firstDayCurrentMonth) &&
-                    "text-blanco",
-                    !isEqual(day, selectedDay) &&
-                    !isToday(day) &&
-                    !isSameMonth(day, firstDayCurrentMonth) &&
-                    "text-gray-400",
-                    isEqual(day, selectedDay) && isToday(day) && "bg-naranja",
-                    isEqual(day, selectedDay) &&
-                    !isToday(day) &&
-                    "bg-naranja",
-                    !isEqual(day, selectedDay) && "hover:bg-gray-200",
-                    (isEqual(day, selectedDay) || isToday(day)) &&
-                    "font-semibold",
-                    "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                    dayIdx === 0 && colStartClasses[getDay(day)],
+                    "py-1.5"
                   )}
                 >
-                  <time dateTime={format(day, "yyyy-MMMM-dd",{locale:es})}>
-                    {format(day, "d")}
-                  </time>
-      
-                </button>
-                {/* Puntos debajo de cada fecha */}
-                <div className="w-1 h-1 mx-auto mt-1">
-                  {meetings.some((meeting) =>
-                    isSameDay(
-                      parseISO(meeting.fecha.toDate().toISOString()),
-                      day
-                    )
-                  ) && (
+                  {/* Para los días en números realiza una consulta */}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedDay(day)}
+                    className={classNames(
+                      isEqual(day, selectedDay) && "text-white",
+                      !isEqual(day, selectedDay) &&
+                        isToday(day) &&
+                        "text-blanco",
+                      !isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        isSameMonth(day, firstDayCurrentMonth) &&
+                        "text-blanco",
+                      !isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        !isSameMonth(day, firstDayCurrentMonth) &&
+                        "text-gray-400",
+                      isEqual(day, selectedDay) && isToday(day) && "bg-naranja",
+                      isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        "bg-naranja",
+                      !isEqual(day, selectedDay) && "hover:bg-gray-200",
+                      (isEqual(day, selectedDay) || isToday(day)) &&
+                        "font-semibold",
+                      "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                    )}
+                  >
+                    <time
+                      dateTime={format(day, "yyyy-MMMM-dd", { locale: es })}
+                    >
+                      {format(day, "d")}
+                    </time>
+                  </button>
+                  {/* Puntos debajo de cada fecha */}
+                  <div className="w-1 h-1 mx-auto mt-1">
+                    {meetings.some((meeting) =>
+                      isSameDay(
+                        parseISO(meeting.fecha.toDate().toISOString()),
+                        day
+                      )
+                    ) && (
                       <div className="w-1 h-1 rounded-full bg-naranja"></div>
                     )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          <section className="mt-8 md:mt-0 md:pl-14">
+            <h2 className="font-medium font-poppins text-left text-blanco text-lg">
+              {/* Fecha del calendario */}{" "}
+              <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
+                {format(selectedDay, "MMM dd, yyy")}
+              </time>
+            </h2>
+            <div className="scrollCalendario2">
+              <ol className="mt-4 space-y-1 text-base leading-6 text-gray-500">
+                {selectedDayMeetings.length > 0 ? (
+                  selectedDayMeetings.map((meeting) => (
+                    <Meeting meeting={meeting} key={meeting.id.id} />
+                  ))
+                ) : (
+                  <p className="text-blanco font-medium font-poppins text-center">
+                    No hay plan para hoy
+                  </p>
+                )}
+              </ol>
+            </div>
+          </section>
         </div>
-        <section className="mt-8 md:mt-0 md:pl-14">
-          <h2 className="font-medium font-poppins text-left text-blanco text-lg">
-            {/* Fecha del calendario */}{" "}
-            <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
-              {format(selectedDay, "MMM dd, yyy")}
-            </time>
-          </h2>
-          <div className="scrollCalendario">
-            <ol className="mt-4 space-y-1 text-base leading-6 text-gray-500">
-              {selectedDayMeetings.length > 0 ? (
-                selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id.id} />
-                ))
-              ) : (
-                <p className="text-blanco font-medium font-poppins text-center">
-                  No hay plan para hoy
-                </p>
-              )}
-            </ol>
-          </div>
-        </section>
       </div>
     </div>
-  </div>
-);
+  );
 }
 // Funcion para las comidas
 function Meeting({ meeting }) {
