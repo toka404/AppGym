@@ -217,6 +217,7 @@ function Calend() {
 }
 // Funcion para las comidas
 function Meeting({ meeting }) {
+  console.log(meeting);
   return (
     <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
       <div className="flex-auto">
@@ -226,7 +227,7 @@ function Meeting({ meeting }) {
         </p>
         {/* Lo que va a comer*/}
         <p className="text-blanco font-medium font-poppins text-left">
-          *{meeting.rutina}
+          *{meeting.titulo}
         </p>
       </div>
     </li>

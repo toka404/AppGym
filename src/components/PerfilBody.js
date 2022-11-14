@@ -1,17 +1,22 @@
 import React from "react";
 import BotonBack from "./BotonBack";
 import { useState, useEffect } from "react";
-import { crearDocumento } from "../Hooks/useDoc";
+import { crearDocumento, updateDocumento } from "../Hooks/useDoc";
 import { useUser } from "./UserContext";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../components/Firebase";
+import { db, app } from "../components/Firebase";
 import { useFormik, yupToFormErrors } from "formik";
 import * as Yup from "yup";
 import { Container, Form, Button, Message } from "semantic-ui-react";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 function PerfilBody() {
   const { usuarioLoged, logOut } = useUser();
   const [loading, setLoading] = useState(true);
+  const [foto, setFoto] = useState("");
+  const [update, setUpdate] = useState(true);
+  const storage = getStorage(app);
+  const storageRef = ref(storage, usuarioLoged.email);
 
   const formik = useFormik({
     initialValues: {
@@ -63,6 +68,7 @@ function PerfilBody() {
     const querySnapshot = await getDoc(docRef);
     let valores;
     if (querySnapshot.exists()) {
+      setFoto(querySnapshot.data().foto);
       valores = {
         Input_Nombre: querySnapshot.data().nombre,
         Input_Apellido: querySnapshot.data().apellido,
@@ -84,9 +90,18 @@ function PerfilBody() {
     }
   };
 
+  const getUrl = async () => {
+    setFoto(await getDownloadURL(storageRef));
+  };
+
   useEffect(() => {
+    getUrl();
     getEventos();
   }, []);
+
+  useEffect(() => {
+    // console.log(foto !== "");
+  }, [foto]);
 
   return (
     <div>
@@ -130,22 +145,33 @@ function PerfilBody() {
             alt="foto de perfil"
           /> */}
 
-          {/* <button id="n_838764_g" class="bi bi-person-circle"></button> */}
-          <svg
-            id="n_838764_g"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="white"
-            class="bi bi-person-circle"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-            <path
-              fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-            />
-          </svg>
+          <label className="botonFoto">
+            {foto !== "" ? (
+              <img className="fotoPerfil" src={foto} alt="imagen yoga" />
+            ) : (
+              <img
+                className="fotoPerfil"
+                src="/images/perfil/perfil.png"
+                alt="imagen yoga"
+              />
+            )}
+            <input
+              hidden
+              type="file"
+              onChange={(e) => {
+                if (e.target.files[0].type.includes("image/")) {
+                  uploadBytes(storageRef, e.target.files[0]).then(
+                    (snapshot) => {
+                      getUrl();
+                      setUpdate(!update);
+                    }
+                  );
+                } else {
+                }
+                // console.log(e.target.files[0]);
+              }}
+            ></input>
+          </label>
 
           {/* input nombre */}
           <div id="Grupo_816_ha">

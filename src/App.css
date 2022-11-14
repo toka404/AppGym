@@ -8469,4 +8469,24 @@ button.icon-button>span.chevron-arrow-right {
   .error.field.Input_nombre {
     /*     opacity: 0;  */
   }
+
+  .fotoPerfil{
+    position:absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .botonFoto {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 130px;
+    top: 100px;
+    overflow: hidden;
+  }
 }
