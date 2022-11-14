@@ -9,12 +9,16 @@ import { useFormik, yupToFormErrors } from "formik";
 import * as Yup from "yup";
 import { Container, Form, Button, Message } from "semantic-ui-react";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Modal from "../components/Modal";
+import styled from "styled-components";
 
 function PerfilBody() {
   const { usuarioLoged, logOut } = useUser();
   const [loading, setLoading] = useState(true);
   const [foto, setFoto] = useState("");
   const [update, setUpdate] = useState(true);
+  const [estadoModal, cambiarEstadoModal] = useState(false);
+
   const storage = getStorage(app);
   const storageRef = ref(storage, usuarioLoged.email);
 
@@ -27,8 +31,12 @@ function PerfilBody() {
       Input_altura: "",
     },
     validationSchema: Yup.object({
-      Input_Nombre: Yup.string().required("El nombre es obligatorio"),
-      Input_Apellido: Yup.string().required("El apellido es obligatorio"),
+      Input_Nombre: Yup.string()
+        .required("El nombre es obligatorio")
+        .matches(/^[aA-zZ\s]+$/, "Solo se aceptan letras"),
+      Input_Apellido: Yup.string()
+        .required("El apellido es obligatorio")
+        .matches(/^[aA-zZ\s]+$/, "Solo se aceptan letras"),
       // input_Correo: Yup.string()
       //   .email("No es un email valido")
       //   .required("El email es obligatorio"),
@@ -99,9 +107,7 @@ function PerfilBody() {
     getEventos();
   }, []);
 
-  useEffect(() => {
-    // console.log(foto !== "");
-  }, [foto]);
+  useEffect(() => {}, [foto, estadoModal]);
 
   return (
     <div>
@@ -145,7 +151,7 @@ function PerfilBody() {
             alt="foto de perfil"
           /> */}
 
-          <label className="botonFoto">
+          {/* <label className="botonFoto">
             {foto !== "" ? (
               <img className="fotoPerfil" src={foto} alt="imagen yoga" />
             ) : (
@@ -171,7 +177,7 @@ function PerfilBody() {
                 // console.log(e.target.files[0]);
               }}
             ></input>
-          </label>
+          </label> */}
 
           {/* input nombre */}
           <div id="Grupo_816_ha">
@@ -269,7 +275,12 @@ function PerfilBody() {
 
           {/* Botón Actualizar */}
           <button type="submit">
-            <div className="BtnActualizar btn">
+            <div
+              className="BtnActualizar btn"
+              onClick={() => {
+                cambiarEstadoModal(!estadoModal);
+              }}
+            >
               <svg className="fondoBtnActu" viewBox="0 0 225 60">
                 <path
                   className="fondoBtnClassActu"
@@ -282,9 +293,34 @@ function PerfilBody() {
             </div>
           </button>
         </Form>
+        <Modal
+          estado={estadoModal}
+          cambiarEstado={cambiarEstadoModal}
+          titulo={"Mensaje"}
+        >
+          <Contenido>
+            <p>Datos Actualizados</p>
+          </Contenido>
+        </Modal>
       </div>
     </div>
   );
 }
 
 export default PerfilBody;
+
+const Contenido = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+`;

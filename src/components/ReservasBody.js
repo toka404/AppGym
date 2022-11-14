@@ -76,7 +76,6 @@ const datosReserva = {
   hora: horas[0].value,
 };
 
-
 // main function
 function ReservasBody() {
   const [reserva, setReserva] = useState(datosReserva);
@@ -87,7 +86,6 @@ function ReservasBody() {
   const [inscripciones, setInscripciones] = useState(0);
   const { usuarioLoged } = useUser();
   const [horaParticipante, setHoraParticipante] = useState([]);
-
 
   function handleChange(e) {
     e.persist(); //persiste el evento
@@ -148,15 +146,13 @@ function ReservasBody() {
     });
 
     docs.forEach((res) => {
-      let time = res.fecha
-      let tim = new Date(
-        time.seconds * 1000 + time.nanoseconds / 1000000
-      );
+      let time = res.fecha;
+      let tim = new Date(time.seconds * 1000 + time.nanoseconds / 1000000);
       /*       console.log(tim);  */
       fec.push(tim);
     });
     setHoraParticipante(fec);
-  }
+  };
 
   const getUsuarios = async () => {
     const querySnapshot = await getDocs(collection(db, "usuarios"));
@@ -244,7 +240,7 @@ function ReservasBody() {
   useEffect(() => {
     getEventos();
     cupoMaximo();
-    return () => { };
+    return () => {};
   }, [reserva, actualizar]);
 
   const [estadoModal, cambiarEstadoModal] = useState(false);
@@ -350,7 +346,7 @@ function ReservasBody() {
                       alt="foto de perfil"
                     /> */}
 
-            {/*         <svg
+                    {/*         <svg
                       xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle FotoPP" viewBox="0 0 16 16">
                       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                       <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -421,16 +417,21 @@ function ReservasBody() {
               <span>Hora:</span>
             </div>
             <div className="lblHora">
-              <select id="hora" value={reserva.hora} onChange={handleChange} onClick>
+              <select
+                id="hora"
+                value={reserva.hora}
+                onChange={handleChange}
+                onClick
+              >
                 {horas.map((e) => {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
                     reserva.fecha !==
-                    today.getFullYear() +
-                    "/" +
-                    (today.getMonth() + 1) +
-                    "/" +
-                    today.getDate()
+                      today.getFullYear() +
+                        "/" +
+                        (today.getMonth() + 1) +
+                        "/" +
+                        today.getDate()
                   ) {
                     return (
                       <option value={e.value} key={e.value}>
@@ -448,8 +449,8 @@ function ReservasBody() {
 
         {/* boton reserva */}
         {consulta != null &&
-          consulta.participantes &&
-          consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+        consulta.participantes &&
+        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
           inscripciones < 2 ? (
             <button
               onClick={async () => {
@@ -481,15 +482,16 @@ function ReservasBody() {
                     d="M 18 0 L 171 0 C 180.9411315917969 0 189 8.058874130249023 189 18 L 189 36 C 189 45.94112396240234 180.9411315917969 54 171 54 L 18 54 C 8.058874130249023 54 0 45.94112396240234 0 36 L 0 18 C 0 8.058874130249023 8.058874130249023 0 18 0 Z"
                   ></path>
                 </svg>
-                <div className="Reservar_ClassReserva" >
+                <div className="Reservar_ClassReserva">
                   <span>Reservar</span>
                 </div>
               </div>
             </button>
           ) : (
-
-            <div className="btnReservar_ClassReserva btn" onClick={() => cambiarEstadoModal(!estadoModal)}>
-
+            <div
+              className="btnReservar_ClassReserva btn"
+              onClick={() => cambiarEstadoModal(!estadoModal)}
+            >
               <svg className="Trazado_40" viewBox="0 0 225 60">
                 <path
                   className="Trazado_40_Class"
@@ -504,25 +506,22 @@ function ReservasBody() {
                 <Modal
                   estado={estadoModal}
                   cambiarEstado={cambiarEstadoModal}
+                  titulo={"Límite Superado"}
                 >
                   <Contenido>
-                    <p>
-                      Usted ya tiene 2 reservaciones:
-                    </p>
+                    <p>Usted ya tiene 2 reservaciones:</p>
                     <div>
-                      {Array.from(horaParticipante).map(e => {
+                      {Array.from(horaParticipante).map((e) => {
                         return (
                           <p>
-                            {
-                              e.toLocaleTimeString([], {
-                                hour: '2-digit',
-                                minute: '2-digit',
-                              })}
+                            {e.toLocaleTimeString([], {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
                           </p>
                         );
                       })}
                     </div>
-
                   </Contenido>
                 </Modal>
               </div>
@@ -545,13 +544,13 @@ const Contenido = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1{
+  h1 {
     font-size: 42px;
     font-weight: 700;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
 
-  p{
+  p {
     font-size: 20px;
   }
 `;

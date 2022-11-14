@@ -3,7 +3,7 @@ import { useState } from "react";
 import BotonBack from "./BotonBack";
 import { useUser } from "../components/UserContext";
 import { useNavigate } from "react-router-dom";
-import { updateDocumento } from "../Hooks/useDoc";
+import { crearDocumento, updateDocumento } from "../Hooks/useDoc";
 import { useFormik, yupToFormErrors } from "formik";
 import * as Yup from "yup";
 import { Container, Form, Button } from "semantic-ui-react";
@@ -11,13 +11,15 @@ import { Container, Form, Button } from "semantic-ui-react";
 function CrearUsuarioBody() {
   const navigate = useNavigate();
   const { signup, update } = useUser();
+  const [back, setBack] = useState(true);
 
   async function handleSubmit(valores) {
     // e.preventDefault();
     try {
+      setBack(false);
       await signup(valores.Input_email, valores.Input_contrasena);
       await update(valores.Input_nombre);
-      await updateDocumento("usuarios", valores.Input_email, {
+      await crearDocumento("usuarios", valores.Input_email, {
         nombre: valores.Input_nombre,
         apellido: valores.Input_apellido,
         peso: "",
@@ -26,6 +28,7 @@ function CrearUsuarioBody() {
       navigate("/");
     } catch (error) {
       console.log(error);
+      setBack(true);
     }
   }
 
@@ -38,15 +41,24 @@ function CrearUsuarioBody() {
       Input_contrasenaF: "",
     },
     validationSchema: Yup.object({
-      Input_nombre: Yup.string().required("El nombre es obligatorio"),
-      Input_apellido: Yup.string().required("El apellido es obligatorio"),
+      Input_nombre: Yup.string("No se admiten números")
+        .required("El nombre es obligatorio")
+        .matches(/^[aA-zZ\s]+$/, "Solo se aceptan letras")
+        .max(50),
+      Input_apellido: Yup.string()
+        .required("El apellido es obligatorio")
+        .matches(/^[aA-zZ\s]+$/, "Solo se aceptan letras")
+        .max(50),
       Input_email: Yup.string()
         .email("No es un email valido")
         .required("El email es obligatorio"),
       Input_contrasena: Yup.string()
         .required("La contraseña es obligatorio")
         .oneOf([Yup.ref("Input_contrasenaF")], "Las contraseñas no son iguales")
-        .min(8, "La contraseña debe tener una longitud mayor o igual a 8 caracteres"),
+        .min(
+          8,
+          "La contraseña debe tener una longitud mayor o igual a 8 caracteres"
+        ),
       Input_contrasenaF: Yup.string()
         .required("Porfavor confirme su contraseña")
         .min(8, "La contraseña debe contener 8 o más caracteres"),
@@ -72,7 +84,7 @@ function CrearUsuarioBody() {
         </svg>
 
         {/* boton regreso */}
-        <BotonBack />
+        {back === true ? <BotonBack /> : <></>}
 
         <Form onSubmit={formik.handleSubmit} className="registro_user">
           <div id="lbl_Crear_Usuario">

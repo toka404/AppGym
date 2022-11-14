@@ -18,7 +18,6 @@ import { isEmpty } from "lodash";
 import Modal from "../components/Modal";
 import styled from "styled-components";
 
-
 const today = new Date();
 // today.setDate(21);
 // today.setHours(21);
@@ -142,10 +141,10 @@ function ReservasEventosBody() {
     querySnapshot.forEach((doc) => {
       docs.push(
         doc.data().fecha.toDate().getFullYear() +
-        "/" +
-        (doc.data().fecha.toDate().getMonth() + 1) +
-        "/" +
-        doc.data().fecha.toDate().getDate()
+          "/" +
+          (doc.data().fecha.toDate().getMonth() + 1) +
+          "/" +
+          doc.data().fecha.toDate().getDate()
       );
     });
 
@@ -269,15 +268,13 @@ function ReservasEventosBody() {
     });
 
     docs.forEach((res) => {
-      let time = res.fecha
-      let tim = new Date(
-        time.seconds * 1000 + time.nanoseconds / 1000000
-      );
+      let time = res.fecha;
+      let tim = new Date(time.seconds * 1000 + time.nanoseconds / 1000000);
       /*       console.log(tim);  */
       fec.push(tim);
     });
     setHoraParticipante(fec);
-  }
+  };
 
   useEffect(() => {
     getFechas();
@@ -292,7 +289,7 @@ function ReservasEventosBody() {
   useEffect(() => {
     getEventos();
     cupoMaximo();
-    return () => { };
+    return () => {};
   }, [reserva, actualizar]);
   const [estadoModal, cambiarEstadoModal] = useState(false);
 
@@ -401,7 +398,7 @@ function ReservasEventosBody() {
                       alt="foto de perfil"
                     /> */}
 
-                   {/*  <svg
+                    {/*  <svg
                       xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle FotoPP" viewBox="0 0 16 16">
                       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                       <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -476,11 +473,11 @@ function ReservasEventosBody() {
                   if (
                     +e.label.split(":")[0] > today.getHours() ||
                     reserva.fecha !==
-                    today.getFullYear() +
-                    "/" +
-                    (today.getMonth() + 1) +
-                    "/" +
-                    today.getDate()
+                      today.getFullYear() +
+                        "/" +
+                        (today.getMonth() + 1) +
+                        "/" +
+                        today.getDate()
                   ) {
                     return (
                       <option value={e.value} key={e.value}>
@@ -498,8 +495,8 @@ function ReservasEventosBody() {
 
         {/* boton reserva */}
         {consulta != null &&
-          consulta.participantes &&
-          consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
+        consulta.participantes &&
+        consulta.participantes.indexOf(usuarioLoged.email) === -1 ? (
           inscripciones < 2 ? (
             <button
               onClick={async () => {
@@ -537,7 +534,10 @@ function ReservasEventosBody() {
               </div>
             </button>
           ) : (
-            <div className="btnReservar_ClassReserva btn" onClick={() => cambiarEstadoModal(!estadoModal)}>
+            <div
+              className="btnReservar_ClassReserva btn"
+              onClick={() => cambiarEstadoModal(!estadoModal)}
+            >
               <svg className="Trazado_40" viewBox="0 0 225 60">
                 <path
                   className="Trazado_40_Class"
@@ -552,37 +552,32 @@ function ReservasEventosBody() {
                 <Modal
                   estado={estadoModal}
                   cambiarEstado={cambiarEstadoModal}
+                  titulo={"Límite Superado"}
                 >
                   <Contenido>
-                    <p>
-                      Usted ya tiene 2 reservaciones:
-                    </p>
+                    <p>Usted ya tiene 2 reservaciones:</p>
                     <div>
-                      {Array.from(horaParticipante).map(e => {
+                      {Array.from(horaParticipante).map((e) => {
                         return (
                           <p>
-                            {
-                              e.toLocaleTimeString([], {
-                                hour: '2-digit',
-                                minute: '2-digit',
-                              })}
+                            {e.toLocaleTimeString([], {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
                           </p>
                         );
                       })}
                     </div>
-
                   </Contenido>
                 </Modal>
               </div>
             </div>
-
           )
         ) : (
           <div className="lblReserva">
             <span>Ya se encuentra registrado</span>
           </div>
         )}
-
       </div>
     </div>
   );
@@ -595,13 +590,13 @@ const Contenido = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1{
+  h1 {
     font-size: 42px;
     font-weight: 700;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
 
-  p{
+  p {
     font-size: 20px;
   }
 `;

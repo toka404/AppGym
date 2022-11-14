@@ -10,6 +10,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { crearDocumento } from "../Hooks/useDoc";
 import { db } from "../components/Firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import Modal from "../components/Modal";
+import styled from "styled-components";
 
 //se declara afuera para no recrearlo en cada render
 const emptyLogin = {
@@ -19,6 +21,7 @@ const emptyLogin = {
 
 function Body() {
   const [login, setLogin] = useState(emptyLogin);
+  const [estadoModal, cambiarEstadoModal] = useState(false);
   const { loginContext } = useUser();
   const navigate = useNavigate();
   const auth = getAuth();
@@ -40,7 +43,7 @@ function Body() {
       await loginContext(login.Input_correo, login.Input_Contra);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      cambiarEstadoModal(!estadoModal);
     }
   }
 
@@ -59,7 +62,7 @@ function Body() {
         });
         navigate("/");
       } catch (error) {
-        console.log(error);
+        console.log("a");
       }
     }
   }
@@ -75,7 +78,6 @@ function Body() {
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
         crossOrigin="anonymous"
       />
-
       <div id="Usuario">
         <svg className="img_fondo">
           <rect id="img_fondo" width="431" height="898"></rect>
@@ -218,8 +220,34 @@ function Body() {
           alt="images/img_cuerda_2.png"
         />
       </div>
+      <Modal
+        estado={estadoModal}
+        cambiarEstado={cambiarEstadoModal}
+        titulo={"Mensaje"}
+      >
+        <Contenido>
+          <p>Credenciales incorrectas</p>
+        </Contenido>
+      </Modal>
+      ;
     </div>
   );
 }
 
 export default Body;
+
+const Contenido = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+`;
