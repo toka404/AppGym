@@ -103,7 +103,7 @@ function PerfilBody() {
   };
 
   useEffect(() => {
-    getUrl();
+    // getUrl();
     getEventos();
   }, []);
 
@@ -145,7 +145,7 @@ function PerfilBody() {
 
         <Form onSubmit={formik.handleSubmit}>
           {/* imagen de perfil, falta que se agrande */}
-          {/*         <img
+          {/* <img
             id="n_838764_g"
             src="/images/Perfil/n_838764_g.png"
             alt="foto de perfil"
@@ -172,13 +172,26 @@ function PerfilBody() {
                       setUpdate(!update);
                     }
                   );
-                } else {
                 }
                 // console.log(e.target.files[0]);
               }}
             ></input>
           </label> */}
-
+          <svg
+            id="n_838764_g"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="white"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            />
+          </svg>
           {/* input nombre */}
           <div id="Grupo_816_ha">
             <div id="Grupo_815_hb">
@@ -220,7 +233,7 @@ function PerfilBody() {
           </div>
 
           {/* input correo */}
-          <div id="Grupo_852">
+          {/* <div id="Grupo_852">
             <div id="Grupo_901">
               <Form.Input
                 type="text"
@@ -235,14 +248,14 @@ function PerfilBody() {
           </div>
           <div id="Correo">
             <span>Correo:</span>
-          </div>
+          </div> */}
 
           {/* input peso */}
-          <div id="Peso">
+          <div id="Altura">
             <span>Peso:</span>
           </div>
 
-          <div id="Grupo_905">
+          <div id="Grupo_906">
             <div id="Grupo_901_h">
               <Form.Input
                 type="number"
@@ -256,10 +269,10 @@ function PerfilBody() {
             </div>
           </div>
           {/* input altura */}
-          <div id="Altura">
+          <div id="Correo">
             <span>Altura:</span>
           </div>
-          <div id="Grupo_906">
+          <div id="Grupo_852">
             <div id="Grupo_901_ia">
               <Form.Input
                 type="number"
