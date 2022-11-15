@@ -196,20 +196,19 @@ body {
   stroke-linecap: butt;
   stroke-miterlimit: 4;
   shape-rendering: auto;
-
 }
 
 .BtnIngresoLogin {
   position: absolute;
   overflow: visible;
-  width: 370px;
+  width: 400px;
   height: 62px;
   left: 0px;
   top: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 350px;
+  max-width: 368px;
   justify-content: space-around;
 }
 
@@ -234,14 +233,14 @@ body {
 .Btn_google {
   position: unset;
   overflow: visible;
-  width: 352px;
+  width: 402px;
   height: 62px;
   left: 0px;
   top: 0px !important;
   display: flex;
   flex-direction: row;
   align-content: center;
-  max-width: 350px;
+  max-width: 368px;
   justify-content: end;
 }
 
@@ -249,7 +248,7 @@ body {
   position: absolute;
   width: 182px;
   height: 62px;
-  left: 15px !important;
+  left: 18px !important;
   top: 740px !important;
   overflow: visible;
 }
@@ -7856,6 +7855,7 @@ button.icon-button>span.chevron-arrow-right {
   display: flex;
   flex-direction: row;
   text-align: right;
+  align-content: flex-start
 }
 
 /* .CajaContenidos::-webkit-scrollbar {
@@ -8019,7 +8019,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   #lbl_broken_hand {
-    font-size: 200%;
+    font-size: 250%;
     left: 18%;
     top: 37%;
   }
@@ -8032,6 +8032,7 @@ button.icon-button>span.chevron-arrow-right {
   #input_correo {
     left: 8%;
     top: 50%;
+    align-items: right !important;
   }
 
   #lbl_contrasenaLogin {
@@ -8068,7 +8069,7 @@ button.icon-button>span.chevron-arrow-right {
   #Home {
     position: absolute;
     width: 100vw !important;
-    height: 220vw !important;
+    height: 200vw !important;
     overflow: hidden;
     --web-view-name: Home;
     --web-view-id: Home;
@@ -8379,7 +8380,7 @@ button.icon-button>span.chevron-arrow-right {
     width: 88vw;
     height: 55vw;
     left: 10vw;
-    top: 138vw;
+    top: 126vw;
   }
 
   .CuadroParticipantes {
@@ -8391,7 +8392,7 @@ button.icon-button>span.chevron-arrow-right {
 
   .lblParticipantes_Class {
     left: 60px;
-    top: 143vw;
+    top: 130vw;
     width: 146px;
     font-size: 20px;
   }
@@ -8402,14 +8403,30 @@ button.icon-button>span.chevron-arrow-right {
 
   .CajaContenidos {
     width: 85vw;
-    height: 40vw;
-    top: 150vw;
+    height: 38vw;
+    top: 140vw;
     left: 10vw;
   }
 
   .participante {
     width: 80vw;
-    height: 15vw;
+    height: 10vw;
+  }
+
+
+  .formRutinas_Class {
+    left: 7vw !important;
+    height: 130px !important;
+  }
+
+  .Rectngulo_386_Class {
+    width: 372.59px;
+    height: 130px !important;
+  }
+
+  .Rectngulo_386 {
+    width: 373px !important;
+    height: 130px !important;
   }
 
   .nmPart {
@@ -8470,8 +8487,8 @@ button.icon-button>span.chevron-arrow-right {
     /*     opacity: 0;  */
   }
 
-  .fotoPerfil{
-    position:absolute;
+  .fotoPerfil {
+    position: absolute;
     left: -100%;
     right: -100%;
     top: -100%;

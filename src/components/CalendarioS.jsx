@@ -98,13 +98,13 @@ function Calend() {
         <span>Calendario</span>
       </div>
 
-      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 ">
+      <div className="max-w-4xl px-4 mx-auto sm:px-4 md:max-w-4xl md:px-6 ">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 border-zinc-50">
           {/*Menu completo */}
           <div className="md:pr-14 bg-fondo rounded-md">
             <div className="flex items-center">
               {/* Mes */}
-              <h2 className="flex-auto font-semibold text-blanco text-lg">
+              <h2 className="flex-auto font-semibold text-blanco text-2xl">
                 {/* Flecha para mes previo*/}
                 {format(firstDayCurrentMonth, "MMMM yyyy", { locale: es })}
               </h2>
@@ -127,7 +127,7 @@ function Calend() {
               </button>
             </div>
             {/* Para los días de la semana */}
-            <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
+            <div className="grid grid-cols-7 mt-10 text-2xl leading-6 text-center text-blanco">
               <div>D</div>
               <div>L</div>
               <div>M</div>
@@ -136,7 +136,7 @@ function Calend() {
               <div>V</div>
               <div>S</div>
             </div>
-            <div className="grid grid-cols-7 mt-2 text-base">
+            <div className="grid grid-cols-7 mt-2 text-2xl">
               {days.map((day, dayIdx) => (
                 <div
                   key={day.toString()}
@@ -192,14 +192,14 @@ function Calend() {
             </div>
           </div>
           <section className="mt-8 md:mt-0 md:pl-14">
-            <h2 className="font-medium font-poppins text-left text-blanco text-lg">
+            <h2 className="font-medium font-poppins text-left text-blanco text-xl">
               {/* Fecha del calendario */}{" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
                 {format(selectedDay, "MMM dd, yyy")}
               </time>
             </h2>
             <div className="scrollCalendario">
-              <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
+              <ol className="mt-4 space-y-1 text-xl leading-6 text-gray-500">
                 {selectedDayMeetings.length > 0 ? (
                   selectedDayMeetings.map((meeting) => (
                     <Meeting meeting={meeting} key={meeting.id.id} />

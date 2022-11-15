@@ -81,18 +81,18 @@ function CalendCom() {
         <span>Plan Alimenticio</span>
       </div>
 
-      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 ">
+      <div className="max-w-4xl px-8 mx-auto sm:px-4 md:max-w-lg md:px-6 ">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 border-zinc-50">
           {/*Menu completo */}
           <div className="md:pr-14 bg-fondo rounded-md">
             <div className="flex items-center">
               {/* Mes */}
-              <h2 className="flex-auto font-semibold text-blanco text-lg ">
+              <h2 className="flex-auto font-semibold text-blanco text-xl ">
                 {format(firstDayCurrentMonth, "MMMM yyyy", { locale: es })}
               </h2>
             </div>
             {/* Para los días de la semana */}
-            <div className="grid grid-cols-7 mt-10 text-base leading-6 text-center text-blanco">
+            <div className="grid grid-cols-7 mt-10 text-xl leading-6 text-center text-blanco">
               <div>D</div>
               <div>L</div>
               <div>M</div>
@@ -101,7 +101,7 @@ function CalendCom() {
               <div>V</div>
               <div>S</div>
             </div>
-            <div className="grid grid-cols-7 mt-2 text-base">
+            <div className="grid grid-cols-7 mt-2 text-xl">
               {days.map((day, dayIdx) => (
                 <div
                   key={day.toString()}
@@ -166,7 +166,7 @@ function CalendCom() {
               </time>
             </h2>
             <div className="scrollCalendario2">
-              <ol className="mt-4 space-y-1 text-base leading-6 text-gray-500">
+              <ol className="mt-4 space-y-1 text-lg leading-6 text-gray-500">
                 {selectedDayMeetings.length > 0 ? (
                   selectedDayMeetings.map((meeting) => (
                     <Meeting meeting={meeting} key={meeting.id.id} />
