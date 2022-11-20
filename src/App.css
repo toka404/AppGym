@@ -8472,7 +8472,7 @@ button.icon-button>span.chevron-arrow-right {
   }
 
   .registro_user {
-    top: -100vw;
+    top: -100vw !important; 
   }
 
   .ui.input {
@@ -8487,6 +8487,9 @@ button.icon-button>span.chevron-arrow-right {
     /*     opacity: 0;  */
   }
 
+  .ui.form{
+    top: -5vw;
+  }
   .fotoPerfil {
     position: absolute;
     left: -100%;
